@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOMATE 2026 | The Climate Honors</title>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --deep-void: #050505;
+            --ethereal-gold: #c5a059;
+            --lunar-white: #e0e0e0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--deep-void);
+            color: var(--lunar-white);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            letter-spacing: 1px;
+        }
+
+        /* Gnosis-Inspired Sacred Geometry Background */
+        .geometry-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.05) 0%, transparent 70%),
+                linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.8)),
+                url('www.transparenttextures.com');
+            z-index: -1;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+        /* Header */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pre-title { 
+            color: var(--ethereal-gold); 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 8vw, 5rem);
+            line-height: 1;
+            margin-bottom: 30px;
+            background: linear-gradient(to bottom, #fff 30%, var(--ethereal-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            max-width: 700px;
+            font-weight: 200;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #888;
+        }
+
+        /* 2025 Archive Section */
+        .legacy-section {
+            padding: 100px 0;
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .stat-box {
+            font-family: 'Cinzel', serif;
+            font-size: 8rem;
+            color: rgba(197, 160, 89, 0.1);
+            position: relative;
+        }
+
+        .stat-label {
+            position: absolute;
+            top: 50%; left: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--lunar-white);
+            text-transform: uppercase;
+        }
+
+        /* Nomination Cards */
+        .nomination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        .nominator-card {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .nominator-card:hover {
+            border-color: var(--ethereal-gold);
+            transform: translateY(-5px);
+            background: rgba(197, 160, 89, 0.02);
+        }
+
+        .nominator-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--ethereal-gold);
+            margin-bottom: 15px;
+        }
+
+        /* The Nomination CTA */
+        .action-zone {
+            padding: 150px 0;
+            text-align: center;
+            background: radial-gradient(circle at center, #111 0%, var(--deep-void) 100%);
+        }
+
+        .btn-nominate {
+            display: inline-block;
+            padding: 20px 50px;
+            border: 1px solid var(--ethereal-gold);
+            color: var(--ethereal-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            position: relative;
+            transition: var(--transition);
+            cursor: pointer;
+            background: transparent;
+        }
+
+        .btn-nominate:hover {
+            background: var(--ethereal-gold);
+            color: #000;
+            box-shadow: 0 0 50px rgba(197, 160, 89, 0.3);
+        }
+
+        /* Membership List */
+        .benefits-list {
+            list-style: none;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .benefits-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .benefits-list li::before {
+            content: "◆";
+            color: var(--ethereal-gold);
+            margin-right: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* JS Reveal Class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: var(--transition);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            padding: 60px;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="geometry-overlay"></div>
+
+    <div class="container">
+        <header>
+            <div class="pre-title reveal">The 2026 Luminary Cycle</div>
+            <h1 class="reveal">AMPLIFY THE UNTOLD</h1>
+            <p class="hero-sub reveal">
+                African women are not just witnessing climate change—they are rewriting its ending. 
+                Following the legacy of our 18 featured pioneers in 2025, we invite you to name the next leaders of 2026.
+            </p>
+            <div style="margin-top: 40px;" class="reveal">
+                <a href="#nominate" class="btn-nominate">NOMINATE A LEADER</a>
+            </div>
+        </header>
+
+        <section class="legacy-section">
+            <div class="counter-grid">
+                <div class="stat-box reveal">
+                    18
+                    <div class="stat-label">Voices Elevated In 2025</div>
+                </div>
+                <div class="reveal">
+                    <h2 style="font-family: 'Cinzel'; margin-bottom: 20px;">The Journey to October 2026</h2>
+                    <p style="color: #888;">We are building a 360° ecosystem. Featured changemakers gain access to the WOMATE Circle and priority eligibility for the Global Awards 2026.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nominate" class="action-zone">
+            <h2 class="reveal" style="font-family: 'Cinzel'; font-size: 2.5rem; margin-bottom: 20px;">Is the story yours to tell?</h2>
+            <p class="reveal" style="color: #888; max-width: 600px; margin: 0 auto 50px;">
+                Whether it is your own innovation or a woman leading in your community, we see you. 
+                Fill the scroll below to activate membership and qualify for the spotlight.
+            </p>
+
+            <div class="nomination-grid">
+                <div class="nominator-card reveal">
+                    <h3>The Spotlight</h3>
+                    <p>Be featured in our upcoming Digital Magazine and Global Spotlight series.</p>
+                </div>
+                <div class="nominator-card reveal">
+                    <h3>The Circle</h3>
+                    <p>One-year access to the Membership Community for networking and collaboration.</p>
+                </div>
+                <div class="nominator-card reveal">
+                    <h3>The Honor</h3>
+                    <p>Direct nomination path for the WOMATE Global Awards in late 2026.</p>
+                </div>
+            </div>
+
+            <!-- ADD THIS SECTION BEFORE THE NOMINATION ZONE -->
+<section class="legacy-gallery reveal">
+    <div class="container">
+        <h2 style="font-family: 'Cinzel'; text-align: center; margin-bottom: 50px;">The 2025 Archive: 18 Pioneers</h2>
+        
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+            
+            <div class="carousel-container" id="gallery">
+                <!-- Slide 1: Jovial -->
+                <div class="spotlight-card active">
+                    <div class="image-placeholder">
+                        <img src="your-image-jovial.jpg" alt="Jovial">
+                        <div class="location-tag">Nairobi, Kenya</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Jovial</h3>
+                        <p>Championing grassroots climate innovations through community-led tech adoption.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Example placeholder for others -->
+                <div class="spotlight-card">
+                    <div class="image-placeholder">
+                        <img src="placeholder-2.jpg" alt="Name">
+                        <div class="location-tag">Accra, Ghana</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Adjoa</h3>
+                        <p>Pioneering solar-powered irrigation for smallholder female farmers.</p>
+                    </div>
+                </div>
+
+                <!-- Add remaining 16 cards following the same format -->
+            </div>
+
+            <button class="nav-btn next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<style>
+/* GALLERY STYLES */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.spotlight-card {
+    min-width: 100%;
+    background: var(--glass);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    display: none; /* Controlled by JS */
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.spotlight-card.active { display: block; }
+
+.image-placeholder {
+    height: 400px;
+    background: #111;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.location-tag {
+    position: absolute;
+    bottom: 20px; right: 20px;
+    background: var(--ethereal-gold);
+    color: #000;
+    padding: 5px 15px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.card-content { padding: 30px; text-align: center; }
+
+.nav-btn {
+    background: none;
+    border: 1px solid var(--ethereal-gold);
+    color: var(--ethereal-gold);
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.nav-btn:hover { background: var(--ethereal-gold); color: #000; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.spotlight-card');
+
+function moveCarousel(direction) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
+
+/* Optional: Auto-cycle every 5 seconds */
+setInterval(() => moveCarousel(1), 5000);
+</script>
+
+
+            <!-- Placeholder for your Form Embed -->
+            <div class="reveal" style="margin-top: 60px; padding: 40px; border: 1px dashed rgba(197,160,89,0.3);">
+                <p style="margin-bottom: 20px; font-style: italic;">[ NOMINATION FORM EMBED GOES HERE ]</p>
+                <button class="btn-nominate" onclick="alert('Form Triggered')">SUBMIT NOMINATION</button>
+            </div>
+        </section>
+
+        <section class="container reveal" style="padding-bottom: 100px;">
+            <h2 style="font-family: 'Cinzel'; text-align: center;">Membership Benefits</h2>
+            <ul class="benefits-list">
+                <li>Exclusive platform for cross-continental networking</li>
+                <li>Priority invitations to 2026 climate summits and workshops</li>
+                <li>Early access to volunteer roles and technological project collaborations</li>
+                <li>Strategic visibility across WOMATE’s 360° ecosystem</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        WOMATE | DRIVING INCLUSIVE CLIMATE ACTION WITH TECHNOLOGY | 2026 OCTOBER CYCLE
+    </footer>
+
+    <script>
+        // Scroll Reveal Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Subtle Mouse Parallax for "Sacred Geometry" feel
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) - 0.5;
+            const y = (e.clientY / window.innerHeight) - 0.5;
+            document.querySelector('.geometry-overlay').style.transform = 
+                `translate(${x * 20}px, ${y * 20}px)`;
+        });
+    </script>
+</body>
+</html>

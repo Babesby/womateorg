@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOMATE | Ecosystem of African Women Climate Leaders</title>
+
+    <!-- 1. Primary Meta Tags (For Google Search & Browsers) -->
+    <meta name="title" content="WOMATE | Ecosystem of African Women Climate Leaders">
+    <meta name="description" content="Womate is an ecosystem where African women rise as climate leaders, storytellers, innovators, and advocates, using technology to solve today’s pressing climate challenges.">
+
+    <!-- 2. Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://womate.org">
+    <meta property="og:title" content="WOMATE | Ecosystem of African Women Climate Leaders">
+    <meta property="og:description" content="A platform for African women to rise as innovators and advocates using sustainable technology.">
+    <!-- Fixed Image Path: Must include https:// and the leading slash for assets -->
+    <meta property="og:image" content="https://womate.org/assets/img/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- 3. Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="womate.org">
+    <meta property="twitter:title" content="WOMATE | Ecosystem of African Women Climate Leaders">
+    <meta property="twitter:description" content="Driving inclusive climate action through technology.">
+    <meta property="twitter:image" content="https://womate.org/assets/img/og-preview.png">
+
+    <!-- 4. Schema Markup (For Google Knowledge Panel & Logo Search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WOMATE",
+      "url": "womate.org",
+      "logo": "https://womate.org/assets/img/logo.svg",
+      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology.",
+      "sameAs": [
+        "x.com"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- 5. Favicons & CSS -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+
+<body>
+
+<canvas id="pleroma-canvas"></canvas>
+<div class="universe-overlay"></div>
+
+<!-- NAV -->
+<nav class="divine-nav">
+   <a><img src="assets/img/logo.svg" alt="WOMATE"></a>
+
+    <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+        <div class="nav-veil"></div>
+         <!-- CLOSE BUTTON -->
+    <button class="nav-close" aria-label="Close Menu">&times;</button>
+
+
+        <a href="#" class="nav-cta">Ecosystem</a>
+        <a href="She-leads.html">She Leads</a>
+        <a href="wok.html">WoK-Action</a>
+        <a href="circle.html">Circle</a>
+        <a href="research.html">Consultation</a>
+        <a href="heal.html">Healing</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Women <span>In Climate</span></h1>
+    <p class="hero-sub">Driving Inclusive Climate Action with Technology</p>
+    <a href="javascript:void(0)" class="cta-rise" onclick="toggleFlipbook()">Explore Our 2025 Impact</a>
+</header>
+
+<!-- THE IMPACT FLIPBOOK OVERLAY -->
+<div id="flipbook-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(5,5,5,0.98); z-index:10000; flex-direction:column; align-items:center; justify-content:center;">
+    
+    <!-- Close Button -->
+    <div style="width:100%; max-width:600px; text-align:right; margin-bottom:10px;">
+        <button onclick="toggleFlipbook()" style="background:none; border:none; color:#0E4D4A; font-size:2rem; cursor:pointer;">&times;</button>
+    </div>
+
+    <!-- The Flipbook -->
+    <div class="flip-book" id="impactBook">
+       <!-- Page 1: The Monolith Cover -->
+<div class="page active">
+    <div class="page-content cover">
+        <h4 style="letter-spacing:5px; color:#7EB148; font-size:0.7rem;">EST. 2025</h4>
+        <h2 style="font-family:'Cinzel'; color:#fff; font-size:2.5rem; margin:10px 0;">WOMATE</h2>
+        <p style="letter-spacing:3px; color:#7EB148; font-weight:bold;">ANNUAL IMPACT REPORT</p>
+        <div class="gold-line"></div>
+        <p style="font-size:0.7rem; color:#666;">DRIVING INCLUSIVE CLIMATE ACTION WITH TECHNOLOGY</p>
+    </div>
+</div>
+
+<!-- Page 2: The Vision & Mission -->
+<div class="page">
+    <div class="page-content" style="text-align:left;">
+        <h3 style="font-family:'Cinzel'; color:#7EB148; border-bottom:1px solid #333; padding-bottom:10px;">The Blueprint</h3>
+        <p style="margin:15px 0; font-style:italic; color:#fff;">"To build a world where African women lead climate action through innovative, tech-driven solutions."</p>
+        <p style="font-size:0.85rem; line-height:1.8;">We equip women with the technology, training, and community support required to flip the script on climate leadership.</p>
+    </div>
+</div>
+
+<!-- Page 3: 2025 Milestones (The Data) -->
+<div class="page">
+    <div class="page-content">
+        <h3 style="font-family:'Cinzel'; color:#7EB148;">2025 Legacy</h3>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-top:20px;">
+            <div style="border:1px solid #222; padding:10px;">
+                <span style="display:block; font-size:1.5rem; color:#fff;">40</span>
+                <small>She Leads Graduates</small>
+            </div>
+            <div style="border:1px solid #222; padding:10px;">
+                <span style="display:block; font-size:1.5rem; color:#fff;">15</span>
+                <small>African Countries</small>
+            </div>
+            <div style="border:1px solid #222; padding:10px;">
+                <span style="display:block; font-size:1.5rem; color:#fff;">18+</span>
+                <small>Climate Honors</small>
+            </div>
+            <div style="border:1px solid #222; padding:10px;">
+                <span style="display:block; font-size:1.5rem; color:#fff;">1k+</span>
+                <small>Lives Impacted</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page 4: Pillars 1 & 2 -->
+<div class="page">
+    <div class="page-content" style="text-align:left;">
+        <h4 style="color:#7EB148;">01. Community</h4>
+        <p style="font-size:0.8rem; margin-bottom:15px;">Safe digital hubs on LinkedIn & WhatsApp for mentorship and collaboration.</p>
+        <h4 style="color:#7EB148;">02. Storytelling</h4>
+        <p style="font-size:0.8rem;">Creative media spotlighting the remarkable work of African women innovators.</p>
+    </div>
+</div>
+
+<!-- Page 5: Pillars 3 & 4 -->
+<div class="page">
+    <div class="page-content" style="text-align:left;">
+        <h4 style="color:#7EB148;">03. Capacity Building</h4>
+        <p style="font-size:0.8rem; margin-bottom:15px;">Fellowships and webinars tailored for women navigating climate leadership paths.</p>
+        <h4 style="color:#7EB148;">04. Advocacy</h4>
+        <p style="font-size:0.8rem;">Partnering with NGOs and tech hubs to influence gender-responsive policies.</p>
+    </div>
+</div>
+
+<!-- Page 6: Tech Integration -->
+<div class="page">
+    <div class="page-content">
+        <h3 style="font-family:'Cinzel'; color:#7EB148;">Tech Integration</h3>
+        <p style="font-size:0.85rem; line-height:1.6; margin-top:15px;">We bridge local climate issues with digital solutions—from precision agriculture projects to inclusive education platforms.</p>
+        <div style="margin-top:20px; border-left:2px solid #7EB148; padding-left:15px; text-align:left; font-style:italic;">
+            "Putting the mic, the power, and the future in the hands of women."
+        </div>
+    </div>
+</div>
+
+<!-- Page 7: Why Womate -->
+<div class="page">
+    <div class="page-content" style="text-align:left;">
+        <h3 style="font-family:'Cinzel'; color:#7EB148;">The "Why"</h3>
+        <p style="font-size:0.85rem; margin-top:10px;">Climate change hits women the hardest, yet they are the least included.</p>
+        <p style="font-size:0.85rem; font-weight:bold; margin-top:10px;">We don't believe in token inclusion. We believe in full leadership.</p>
+    </div>
+</div>
+
+<!-- Page 8: SDG Alignment -->
+<div class="page">
+    <div class="page-content" style="text-align:left;">
+        <h3 style="font-family:'Cinzel'; color:#7EB148; border-bottom:1px solid #333; padding-bottom:10px;">Global Alignment</h3>
+        <p style="font-size:0.75rem; margin-bottom:15px; color:#888;">WOMATE's 2026 ecosystem directly accelerates 5 critical UN Sustainable Development Goals:</p>
+        
+        <div style="display:grid; grid-template-columns: 1fr; gap:10px;">
+            <div style="display:flex; align-items:center; background:rgba(255,255,255,0.03); padding:8px; border-radius:4px;">
+                <span style="font-size:1.2rem; margin-right:12px;">⚖️</span>
+                <div style="font-size:0.75rem;"><strong style="color:#7EB148;">SDG 5:</strong> Gender Equality</div>
+            </div>
+            <div style="display:flex; align-items:center; background:rgba(255,255,255,0.03); padding:8px; border-radius:4px;">
+                <span style="font-size:1.2rem; margin-right:12px;">💻</span>
+                <div style="font-size:0.75rem;"><strong style="color:#7EB148;">SDG 9:</strong> Industry, Innovation & Tech</div>
+            </div>
+            <div style="display:flex; align-items:center; background:rgba(255,255,255,0.03); padding:8px; border-radius:4px;">
+                <span style="font-size:1.2rem; margin-right:12px;">🌍</span>
+                <div style="font-size:0.75rem;"><strong style="color:#7EB148;">SDG 13:</strong> Climate Action</div>
+            </div>
+            <div style="display:flex; align-items:center; background:rgba(255,255,255,0.03); padding:8px; border-radius:4px;">
+                <span style="font-size:1.2rem; margin-right:12px;">🤝</span>
+                <div style="font-size:0.75rem;"><strong style="color:#7EB148;">SDG 17:</strong> Partnerships for the Goals</div>
+            </div>
+            <div style="display:flex; align-items:center; background:rgba(255,255,255,0.03); padding:8px; border-radius:4px;">
+                <span style="font-size:1.2rem; margin-right:12px;">🎓</span>
+                <div style="font-size:0.75rem;"><strong style="color:#7EB148;">SDG 4:</strong> Quality Education & Training</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page 9: The Closing Call (Relocated) -->
+<div class="page">
+    <div class="page-content cover">
+        <h3 style="font-family:'Cinzel'; color:#7EB148;">Bridge the Gap</h3>
+        <p style="font-size:0.85rem; margin:20px 0;">Let's align for the SDGs. We are calling for like-minded partners to lead 2026.</p>
+        <a href="mailto:womatead@gmail.com" style="font-size:0.7rem; color:#7EB148; text-decoration:none; border:1px solid #7EB148; padding:10px 20px; transition: 0.3s;" onmouseover="this.style.background='#7EB148'; this.style.color='#000';" onmouseout="this.style.background='transparent'; this.style.color='#7EB148';">CONNECT WITH US</a>
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Controls -->
+    <div class="flip-controls">
+        <button onclick="prevPage()">PREVIOUS</button>
+        <button onclick="nextPage()">NEXT</button>
+    </div>
+</div>
+
+<script>
+    let currentPage = 0;
+
+    function toggleFlipbook() {
+        const overlay = document.getElementById('flipbook-overlay');
+        const isHidden = overlay.style.display === 'none' || overlay.style.display === '';
+        
+        overlay.style.display = isHidden ? 'flex' : 'none';
+        
+        if (isHidden) {
+            currentPage = 0;
+            updateDisplay();
+        }
+    }
+
+    function updateDisplay() {
+        const bookPages = document.querySelectorAll('.page');
+        bookPages.forEach((page, index) => {
+            // Remove active state and hide completely
+            page.classList.remove('active');
+            page.style.display = 'none'; 
+            page.style.zIndex = '1';
+
+            if (index === currentPage) {
+                page.classList.add('active');
+                page.style.display = 'block';
+                page.style.zIndex = '10'; // Force to top
+            }
+        });
+    }
+
+    function nextPage() {
+        const bookPages = document.querySelectorAll('.page');
+        if (currentPage < bookPages.length - 1) {
+            currentPage++;
+            updateDisplay();
+        }
+    }
+
+    function prevPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            updateDisplay();
+        }
+    }
+</script>
+
+
+<main>
+<section id="ecosystem">
+    <div class="card">
+        <div class="status-badge">2026 COHORT APPLICATIONS OPENING SOON</div>
+        <h2>SHE LEADS <span>Climate Mentorship</span></h2>
+        <p>From community to global policy.</p>
+         <p class="program-intro">
+           She Leads is climate mentorship programme designed to equip young women with the climate knowledge, leadership skills, &
+           confidence to actively shape climate justice advocacy and action.
+        </p>
+         <a href="She-leads.html" class="cta-card glow-button">APPLY NOW</a>
+    </div>
+       <div class="card">
+        <div class="status-badge">PROJECT ONGOING</div>
+        <h2>WoK-Action <span>Project (2026)</span></h2>
+        <p>Women, Knowledge Systems, and Climate Action (WoK-Action) Project</p>
+         <p class="program-intro">
+           WoK-Action Project is an annual, community-based research and empowerment initiative that centres women’s local knowledge, 
+           lived experiences, and everyday leadership in climate adaptation.
+        </p>
+         <a href="wok.html" class="cta-card glow-button">SUPPORT PROJECT</a>
+    </div>
+       <div class="card">
+        <div class="status-badge">REGISTER TO BECOME A MEMBER</div>
+        <h2>WOMATE <span>Circle</span></h2>
+        <p>Women Ready to Lead Climate Action.</p>
+         <p class="program-intro">
+           WOMATE Circle is a growing network and community of women working in or aspiring to work in climate and sustainability spaces. 
+           It is designed to foster connection, shared learning, and access to opportunities that support women’s professional growth and leadership.
+
+        </p>
+         <a href="circle.html" class="cta-card glow-button">BECOME A MEMBER</a>
+    </div>
+       <div class="card">
+        <div class="status-badge">CONTACT US TO LEARN MORE</div>
+        <h2>Research and Consultation <span>Services</span></h2>
+         <p class="program-intro">
+          WOMATE provides fee-based research, monitoring, evaluation, and consultation services grounded in feminist, evidence-based, & context-responsive approaches. 
+          We support organisations, donors, and programmes to design, implement, and assess impactful gender- and climate-responsive initiatives, ensuring that evidence, lived experience, and policy relevance are meaningfully connected.
+
+        </p>
+         <a href="research.html" class="cta-card glow-button">BOOK A SERVICE</a>
+    </div>
+        <div class="card">
+        <div class="status-badge">CALLING FOR VOLUNTEERS</div>
+        <h2>Resilient Minds, <span>Resilient Women</span></h2>
+         <p class="program-intro">
+This initiative addresses the intersection of climate impacts, gender, & mental health, an often overlooked but critical area of climate justice. WOMATE recognises that climate shocks, displacement, poverty, and social exclusion disproportionately affect women’s mental wellbeing, especially those already living in vulnerable conditions.
+To rescue, rehabilitate, & restore young women with mental health challenges, particularly those living on the streets by providing medical care, safe accommodation, psychosocial support, & vocational skills for long-term recovery & dignity.
+
+        </p>
+         <a href="She-leads.html" class="cta-card glow-button">DONATE</a>
+    </div>
+</section>
+
+</main>
+
+ <!-- SPOTLIGHT HERO SECTION -->
+    <div class="spotlight-hero">
+        <div class="spotlight-grid">
+            <div class="spotlight-content">
+                <div class="status-badge" style="color: var(--womate-gold); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 1rem;">CELEBRATING WOMEN’S VISION, IMPACT & LEADERSHIP IN CLIMATE ACTION</div>
+                <h2>Spotlighting the <span>Climate Leaders</span> of Tomorrow.</h2>
+                <p style="color: var(--text-dim); max-width: 500px; margin-bottom: 2rem;">
+                    Behind every initiative is a woman of vision. We celebrate the everyday leaders transforming climate anxiety into actionable wisdom for Africa.
+                </p>
+                <a href="CH.html" style="color: var(--accent-green); text-decoration: none; font-weight: 600; border-bottom: 1px solid; padding-bottom: 4px;">Meet the 2025 Leaders &rarr;</a>
+            </div>
+            <div class="spotlight-image">
+                <img src="assets/img/featured-img.svg" alt="Featured Leader">
+            </div>
+        </div>
+    </div>
+
+    <!-- GALLERY CAROUSEL SECTION -->
+    <section class="gallery-section">
+        <div class="gallery-header">
+            <h2 style="font-family: 'Instrument Serif', serif; font-size: 3rem;">A Journey in <span>Documentation</span></h2>
+            <p style="color: var(--text-dim);">Evidence of action from the Okere District to the Global Governance rooms. (Swipe Through Gallery)</p>
+        </div>
+        <div class="carousel-container">
+            <div class="gallery-card">
+                <img src="assets/img/wok/16.svg" alt="Field Research">
+                <div style="padding: 1.5rem;">
+                    <p style="font-size: 0.85rem; opacity: 0.7;">Documenting indigenous adaptation cycles.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="assets/img/wok/17.svg" alt="Mentorship Session">
+                <div style="padding: 1.5rem;">
+                    <p style="font-size: 0.85rem; opacity: 0.7;">Team group photo</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="assets/img/wok/18.svg" alt="Community Action">
+                <div style="padding: 1.5rem;">
+                    <p style="font-size: 0.85rem; opacity: 0.7;">Group photo with Queen Mother & Community Members</p>
+                </div>
+            </div>
+             <div class="gallery-card">
+                <img src="assets/img/wok/19.svg" alt="Mentorship Session">
+                <div style="padding: 1.5rem;">
+                    <p style="font-size: 0.85rem; opacity: 0.7;">Data Collection Process</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="assets/img/wok/20.svg" alt="Community Action">
+                <div style="padding: 1.5rem;">
+                    <p style="font-size: 0.85rem; opacity: 0.7;">Breakout Session</p>
+                </div>
+            </div> 
+           
+            <!-- Add more cards as needed -->
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-family: 'Instrument Serif', serif; font-size: 3rem;">Words of <span>Transformation</span></h2>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>“
+This program has been insightful and very educational, it
+has really helped me understand and learn more about
+Climate Change, resilience, mitigation and adaptation
+strategies, its impacts and possible solutions. This
+program has also taught me the importance of
+Advocacy, women empowerment, youth engagement
+and being the change for a start. I look forward to seeing
+more of womate works, collaborations especially here in
+Zambia and to continue being part of the Alumni
+Network Community. I will gladly participate in any
+projects or activities initiated by womate."
+”</p>
+                <div class="author">
+                    <img src="assets/img/testi/19.svg" alt="Profile">
+                    <div class="author-info">
+                        <h5>Betty Mulenga</h5>
+                        <span>2025 She Leads Alumni • Zambia</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>“This program has been a truly transformative experience for me. I've gained valuable insights into the relationship between
+both climate change and gender, and how women are both affected by and central to climate resilience. Through the mentorship sessions,
+I've learned practical ways we can help reduce the impacts of climate change in our communities. I also appreciate the opportunity to connect & network with inspiring colleagues on LinkedIn who share the same passion for climate advocacy. 
+This program has strengthened my confidence and commitment to continue Championing women-led climate solutions”</p>
+                <div class="author">
+                    <img src="assets/img/testi/21.svg" alt="Profile">
+                    <div class="author-info">
+                        <h5>Mariam Hamza</h5>
+                        <span>2025 She Leads Alumni • Ghana</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>“The She Leads Mentorship Program has been an enlightening and empowering experience. The sessions on climate change, adaptation and resilience, climate and gender, and digital tools for climate advocacy have greatly expanded my understanding of how young
+women can be powerful change agents in the face of climate challenges. The program helped me connect the dots between gender equity and environmental justice,
+and how digital advocacy can amplify our voices & impact. I now feel more equipped and confident to engage in community-based climate action and advocate for inclusive, gender-responsive climate
+policies. I'm grateful to the mentors and organizers for such a meaningful platform for learning, growth, and leadership development.”</p>
+                <div class="author">
+                    <img src="assets/img/testi/22.svg" alt="Profile">
+                    <div class="author-info">
+                        <h5>Zainab Kamara</h5>
+                        <span>2025 She Leads Alumni • Sierra Leone</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>“This program has been eye opening for me. The
+things I'd learned here, it would have probably
+taken me years to learn them somewhere else
+with a higher cost. Now I am better equipped to
+be a climate advocate wherever I find myself,
+not just in title but in action. But if only the
+timeline could be extended for others it would
+be great. Thank you for this opportunity.”</p>
+                <div class="author">
+                    <img src="assets/img/testi/18.svg" alt="Profile">
+                    <div class="author-info">
+                        <h5>Makaria Dadzie</h5>
+                        <span>2025 She Leads Alumni • Ghana</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>“Grateful to have been part of the WOMATE, She
+Leads Climate Mentorship Program,a truly inspiring
+journey that deepened my understanding of
+climate leadership and women-led innovation. The
+mentorship, sisterhood, and shared purpose
+reminded me that small actions can create lasting
+impact. I'm leaving more confident, inspired, and
+ready to keep driving change for a greener,
+resilient Africa.”</p>
+                <div class="author">
+                    <img src="assets/img/testi/20.svg" alt="Profile">
+                    <div class="author-info">
+                        <h5>Ethel Eyram Ahorlu</h5>
+                        <span>2025 She Leads Alumni • Ghana</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>“This is a very powerful program where
+women are taught what climate change is,
+the way it affects them and how to
+champion the world to taking a step in
+mitigating climate change through social
+media platforms. I would highly recommend
+for anyone from beginners in climate
+change to experts; there is something to
+learn”</p>
+                <div class="author">
+                    <img src="assets/img/testi/17.svg" alt="Profile">
+                    <div class="author-info">
+                        <h5>Mary Kimani</h5>
+                        <span>2025 She Leads Alumni • Kenya</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- PARTNERS & FUNDERS SECTION -->
+<section class="partners-section reveal" style="padding: 100px 0; text-align: center; border-top: 1px solid #0E4D4A;">
+    <div class="container">
+        <h2>The Coalition</h2>
+        <p style=" margin-bottom: 50px;">Proudly supported by visionaries committed to climate justice.</p>
+        
+        <div class="partner-logos" style="display:flex; justify-content:center; gap:60px; filter:grayscale(100%); opacity:0.6; flex-wrap:wrap;">
+            <!-- Placeholder Logo Blocks -->
+            <div style="width:120px; height:60px; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-size:0.6rem;"><img src="assets/img/partners/3.svg" alt="grow" style="max-width:80%; max-height:60%; object-fit:contain;"></div>
+            <div style="width:120px; height:60px; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-size:0.6rem;"><img src="assets/img/partners/4.svg" alt="Tranquiliva" style="max-width:80%; max-height:60%; object-fit:contain;"></div>
+            <div style="width:120px; height:60px; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-size:0.6rem;"><img src="assets/img/partners/5.svg" alt="fkyiis" style="max-width:80%; max-height:60%; object-fit:contain;"></div>
+
+        </div>
+
+        <div style="margin-top: 60px;">
+            <p style="font-size:0.9rem; color:var(--lunar-white);">We are expanding our 2026 Ecosystem.</p>
+            <a href="mailto:womatead@gmail.com" style="color:var(--life-green); text-decoration:none; font-weight:bold; letter-spacing:2px; border-bottom:1px solid var(--life-green);">Partner with WOMATE &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- UPDATED CONTACT-RICH FOOTER -->
+<footer style="padding: 80px 40px;">
+    <div class="container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:40px; text-align:left;">
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">WOMATE</h4>
+            <p style="font-size:0.8rem; color:#666; line-height:1.8;">Driving 360° inclusive climate action through sustainable technology and community leadership.</p>
+        </div>
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">Contact</h4>
+            <p style="font-size:0.8rem; color:#666;">Global HQ: Accra, Ghana</p>
+            <p style="font-size:0.8rem; color:#666;">womatead.gmail.com</p>
+        </div>
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">Community</h4>
+            <ul style="list-style:none; font-size:0.8rem; color:#666;">
+                <li><a href="circle.html" style="color:#666; text-decoration:none;">The Circle Membership</a></li>
+                <li><a href="CH.html" style="color:#666; text-decoration:none;">WOMATE CLIMATE HONOURS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="margin-top:60px; border-top:1px solid rgba(255,255,255,0.05); padding-top:20px; text-align:center;">
+        <p>© 2026 WOMATE. All Rights Reserved.</p>
+    </div>
+</footer>
+
+ <!-- Main JS File -->
+  <script src="assets/js/style.js"></script>
+</body>
+</html>

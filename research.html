@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOMATE | Research & Strategic Consultation</title>
+    
+    
+
+    <!-- 1. Primary Meta Tags (For Google Search & Browsers) -->
+    <meta name="title" content="WOMATE | Research & Strategic Consultation">
+    <meta name="description" content="Providing organizations and donors with the analytical depth to design, implement, and assess gender-responsive climate initiatives.">
+
+    <!-- 2. Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://womate.org/research.html">
+    <meta property="og:title" content="WOMATE | Research & Strategic Consultation">
+    <meta property="og:description" content="Providing organizations and donors with the analytical depth to design, implement, and assess gender-responsive climate initiatives.">
+    <!-- Fixed Image Path: Must include https:// and the leading slash for assets -->
+    <meta property="og:image" content="https://womate.org/assets/img/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- 3. Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="womate.org/research.html">
+    <meta property="twitter:title" content="WOMATE | Research & Strategic Consultation">
+    <meta property="twitter:description" content="Driving inclusive climate action through technology.">
+    <meta property="twitter:image" content="https://womate.org/assets/img/og-preview.png">
+
+    <!-- 4. Schema Markup (For Google Knowledge Panel & Logo Search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WOMATE",
+      "url": "womate.org",
+      "logo": "https://womate.org/assets/img/logo.svg",
+      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology.",
+      "sameAs": [
+        "x.com"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- 5. Favicons & CSS -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+
+    <style>
+        :root {
+            --bg: #050605;
+            --surface: #0d0f0d;
+            --accent: #7EB148; /* Gold: Representing the value of refined data */
+            --intel: #7EB148; /* Green: Representing the climate-gender lens */
+            --border: rgba(255, 255, 255, 0.07);
+            --text-main: #FCFBF7;
+            --text-dim: #0E4D4A;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text-main); overflow-x: hidden; }
+
+        /* --- THE LENS EFFECT (JS Target) --- */
+        .cursor-lens {
+            position: fixed; top: 0; left: 0; width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(94, 252, 130, 0.08) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); z-index: 999;
+        }
+
+        /* --- HERO: THE ARCHITECTURE OF INSIGHT --- */
+        header {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 2rem; position: relative;
+        }
+
+        .pre-title { font-size: 0.7rem; color: var(--accent); letter-spacing: 5px; margin-bottom: 2rem; }
+        
+        h1 {  font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 400; line-height: 1; margin-bottom: 2rem; }
+        h1 span { font-style: italic; color: var(--text-dim); }
+
+        .hero-sub { max-width: 750px; font-size: 1.3rem; font-weight: 300; color: var(--text-dim); margin-bottom: 3.5rem; }
+
+        .btn { padding: 1.3rem 3rem; border-radius: 2px; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; transition: 0.4s; text-transform: uppercase; }
+        .btn-gold { background: var(--accent); color: #000; }
+        .btn-gold:hover { background: #fff; box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); }
+
+        /* --- SERVICE ARCHIVE (THE CORE PILLARS) --- */
+        .services-section { padding: 120px 8%; }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 1px; /* Creates the "Grid Blueprint" look */
+            background-color: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        .service-card {
+            background: var(--bg);
+            padding: 4rem 3rem;
+            transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover { background: var(--surface); }
+        .service-card:hover h3 { color: var(--intel); }
+
+        .service-tag {  font-size: 0.65rem; color: var(--accent); margin-bottom: 1.5rem; display: block; opacity: 0.6; }
+        
+        .service-card h3 {font-size: 2.2rem; margin-bottom: 1.2rem; transition: 0.3s; }
+        .service-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; }
+
+        .capability-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+        .capability-list li { font-size: 0.7rem; border: 1px solid var(--border); padding: 4px 10px; color: var(--text-dim); text-transform: uppercase; }
+
+        /* --- CALL TO ACTION: THE COLLABORATION --- */
+        .collab-footer { 
+            padding: 150px 10%; background: var(--surface); text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        .collab-footer h2 {  font-size: 4rem; margin-bottom: 2rem; }
+        .collab-footer p { max-width: 600px; margin: 0 auto 3rem; color: var(--text-dim); font-size: 1.1rem; }
+
+        @media (max-width: 768px) {
+            .service-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 3.5rem; }
+            .service-card { padding: 3rem 1.5rem; }
+        }
+
+
+        /* GNOSIS ENQUIRY SYSTEM 2026 */
+.gnosis-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(5, 6, 8, 0.92); /* Deep Obsidian */
+    backdrop-filter: blur(20px) saturate(150%);
+    z-index: 60000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.enquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Form Labels - Syne Industrial Style */
+.enquiry-form label {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #7EB148;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Liquid Inputs */
+.enquiry-form input, 
+.enquiry-form select, 
+.enquiry-form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(126, 177, 72, 0.2);
+    padding: 15px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.enquiry-form input:focus, 
+.enquiry-form select:focus, 
+.enquiry-form textarea:focus {
+    outline: none;
+    background: rgba(126, 177, 72, 0.05);
+    border-color: #7EB148;
+    box-shadow: 0 0 15px rgba(126, 177, 72, 0.2);
+}
+
+/* Select Arrow Customization */
+.enquiry-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='www.w3.org' width='12' height='12' fill='%237EB148'%3E%3Cpath d='M6 9L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+/* Step Animations */
+.form-step {
+    animation: gnosisEntrance 0.6s ease-out forwards;
+}
+
+@keyframes gnosisEntrance {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Portal Content Glow */
+.portal-content {
+    border: 1px solid rgba(126, 177, 72, 0.4);
+    box-shadow: 0 0 60px rgba(126, 177, 72, 0.1), inset 0 0 20px rgba(0,0,0,0.5);
+    padding: 50px;
+    max-width: 500px;
+}
+
+    </style>
+</head>
+<body>
+
+    <canvas id="pleroma-canvas"></canvas>
+<div class="universe-overlay"></div>
+
+    <!-- NAV -->
+<nav class="divine-nav">
+   <a><img src="assets/img/logo.svg" alt="WOMATE"></a>
+
+    <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+        <div class="nav-veil"></div>
+         <!-- CLOSE BUTTON -->
+    <button class="nav-close" aria-label="Close Menu">&times;</button>
+
+
+        <a href="index.html" >Ecosystem</a>
+        <a href="She-leads.html">She Leads</a>
+        <a href="wok.html">WoK-Action</a>
+        <a href="circle.html">Circle</a>
+        <a href="#" class="nav-cta">Consultation</a>
+        <a href="heal.html">Healing</a>
+    </div>
+</nav>
+
+    <div class="cursor-lens" id="lens"></div>
+
+    <header>
+        <div class="pre-title">Strategic Insight & Research</div>
+        <h1 class="gnosis-extra-syne">We<span>Research.</span> You <span>Lead.</span></h1>
+        <p class="hero-sub">Providing organizations and donors with the analytical depth to design, implement, and assess gender-responsive climate initiatives.</p>
+        <a href="mailto:womatead@gmail.com" class="btn btn-gold">Enquire</a>
+    </header>
+
+    <section class="services-section">
+        <div class="service-grid">
+            
+            <!-- Pillar A -->
+            <div class="service-card">
+                <span class="service-tag">RESEARCH & POLICY</span>
+                <h3>Climate & Gender Intel</h3>
+                <p>Gender-responsive research informing policy and community action. Vulnerability assessments, resilience studies, and indigenous knowledge documentation.</p>
+                <ul class="capability-list">
+                    <li>Vulnerability Mapping</li>
+                    <li>Policy Briefs</li>
+                    <li>Stakeholder Consultation</li>
+                </ul>
+            </div>
+
+            <!-- Pillar B -->
+            <div class="service-card">
+                <span class="service-tag">MEASUREMENT</span>
+                <h3>MEL & Impact Analysis</h3>
+                <p>Measuring results and strengthening accountability through comprehensive Monitoring, Evaluation, and Learning (MEL) frameworks.</p>
+                <ul class="capability-list">
+                    <li>Impact Frameworks</li>
+                    <li>SDG Integration</li>
+                    <li>Adaptive Management</li>
+                </ul>
+            </div>
+
+            <!-- Pillar C -->
+            <div class="service-card">
+                <span class="service-tag">DATA SCIENCE</span>
+                <h3>Evidence Support</h3>
+                <p>Translating complex quantitative and qualitative data into actionable dashboards and visualizations for strategic planning.</p>
+                <ul class="capability-list">
+                    <li>Data Dashboards</li>
+                    <li>Economic Analysis</li>
+                    <li>Synthesis Reports</li>
+                </ul>
+            </div>
+
+            <!-- Pillar D -->
+            <div class="service-card">
+                <span class="service-tag">PARTICIPATORY</span>
+                <h3>Community Co-Creation</h3>
+                <p>Specialized participatory approaches that center women and youth as co-creators of climate solutions and ownership.</p>
+                <ul class="capability-list">
+                    <li>Needs Assessment</li>
+                    <li>Youth Mapping</li>
+                    <li>Participatory Action</li>
+                </ul>
+            </div>
+
+            <!-- Pillar E -->
+            <div class="service-card">
+                <span class="service-tag">OPERATIONS</span>
+                <h3>Programme Design</h3>
+                <p>Support across the full project cycle: Theory of Change, Grant Management, and Donor Reporting for effective risk management.</p>
+                <ul class="capability-list">
+                    <li>Theory of Change</li>
+                    <li>Implementation</li>
+                    <li>Grant Management</li>
+                </ul>
+            </div>
+
+            <!-- Pillar F -->
+            <div class="service-card">
+                <span class="service-tag">ADVOCACY</span>
+                <h3>Knowledge Management</h3>
+                <p>Amplifying women's voices through strategic communications and digital platforms that enhance visibility and influence.</p>
+                <ul class="capability-list">
+                    <li>Advocacy Campaigns</li>
+                    <li>Learning Products</li>
+                    <li>Multimedia Content</li>
+                </ul>
+            </div>
+
+            <!-- Pillar G -->
+            <div class="service-card">
+                <span class="service-tag">SPECIALIZED</span>
+                <h3>Wellbeing & Protection</h3>
+                <p>Research at the intersection of climate impacts, psychosocial mental health, and gender-based social protection.</p>
+                <ul class="capability-list">
+                    <li>Psychosocial Design</li>
+                    <li>Outreach Support</li>
+                    <li>Stigma Reduction</li>
+                </ul>
+            </div>
+
+            <!-- Pillar H -->
+            <div class="service-card">
+                <span class="service-tag">TRAINING</span>
+                <h3>Institutional Capacity</h3>
+                <p>Bespoke workshops and mentorship design for organizations aiming to strengthen climate and gender leadership.</p>
+                <ul class="capability-list">
+                    <li>Curriculum Design</li>
+                    <li>Leadership Mentorship</li>
+                    <li>Digital Literacy</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="collab-footer" id="contact">
+    <h2>Bridge the Gap.</h2>
+    <p>Integrate lived experience with policy relevance...</p>
+    <!-- Ensure onclick is exactly toggleEnquiryModal() -->
+    <a href="javascript:void(0)" class="btn btn-gold" onclick="toggleEnquiryModal()">Inquire</a>
+</footer>
+
+
+<!-- GNOSIS ENQUIRY MODAL -->
+<div id="enquiry-modal" class="gnosis-overlay" style="display:none;">
+    <div class="portal-content">
+        <div class="portal-header">
+            <h3 style="font-family:'Cinzel'; color:#7EB148;">Partner Inquiry</h3>
+            <button onclick="toggleEnquiryModal()" class="close-x">&times;</button>
+        </div>
+        
+        <!-- Logic for Email Delivery (No Backend Needed) -->
+       <form id="gnosis-enquiry-form" class="enquiry-form">
+    <!-- Configuration for the email body & subject -->
+    <input type="hidden" name="_subject" value="New WOMATE Partnership Inquiry">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_honey" style="display:none"> <!-- Spam protection -->
+
+    <div class="form-step active" id="step1">
+        <label>Full Name or Organization</label>
+        <input type="text" name="name" placeholder="Who are we speaking with?" required>
+        <label>Work Email</label>
+        <input type="email" name="email" placeholder="email@organization.com" required>
+        <button type="button" class="btn btn-emerald" onclick="nextEnquiryStep(2)">Next</button>
+    </div>
+
+    <div class="form-step" id="step2" style="display:none;">
+        <label>Nature of Interest</label>
+        <select name="interest" required>
+            <option value="Policy Advocacy">Policy Advocacy</option>
+            <option value="Tech Integration">Tech Integration</option>
+            <option value="Research Partnership">Research Partnership</option>
+            <option value="Project Funding">Project Funding</option>
+        </select>
+        <label>Proposed Collaboration</label>
+        <textarea name="message" rows="4" placeholder="How can we bridge the gap?"></textarea>
+        <div class="cta-group" style="margin-top:20px;">
+            <button type="button" class="btn btn-outline" onclick="nextEnquiryStep(1)">Back</button>
+            <button type="submit" id="submit-btn" class="btn btn-gold">Send Inquiry</button>
+        </div>
+    </div>
+</form>
+
+<!-- Success Message (Initially Hidden) -->
+<div id="form-success" style="display:none; text-align:center; padding:20px;">
+    <h3 style="color:#7EB148; font-family:'Cinzel';">Inquiry Transmitted.</h3>
+    <p style="color:#888;">We will connect with you shortly.</p>
+</div>
+
+    </div>
+</div>
+<script> 
+// 1. Modal Toggle Logic
+function toggleEnquiryModal() {
+    const modal = document.getElementById('enquiry-modal');
+    if (!modal) return; /* Safety check */
+
+    if (modal.style.display === 'none' || modal.style.display === '') {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    } else {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// 2. Multi-Step Navigation
+function nextEnquiryStep(step) {
+    const s1 = document.getElementById('step1');
+    const s2 = document.getElementById('step2');
+    
+    if (s1 && s2) {
+        if (step === 2) {
+            s1.style.display = 'none';
+            s2.style.display = 'block';
+        } else {
+            s1.style.display = 'block';
+            s2.style.display = 'none';
+        }
+    }
+}
+
+// 3. SECURE AJAX SUBMISSION 
+document.addEventListener('DOMContentLoaded', function() {
+    const enquiryForm = document.getElementById('gnosis-enquiry-form');
+    
+    if (enquiryForm) {
+        enquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // HALT THE EXTERNAL REDIRECT
+
+            const form = e.target;
+            const btn = document.getElementById('submit-btn');
+            const successMsg = document.getElementById('form-success');
+            
+            // UI Feedback: High-Trust Transmission State
+            btn.textContent = "TRANSMITTING...";
+            btn.disabled = true;
+            btn.style.opacity = "0.5";
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // 2026 AJAX Endpoint for womatead@gmail.com
+            // FIXED LINK: Must include https:// and the /ajax/ endpoint
+            fetch("https://formsubmit.co/womatead@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if(result.success === "true") {
+                    form.style.display = 'none'; // Hide form instantly
+                    successMsg.style.display = 'block'; // Reveal Gnosis success message
+                } else {
+                    throw new Error('Transmission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Gnosis Form Error:', error);
+                btn.textContent = "RETRY TRANSMISSION";
+                btn.disabled = false;
+                btn.style.opacity = "1";
+            });
+        });
+    }
+});
+</script>
+
+
+
+    
+
+    <script>
+        // CONCEPTUAL JS: The Illuminating Lens
+        const lens = document.getElementById('lens');
+        
+        window.addEventListener('mousemove', (e) => {
+            lens.style.left = e.clientX + 'px';
+            lens.style.top = e.clientY + 'px';
+        });
+
+        // Entrance animation for Service Cards
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(40px)";
+            observer.observe(card);
+        });
+
+
+       
+
+    </script>
+ <script src="assets/js/style.js"></script>
+</body>
+</html>

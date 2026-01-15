@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHE LEADS | WOMATE</title>
+    
+    <!-- Typography: 2026 Trend - Elegant Serifs & Minimal Sans -->
+   
+  
+     <link href="assets/css/style.css" rel="stylesheet">
+     <link href="assets/css/she.css" rel="stylesheet">
+
+
+     <!-- 1. Primary Meta Tags (For Google Search & Browsers) -->
+    <meta name="title" content="SHE LEADS | WOMATE">
+    <meta name="description" content="She Leads equips and empowers young women with climate knowledge, leadership skills, and confidence to actively engage in climate justice advocacy and action">
+
+    <!-- 2. Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://womate.org">
+    <meta property="og:title" content="SHE LEADS | WOMATE">
+    <meta property="og:description" content="She Leads equips and empowers young women with climate knowledge to actively engage in climate justice advocacy and action">
+    <!-- Fixed Image Path: Must include https:// and the leading slash for assets -->
+    <meta property="og:image" content="https://womate.org/assets/img/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- 3. Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="womate.org">
+    <meta property="twitter:title" content="SHE LEADS | WOMATE">
+    <meta property="twitter:description" content="Driving inclusive climate action through technology.">
+    <meta property="twitter:image" content="https://womate.org/assets/img/og-preview.png">
+
+    <!-- 4. Schema Markup (For Google Knowledge Panel & Logo Search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WOMATE",
+      "url": "womate.org",
+      "logo": "https://womate.org/assets/img/logo.svg",
+      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology.",
+      "sameAs": [
+        "x.com"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- 5. Favicons & CSS -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+    <style>
+        :root {
+            --bg: #050706;
+            --surface: #0d110f;
+            --accent: #63ff9b; /* The "Divine Spark" Green */
+            --accent-glow: rgba(99, 255, 155, 0.2);
+            --text-dim: #FCFBF7;
+            --text-bright: #f8fafc;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-bright);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- BACKGROUND EFFECTS --- */
+        .gnosis-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a2e23 0%, transparent 70%);
+            opacity: 0.4;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+        
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            line-height: 0.9;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* --- BUTTONS --- */
+        .cta-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 40px var(--accent-glow);
+            transform: translateY(-5px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text-bright);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--text-bright);
+        }
+
+        /* --- CURRICULUM SECTION --- */
+        .curriculum {
+            padding: 10rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 6rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pillar-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 3rem;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .pillar-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at top right, var(--accent-glow), transparent 70%);
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .pillar-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-10px);
+        }
+
+        .pillar-card:hover::before {
+            opacity: 1;
+        }
+
+        .pillar-card span {
+         
+            color: var(--accent);
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-card h3 {
+         
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-card p {
+            color: var(--text-dim);
+        }
+
+        /* --- FOOTER CTA --- */
+        footer {
+            padding: 10rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer h2 {
+    
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+            .pillar-grid { grid-template-columns: 1fr; }
+            footer h2 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<!-- NAV -->
+ <canvas id="pleroma-canvas"></canvas>
+<div class="universe-overlay"></div>
+<nav class="divine-nav">
+   <a><img src="assets/img/logo.svg" alt="WOMATE"></a>
+
+    <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+        <div class="nav-veil"></div>
+         <!-- CLOSE BUTTON -->
+    <button class="nav-close" aria-label="Close Menu">&times;</button>
+
+
+        <a href="index.html">Ecosystem</a>
+        <a href="#" class="nav-cta">She Leads</a>
+        <a href="wok.html">WoK-Action</a>
+        <a href="circle.html">Circle</a>
+        <a href="research.html">Consultation</a>
+        <a href="heal.html">Healing</a>
+    </div>
+</nav>
+<body>
+
+    <div class="gnosis-overlay"></div>
+
+<header>
+
+          <h1 class="fade-in">She Leads <span>Climate Mentorship.</span></h1>
+          <p class="hero-sub">Where Young Women Gain the Knowledge, Skills, and Courage to Lead Climate Action</p>
+    <div class="cta-container">
+        <!-- Triggers the form overlay instead of an external link -->
+        <a href="javascript:void(0)" class="btn btn-primary" onclick="toggleForm()">Secure Your Interest</a>
+        <a href="#curriculum" class="btn btn-secondary">Explore the Pillars</a>
+    </div>
+
+</header>
+
+  
+
+<!-- FORM OVERLAY (Hidden by default) -->
+<div id="form-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(5,6,8,0.98); z-index:20000; flex-direction:column; align-items:center; justify-content:center; padding: 20px;">
+    
+    <!-- Close Button -->
+    <div style="width:100%; max-width:700px; text-align:right; margin-bottom:10px;">
+        <button onclick="toggleForm()" style="background:none; border:none; color:#7EB148; font-size:2rem; cursor:pointer;">&times;</button>
+    </div>
+
+    <!-- The Google Form Embed -->
+    <div style="width:100%; max-width:700px; height:85vh; background:#fff; border-radius:8px; overflow:hidden; box-shadow: 0 0 50px rgba(126, 177, 72, 0.2);">
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdwc1l7vlWD4VC6v9cPF_-UdO3VLGDVLRiVJiwmiGE3Aqjs4w/viewform?embedded=true" 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            Loading…
+        </iframe>
+    </div>
+</div>
+
+
+<section id="curriculum" class="curriculum">
+    <div class="section-header">
+        <h2>Six Core Learning Pillars</h2>
+        <p>Equipping young women with knowledge, skills, and pathways for climate leadership.</p>
+    </div>
+
+    <div class="pillar-grid">
+        <div class="pillar-card">
+            <span>// PILLAR 01</span>
+            <h3>Climate Change Foundations</h3>
+            <p>
+                Understanding climate change science, causes, and impacts at local, regional, and global levels.
+            </p>
+        </div>
+
+        <div class="pillar-card">
+            <span>// PILLAR 02</span>
+            <h3>Gender & Climate Justice</h3>
+            <p>
+                Examining how climate change affects women and marginalized communities and how equity-centered solutions drive impact.
+            </p>
+        </div>
+
+        <div class="pillar-card">
+            <span>// PILLAR 03</span>
+            <h3>Climate Governance & Policy</h3>
+            <p>
+                Learning how climate institutions, policies, and decision-making spaces function—and how women can engage and lead.
+            </p>
+        </div>
+
+        <div class="pillar-card">
+            <span>// PILLAR 04</span>
+            <h3>Advocacy, Storytelling & Communication</h3>
+            <p>
+                Building skills to communicate climate issues clearly, influence change, and mobilize communities.
+            </p>
+        </div>
+
+        <div class="pillar-card">
+            <span>// PILLAR 05</span>
+            <h3>Leadership & Community Engagement</h3>
+            <p>
+                Strengthening leadership confidence, collaboration, and community-based climate action.
+            </p>
+        </div>
+
+        <div class="pillar-card">
+            <span>// PILLAR 06</span>
+            <h3>Climate Careers & Professional Pathways</h3>
+            <p>
+                Exploring career opportunities, mentorship pathways, and professional growth in climate and sustainability fields.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+    <footer>
+    <h2>The 2026 Cohort Awaits.</h2>
+    <div class="share-wrapper">
+        <a href="javascript:void(0)" class="btn btn-primary" onclick="handleShare()">Share the Movement</a>
+        
+        <!-- Hidden Desktop Share Menu -->
+        <div id="desktop-share-menu" class="share-menu">
+            <a href="api.whatsapp.com" target="_blank" class="share-item">WhatsApp</a>
+            <a href="www.linkedin.com" target="_blank" class="share-item">LinkedIn</a>
+            <a href="twitter.com." target="_blank" class="share-item">X (Twitter)</a>
+            <a href="www.facebook.com" target="_blank" class="share-item">Facebook</a>
+            <button onclick="copyLink()" class="share-item" style="color:#7EB148; background:none; border:none; width:100%; cursor:pointer;">Copy Link</button>
+        </div>
+    </div>
+
+    <div style="padding: 80px 40px;">
+    <div class="container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:40px; text-align:left;">
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">WOMATE</h4>
+            <p style="font-size:0.8rem; color:#666; line-height:1.8;">Driving 360° inclusive climate action through sustainable technology and community leadership.</p>
+        </div>
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">Contact</h4>
+            <p style="font-size:0.8rem; color:#666;">Global HQ: Accra, Ghana</p>
+            <p style="font-size:0.8rem; color:#666;">womatead.gmail.com</p>
+        </div>
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">Community</h4>
+            <ul style="list-style:none; font-size:0.8rem; color:#666;">
+                <li><a href="circle.html" style="color:#666; text-decoration:none;">The Circle Membership</a></li>
+                <li><a href="CH.html" style="color:#666; text-decoration:none;">WOMATE CLIMATE HONOURS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="margin-top:60px; border-top:1px solid rgba(255,255,255,0.05); padding-top:20px; text-align:center;">
+        <p>© 2026 WOMATE. All Rights Reserved.</p>
+    </div>
+</div>
+
+</footer>
+
+
+    <script>
+        // Subtle 2026 Micro-Interaction: Tracking mouse for a dynamic glow
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.gnosis-overlay');
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            glow.style.background = `radial-gradient(circle at ${x}% ${y}%, #1a2e23 0%, transparent 70%)`;
+        });
+    </script>
+
+      <script src="assets/js/style.js"></script>
+
+</body>
+</html>

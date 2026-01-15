@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOMATE | Safe Minds Initiative</title>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-deep: #0a0a0b;
+            --accent-gold: #7EB148;
+            --glass-white: rgba(255, 255, 255, 0.05);
+            --text-main: #FCFBF7;
+            --text-muted: #0E4D4A;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+
+       
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-family: 'Playfair Display'; font-size: 1.5rem; letter-spacing: 2px; }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to bottom, #fff, var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Impact Matrix */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 5rem 0;
+        }
+
+        .glass-card {
+            background: var(--glass-white);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            padding: 3rem;
+            border-radius: 4px;
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-10px);
+            background: rgba(212, 175, 55, 0.03);
+        }
+
+        .glass-card h3 { color: var(--accent-gold); margin-bottom: 1rem; font-size: 1.5rem; }
+
+        /* Donation Section */
+        .donation-suite {
+            background: #0d0d0f;
+            padding: 6rem 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+        }
+
+        .tier-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .tier {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            padding: 3rem 2rem;
+            border: 1px solid var(--glass-white);
+            background: rgba(255,255,255,0.02);
+            transition: 0.3s;
+        }
+
+        .tier:hover { background: rgba(255,255,255,0.05); }
+
+        .tier.highlight { border: 1px solid var(--accent-gold); }
+
+        .price { font-size: 2.5rem; font-family: 'Playfair Display'; margin: 1rem 0; color: var(--accent-gold); }
+        .frequency { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; }
+
+        .cta-btn {
+            display: inline-block;
+            background: #7EB148;
+            color: #000;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-btn:hover {
+            background: #fff;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--glass-white);
+        }
+
+
+
+/* RESPONSIVE GNOSIS OVERLAY */
+.gnosis-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 5, 0.98); /* Deep Obsidian */
+    backdrop-filter: blur(15px);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 15px; /* Critical for mobile spacing */
+}
+
+.portal-content {
+    background: #000;
+    border: 1px solid var(--accent-gold);
+    position: relative;
+    width: 100%;
+    max-width: 850px; /* Limits width on desktop */
+    height: 90vh; /* Scalable height based on viewport */
+    max-height: 800px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 50px rgba(126, 177, 72, 0.1);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden; /* Prevents double scrollbars */
+}
+
+/* THE IFRAME CONTAINER */
+#paystack-frame {
+    width: 100%;
+    flex-grow: 1; /* Takes up all remaining space below the header */
+    border: none;
+    background: #fff; /* Paystack loads best on white */
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+    .portal-content {
+        height: 95vh;
+        max-height: none;
+        width: 100%;
+    }
+    
+    #tier-display {
+        font-size: 1rem;
+    }
+    
+    #persuasion-display {
+        font-size: 0.7rem;
+    }
+}
+
+
+    </style>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- 5. Favicons & CSS -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+
+    <!-- 1. Primary Meta Tags (For Google Search & Browsers) -->
+    <meta name="title" content="WOMATE | Safe Minds Initiative">
+    <meta name="description" content="Safe Minds in a Changing Climate: Rescuing and restoring the dignity of young women at the intersection of mental health and environmental crisis.">
+
+    <!-- 2. Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://womate.org/heal.html">
+    <meta property="og:title" content="WOMATE | Safe Minds Initiative">
+    <meta property="og:description" content="Safe Minds in a Changing Climate: Rescuing and restoring the dignity of young women at the intersection of mental health and environmental crisis.">
+    <!-- Fixed Image Path: Must include https:// and the leading slash for assets -->
+    <meta property="og:image" content="https://womate.org/assets/img/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- 3. Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://womate.org/heal.html">
+    <meta property="twitter:title" content="WOMATE | Safe Minds Initiative">
+    <meta property="twitter:description" content="Driving inclusive climate action through technology.">
+    <meta property="twitter:image" content="https://womate.org/assets/img/og-preview.png">
+
+    <!-- 4. Schema Markup (For Google Knowledge Panel & Logo Search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WOMATE",
+      "url": "womate.org",
+      "logo": "https://womate.org/assets/img/logo.svg",
+      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology.",
+      "sameAs": [
+        "x.com"
+      ]
+    }
+    </script>
+
+
+</head>
+<body>
+
+    <!-- NAV -->
+<nav class="divine-nav">
+   <a><img src="assets/img/logo.svg" alt="WOMATE"></a>
+
+    <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+        <div class="nav-veil"></div>
+         <!-- CLOSE BUTTON -->
+    <button class="nav-close" aria-label="Close Menu">&times;</button>
+
+
+        <a href="index.html" >Ecosystem</a>
+        <a href="She-leads.html">She Leads</a>
+        <a href="wok.html">WoK-Action</a>
+        <a href="circle.html">Circle</a>
+        <a href="research.html">Consultation</a>
+        <a href="#" class="nav-cta">Healing</a>
+    </div>
+</nav>
+
+<canvas id="pleroma-canvas"></canvas>
+<div class="universe-overlay"></div>
+
+    <div id="canvas-bg"></div>
+
+    <div class="container">
+    
+
+        <div class="hero">
+            <h1 class="reveal">To See What Is Hidden.</h1>
+            <p class="reveal">Safe Minds in a Changing Climate: Rescuing and restoring the dignity of young women at the intersection of mental health and environmental crisis.</p>
+            <a href="#" class="cta-btn reveal">BECOME A GUARDIAN</a>
+        </div>
+
+        <div class="grid">
+            <div class="glass-card reveal">
+                <h3 style="color: #7EB148;">Rescue</h3>
+                <p>Identifying and compassionately removing young women from the isolation of the streets into a sanctuary of healing.</p>
+            </div>
+            <div class="glass-card reveal">
+                <h3 style="color: #7EB148;">Restore</h3>
+                <p>Professional psychiatric assessment combined with clinical care to rebuild the cognitive foundations of the self.</p>
+            </div>
+            <div class="glass-card reveal">
+                <h3 style="color: #7EB148;">Resilience</h3>
+                <p>Mastering vocational arts—from tailoring to catering—ensuring a future defined by independence, not survival.</p>
+            </div>
+        </div>
+    </div>
+
+   <section id="donate" class="donation-suite">
+    <div class="container">
+        <h2 class="reveal">Invest in Restoration</h2>
+        <p class="reveal" style="color: var(--text-muted);">Choose a tier of guardianship to sustain this sanctuary.</p>
+
+        <div class="tier-container">
+            <!-- Weekly Seed -->
+            <div class="tier reveal">
+                <div class="frequency">The Seed</div>
+                <div class="price">GHS300</div>
+                <p>Covers emergency medical care and psychiatric stabilization for one week.</p>
+                <button class="cta-btn" onclick="openGuardedPayment('The Seed', 'You are providing the first spark of medical hope.')">CONTRIBUTE</button>
+            </div>
+
+            <!-- Monthly Root -->
+            <div class="tier highlight reveal">
+                <div class="frequency">The Root</div>
+                <div class="price">GHS600</div>
+                <p>Funds a full month of vocational training and nutritional support for a resident.</p>
+                <button class="cta-btn" onclick="openGuardedPayment('The Root', 'You are anchoring a woman’s future in vocational mastery.')">CONTRIBUTE</button>
+            </div>
+
+            <!-- Monthly Canopy -->
+            <div class="tier reveal">
+                <div class="frequency">The Canopy</div>
+                <div class="price">GHS1000</div>
+                <p>Sustains a safe-house room, providing 24/7 security and specialist care.</p>
+                <button class="cta-btn" onclick="openGuardedPayment('The Canopy', 'You are building the ultimate sanctuary of safety.')">CONTRIBUTE</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- THE GNOSIS PAYMENT MODAL (Put before </body>) -->
+<div id="payment-modal" class="gnosis-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(5,5,5,0.98); z-index:90000; align-items:center; justify-content:center; backdrop-filter: blur(15px);">
+    <div class="portal-content" style="width:90%; max-width:850px; height:90%; background:#000; border:1px solid #7EB148; position:relative; box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);">
+        
+        <!-- Persuasive Guidance Header -->
+        <div style="padding: 20px; text-align: center; border-bottom: 1px solid #222;">
+            <h3 id="tier-display" style="color:#7EB148; font-family:'Cinzel'; margin-bottom:5px;">Guardianship</h3>
+            <p id="persuasion-display" style="font-size:0.8rem; color:#888; font-style:italic;"></p>
+            <button onclick="closePaymentModal()" style="position:absolute; top:15px; right:15px; background:none; border:none; color:#7EB148; font-size:2rem; cursor:pointer;">&times;</button>
+        </div>
+
+        <!-- The Paystack Shop iFrame -->
+        <iframe 
+            id="paystack-frame"
+            src="about:blank" 
+            width="100%" 
+            height="calc(100% - 100px)" 
+            frameborder="0">
+        </iframe>
+    </div>
+</div>
+<script>function openGuardedPayment(tierName, persuasiveText) {
+    const modal = document.getElementById('payment-modal');
+    const frame = document.getElementById('paystack-frame');
+    const tierDisplay = document.getElementById('tier-display');
+    const persuasionDisplay = document.getElementById('persuasion-display');
+
+    // Update UI with unique tier branding
+    tierDisplay.textContent = `Guardianship: ${tierName}`;
+    persuasionDisplay.textContent = persuasiveText;
+
+    // Load the Paystack Shop Link internally
+    frame.src = "https://paystack.shop/pay/safe-minds-initiative";
+
+    // Show Modal
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Lock background scroll
+}
+
+function closePaymentModal() {
+    const modal = document.getElementById('payment-modal');
+    const frame = document.getElementById('paystack-frame');
+    
+    modal.style.display = 'none';
+    frame.src = "about:blank"; // Unload to save resources
+    document.body.style.overflow = 'auto'; // Unlock scroll
+}
+
+// Ensure "Become a Guardian" Hero button also works
+document.querySelectorAll('.cta-btn').forEach(btn => {
+    if(btn.textContent === "BECOME A GUARDIAN") {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openGuardedPayment('General Support', 'Your contribution sustains the entire restoration ecosystem.');
+        });
+    }
+});
+</script>
+
+    <footer style="padding: 80px 40px;">
+    <div class="container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:40px; text-align:left;">
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">WOMATE</h4>
+            <p style="font-size:0.8rem; color:#666; line-height:1.8;">Driving 360° inclusive climate action through sustainable technology and community leadership.</p>
+        </div>
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">Contact</h4>
+            <p style="font-size:0.8rem; color:#666;">Global HQ: Accra, Ghana</p>
+            <p style="font-size:0.8rem; color:#666;">womatead.gmail.com</p>
+        </div>
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">Community</h4>
+            <ul style="list-style:none; font-size:0.8rem; color:#666;">
+                <li><a href="circle.html" style="color:#666; text-decoration:none;">The Circle Membership</a></li>
+                <li><a href="CH.html" style="color:#666; text-decoration:none;">WOMATE CLIMATE HONOURS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="margin-top:60px; border-top:1px solid rgba(255,255,255,0.05); padding-top:20px; text-align:center;">
+        <p>© 2026 WOMATE. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+    <script>
+        // Reveal elements on scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Interaction for Donation (Integration Hook)
+        function openPaystack() {
+            alert("Redirecting to secure Paystack gateway...");
+            // Integrate your Paystack Inline JS here:
+            // paystack.com
+        }
+
+        // Mouse Parallax for Background (Gnosis subtle movement)
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            document.getElementById('canvas-bg').style.transform = `translate(${moveX}px, ${moveY}px) scale(1.1)`;
+        });
+    </script>
+
+    <script src="assets/js/style.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOMATE | WOMATE Circle </title>
+
+    <!-- 1. Primary Meta Tags (For Google Search & Browsers) -->
+    <meta name="title" content="WOMATE | WOMATE Circle ">
+    <meta name="description" content="A circle of women across Africa fostering connection, shared learning, and access to opportunities that support professional growth and leadership.">
+
+    <!-- 2. Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://womate.org/circle.html">
+    <meta property="og:title" content="WOMATE | WOMATE Circle">
+    <meta property="og:description" content="A circle of women across Africa fostering connection, shared learning, and access to opportunities that support professional growth and leadership.">
+    <!-- Fixed Image Path: Must include https:// and the leading slash for assets -->
+    <meta property="og:image" content="https://womate.org/assets/img/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- 3. Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="womate.org/circle.html">
+    <meta property="twitter:title" content="WOMATE | WOMATE Circle">
+    <meta property="twitter:description" content="Driving inclusive climate action through technology.">
+    <meta property="twitter:image" content="https://womate.org/assets/img/og-preview.png">
+
+    <!-- 4. Schema Markup (For Google Knowledge Panel & Logo Search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WOMATE",
+      "url": "womate.org",
+      "logo": "https://womate.org/assets/img/logo.svg",
+      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology.",
+      "sameAs": [
+        "x.com"
+      ]
+    }
+    </script>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- 5. Favicons & CSS -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+   
+    
+    <!-- 2026 Aesthetic Typography -->
+
+     <link href="assets/css/style.css" rel="stylesheet">
+     <link href="assets/css/circle.css" rel="stylesheet">
+     
+</head>
+<style>* { margin: 0; padding: 0; box-sizing: border-box; }</style>
+
+<body>
+
+    
+    
+    <canvas id="portal-canvas"></canvas>
+<div class="universe-overlay"!important></div>
+
+    <!-- NAV -->
+<nav class="divine-nav">
+   <a><img src="assets/img/logo.svg" alt="WOMATE"></a>
+
+    <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+        <div class="nav-veil"></div>
+         <!-- CLOSE BUTTON -->
+    <button class="nav-close" aria-label="Close Menu">&times;</button>
+
+
+        <a href="index.html">Ecosystem</a>
+        <a href="She-leads.html">She Leads</a>
+        <a href="wok.html">WoK-Action</a>
+        <a href="#" class="nav-cta">Circle</a>
+        <a href="research.html">Consultation</a>
+        <a href="heal.html">Healing</a>
+    </div>
+</nav>
+<script>
+const toggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const closeBtn = document.querySelector('.nav-close');
+
+toggle.onclick = () => navLinks.classList.toggle('open');
+closeBtn.onclick = () => navLinks.classList.remove('open');
+
+document.querySelectorAll('.nav-links a').forEach(a =>
+    a.onclick = () => navLinks.classList.remove('open')
+);</script>
+
+
+
+
+<header>
+    <div class="eyebrow">The Inner Ring of Climate Leadership</div>
+    <h1 class="gnosis-extra-syne">The WOMATE<span>Circle</span></h1>
+    <p class="hero-p">A specialized ecosystem for women architects of sustainability. Access a curated stream of influence, intelligence, and collective power.</p>
+    
+    <!-- Step 1: Open the Membership Form -->
+    <a href="javascript:void(0)" class="btn btn-emerald" onclick="openMembershipPortal()">Enter the Circle</a>
+    
+</header>
+
+<!-- MEMBERSHIP PORTAL MODAL -->
+<!-- MEMBERSHIP PORTAL MODAL -->
+<!-- MEMBERSHIP PORTAL: The Data Collection Layer -->
+<div id="membership-portal" class="gnosis-overlay" style="display:none;">
+    <div class="portal-content">
+        <div class="portal-header">
+            <h3 style="color:#7EB148; font-family:'Cinzel';">Membership Activation</h3>
+            <button onclick="closePortal()" class="close-x">&times;</button>
+        </div>
+        <p style="font-size:0.8rem; color:#888; margin-bottom:15px;">Complete your credentials to unlock the Inner Circle access.</p>
+        
+        <div class="form-container" style="height: 450px; overflow-y: auto; background: #fff; border-radius: 4px;">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf-qz5my6XYer4uxyarq9Ot4UQxOvrTglGus26kX9r_D2SgRQ/viewform?embedded=true" width="100%" height="5299" frameborder="0">Loading…</iframe>
+        </div>
+
+        <!-- DYNAMIC BRIDGES (Controlled by JS) -->
+        <div id="whatsapp-activation" style="display:none; margin-top:20px; text-align:center;">
+            <p style="font-size:0.75rem; color:#7EB148; margin-bottom:12px; font-weight: bold;">Step 2: Join the Community</p>
+            <button class="start-chat-btn" onclick="joinTheCircle()">PROCEED TO WHATSAPP GROUP</button>
+        </div>
+
+        <div id="payment-bridge" style="display:none; margin-top:20px; text-align:center;">
+            <p style="font-size:0.75rem; color:#7EB148; margin-bottom:12px; font-weight:bold;">Step 2: Secure Annual Membership</p>
+            <button class="start-chat-btn" onclick="proceedToPayment()">PROCEED TO SECURE PAYMENT</button>
+        </div>
+
+        <p style="font-size:0.6rem; color:#555; margin-top:8px; text-align:center;">Only click after submitting the form above.</p>
+    </div>
+</div>
+
+<!-- SHOP MODAL: The Secure Payment Layer (Put this before </body>) -->
+<div id="shop-modal" class="gnosis-shop-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(5,5,5,0.98); z-index:60000; align-items:center; justify-content:center;">
+    <div class="gnosis-shop-content" style="width:90%; max-width:800px; height:90%; background:#000; border:1px solid #7EB148; position:relative;">
+        <button onclick="finalWhatsAppEntry()" style="position:absolute; top:10px; right:10px; z-index:100; background:#0E4D4A; color:#7EB148; border:1px solid #7EB148; padding:8px 15px; cursor:pointer; font-family:'Syne'; font-weight:800;">DONE & JOIN COMMUNITY</button>
+        <iframe src="https://paystack.shop/pay/womate-circle-fees" width="100%" height="100%" frameborder="0" style="padding-top:50px;"></iframe>
+    </div>
+</div>
+
+
+<div class="whatsapp-chat" id="whatsappChat">
+    <div class="chat-header">
+        <div class="chat-header-info">
+            <div class="chat-avatar">
+                <!-- Ensure your avatar is in img/e.JPG or use a placeholder -->
+                <img src="assets/img/og-preview.png"  onerror="this.src='via.placeholder.com'">
+            </div>
+            <div>
+                <h3 class="chat-title">The WOMATE Circle</h3>
+                <p class="chat-subtitle" style="color:rgba(255,255,255,0.7) !important; font-size: 0.7rem;">Architects of Sustainability Hub</p>
+            </div>
+        </div>
+        <button class="close-btn" id="closeChat">×</button>
+    </div>
+    
+    <div class="chat-body" style="background: rgba(0,0,0,0.2);">
+        <div class="message received">
+            <div class="message-bubble" style="border-left: 3px solid #7EB148;">
+Welcome to the Inner Circle!
+This is a space where connection, shared insight, and collective power come together to drive meaningful impact.
+
+If you are a paid member, please send a screenshot of your successful payment to the admin. This helps us ensure smooth admission, onboarding, and access to premium toolkits.
+
+You will soon be redirected to the appropriate group.
+            </div>
+            <div class="message-time">Just now</div>
+        </div>
+    </div>
+    
+    <div class="chat-footer">
+      <button class="start-chat-btn" id="startChatBtn" onclick="joinTheCircle()">
+    JOIN THE INNER CIRCLE
+</button>
+
+        <p style="color: #444; font-size: 0.6rem; text-align: center; margin-top: 10px;">
+            Securely encrypted access via WhatsApp
+        </p>
+    </div>
+</div>
+<script>// 1. Unified Configuration
+const WOMATE_CONFIG = {
+    groupLink: 'https://chat.whatsapp.com/LqwGMv8j27qISANI4dW2en',
+    paystackShop: 'https://paystack.shop/pay/womate-circle-fees'
+};
+
+// OPEN FOR FREE TIER
+function openMembershipPortal() {
+    const portal = document.getElementById('membership-portal');
+    portal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    document.getElementById('whatsapp-activation').style.display = 'block';
+    document.getElementById('payment-bridge').style.display = 'none';
+}
+
+// OPEN FOR PAID TIERS (Practitioner/Vanguard)
+function openPaidPathway(tier) {
+    const portal = document.getElementById('membership-portal');
+    portal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    document.getElementById('payment-bridge').style.display = 'block';
+    document.getElementById('whatsapp-activation').style.display = 'none';
+}
+
+function closePortal() {
+    document.getElementById('membership-portal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// ACTION: Move to Payment iFrame
+function proceedToPayment() {
+    closePortal();
+    document.getElementById('shop-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// ACTION: Final Community Entry (After Payment or Form)
+function joinTheCircle() {
+    closePortal();
+    const whatsappChat = document.getElementById('whatsappChat');
+    whatsappChat.classList.add('show');
+    updateChatTime();
+}
+
+function finalWhatsAppEntry() {
+    document.getElementById('shop-modal').style.display = 'none';
+    joinTheCircle();
+}
+
+function updateChatTime() {
+    const now = new Date();
+    const timeStr = now.getHours() + ":" + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+    const timeDisplay = document.querySelector('.message-time');
+    if(timeDisplay) timeDisplay.textContent = timeStr;
+}
+
+// WHATSAPP REDIRECT (Deep Link)
+document.getElementById('startChatBtn').addEventListener('click', () => {
+    window.location.href = WOMATE_CONFIG.groupLink;
+});
+
+document.getElementById('closeChat').addEventListener('click', () => {
+    document.getElementById('whatsappChat').classList.remove('show');
+});
+
+
+</script>
+<style>:root {
+    --emerald-gnosis: #0E4D4A;
+    --emerald-light: #7EB148;
+}
+
+.whatsapp-chat {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 350px;
+    background: rgba(5, 6, 8, 0.96);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--emerald-light);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    z-index: 99999;
+    flex-direction: column;
+    overflow: hidden;
+
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Toggle Class */
+.whatsapp-chat.show { 
+    display: flex; 
+    animation: gnosisSlideUp 0.4s ease-out forwards; 
+}
+
+.chat-header {
+    background: var(--emerald-gnosis);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(126, 177, 72, 0.2);
+}
+
+.chat-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--emerald-light);
+    object-fit: cover;
+}
+
+.chat-body { padding: 20px; background: rgba(0,0,0,0.3); }
+
+.message-bubble {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--emerald-light);
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.message-time {
+    font-size: 0.7rem;
+    color: #555;
+    margin-top: 8px;
+    text-align: right;
+}
+
+.chat-footer { padding: 20px; background: #000; text-align: center; }
+
+.start-chat-btn {
+    width: 100%;
+    background: var(--emerald-light);
+    color: #050608;
+    border: none;
+    padding: 15px;
+  
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-chat-btn:hover { 
+    background: #fff; 
+    box-shadow: 0 0 25px rgba(126, 177, 72, 0.6);
+    transform: translateY(-2px);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+@keyframes gnosisSlideUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.gnosis-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(5, 6, 8, 0.95);
+    backdrop-filter: blur(15px);
+    z-index: 50000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portal-content {
+    background: #000;
+    border: 1px solid #7EB148;
+    width: 95%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(126, 177, 72, 0.2);
+}
+
+.portal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    height: 400px;
+    overflow-y: auto;
+    border-radius: 4px;
+    background: #fff; /* Google forms look best on white */
+}
+
+.close-x {
+    background: none;
+    border: none;
+    color: #7EB148;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.start-chat-btn {
+    width: 100%;
+    background: #7EB148;
+    color: #000;
+    padding: 15px;
+    
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-chat-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 20px #7EB148;
+}
+
+
+</style>
+
+
+    <section class="ecosystem-section">
+        <div class="eco-content">
+            <h2>Fostering <span>Visibility.</span></h2>
+            <p style="margin-bottom: 2rem; color: var(--text-muted);">More than a network, the Circle is a growth accelerator for women aspiring to command the climate space.</p>
+            <ul class="eco-list">
+                <li class="eco-item">
+                    <span>01</span>
+                    <div>
+                        <h4>Shared Learning</h4>
+                        <p>Weekly capacity-building exchanges and resource sharing.</p>
+                    </div>
+                </li>
+                <li class="eco-item">
+                    <span>02</span>
+                    <div>
+                        <h4>Direct Access</h4>
+                        <p>Curated list of fellowships, grants, and international speaking roles.</p>
+                    </div>
+                </li>
+                <li class="eco-item">
+                    <span>03</span>
+                    <div>
+                        <h4>The Annual Sit</h4>
+                        <p>Strategic reflection and goal-setting for the year ahead.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="eco-visual" style="position: relative;">
+            <!-- CONCEPTUAL ART: An abstract representation of a ring of light -->
+            <div style="width: 100%; aspect-ratio: 1; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <div style="width: 70%; aspect-ratio: 1; border: 1px solid var(--emerald); opacity: 0.3; border-radius: 50%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tiers" class="membership-section">
+    <div class="section-header">
+        <h2>Membership Pathways</h2>
+        <p style="color: var(--text-muted);">Select your level of involvement in the vanguard.</p>
+    </div>
+
+    <div class="tier-grid">
+        <!-- FREE TIER: The Collective -->
+        <div class="tier-card">
+            <span class="tier-name">The Collective</span>
+            <div class="tier-price">Free <span>/ Lifetime</span></div>
+            <ul class="benefits-list">
+                <li>Basic Opportunity Sharing (Jobs/Grants)</li>
+                <li>Community Training Exchanges</li>
+                <li>Regular Volunteering Openings</li>
+                <li>Digital Resource Library Access</li>
+            </ul>
+            <!-- REDIRECTS to the Top Hero Button Logic -->
+            <a href="#whatsappButton" class="btn btn-outline" onclick="openMembershipPortal()" style="border: 1px solid var(--border); color: #fff; text-align: center; display: block;">Join Community</a>
+        </div>
+
+       <!-- MID TIER: The Practitioner -->
+<div class="tier-card">
+    <span class="tier-name">The Practitioner</span>
+    <div class="tier-price">GHS 500 <span>/ Annual</span></div>
+    <ul class="benefits-list">
+        <li>Priority Involvement in Projects</li>
+        <li>Invitations to Private Sitting Programs</li>
+        <li>Advanced Capacity Building Sessions</li>
+        <li>Verified Speaking Opportunities</li>
+    </ul>
+    <!-- Task 1: Open Form -->
+    <a href="javascript:void(0)" class="btn btn-emerald" onclick="openPaidPathway('Practitioner')">Register Now</a>
+</div>
+
+<!-- ELITE TIER: The Vanguard -->
+<div class="tier-card tier-featured">
+    <span class="tier-name" style="color: var(--gold);">The Vanguard</span>
+    <div class="tier-price">GHS 1000 <span>/ Annual</span></div>
+    <ul class="benefits-list">
+        <li><strong>VIP Access:</strong> Climate Honours Convening</li>
+        <li>Private Funding & Grant Matchmaking</li>
+        <li>Executive Speaking Placements</li>
+        <li>Strategic Leadership Mentorship</li>
+        <li>Permanent Seat in the Advisory Sit</li>
+    </ul>
+    <!-- Task 1: Open Form -->
+    <a href="javascript:void(0)" class="btn btn-emerald" style="background: var(--gold);" onclick="openPaidPathway('Vanguard')">Claim The Honours</a>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="convening-banner">
+        <h3>The WOMATE Climate Honours</h3>
+        <p>Our annual flagship convening. Celebrating women at the intersection of local wisdom and global action. Benefit from priority seating as a Circle member.</p>
+        <a href="CH.html" class="btn btn-outline" style="border: 1px solid var(--gold); color: var(--gold);">Learn About Honours</a>
+    </div>
+
+   <footer style="padding: 80px 40px;">
+    <div class="container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:40px; text-align:left;">
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">WOMATE</h4>
+            <p style="font-size:0.8rem; color:#666; line-height:1.8;">Driving 360° inclusive climate action through sustainable technology and community leadership.</p>
+        </div>
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">Contact</h4>
+            <p style="font-size:0.8rem; color:#666;">Global HQ: Accra, Ghana</p>
+            <p style="font-size:0.8rem; color:#666;">womatead.gmail.com</p>
+        </div>
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">Community</h4>
+            <ul style="list-style:none; font-size:0.8rem; color:#666;">
+                <li><a href="circle.html" style="color:#666; text-decoration:none;">The Circle Membership</a></li>
+                <li><a href="CH.html" style="color:#666; text-decoration:none;">WOMATE CLIMATE HONOURS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="margin-top:60px; border-top:1px solid rgba(255,255,255,0.05); padding-top:20px; text-align:center;">
+        <p>© 2026 WOMATE. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <script>
+        // CONCEPTUAL JS: The "Orbital Ring" background
+        const canvas = document.getElementById('portal-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles;
+
+        function init() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 50; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    size: Math.random() * 2,
+                    speed: Math.random() * 0.5 + 0.2,
+                    angle: Math.random() * Math.PI * 2
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = '#5efc82';
+            particles.forEach(p => {
+                p.angle += 0.002;
+                p.x += Math.cos(p.angle) * p.speed;
+                p.y += Math.sin(p.angle) * p.speed;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', init);
+        init();
+        animate();
+
+
+
+
+
+
+
+    </script>
+
+      <script src="assets/js/style.js"></script>
+      
+      
+     
+     
+</body>
+</html>
