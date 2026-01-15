@@ -30,7 +30,11 @@ body {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: radial-gradient(circle, rgba(45,90,39,.15), transparent 70%);
+    background: var(--life-green); 
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(126, 177, 72, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 69, 19, 0.15) 0px, transparent 50%);
+
     animation: pulseLight 15s infinite alternate ease-in-out;
 }
 
