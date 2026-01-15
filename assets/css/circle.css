@@ -1,0 +1,595 @@
+<<<<<<< HEAD
+
+        :root {
+            --bg: #040505;
+            --surface: #0a0c0c;
+            --emerald: #7EB148;
+            --gold: #0E4D4A;
+            --border: rgba(255, 255, 255, 0.08);
+            --text-main: #f1f5f9;
+            --text-muted: #0E4D4A;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+     
+        body {
+    background: var(--void-black);
+    color: var(--divine-white);
+    font-family: 'Syne', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+
+        /* --- THE ORBITAL CANVAS (JS Target) --- */
+        #portal-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none; opacity: 0.4;
+        }
+
+      
+
+        .eyebrow {  font-size: 0.75rem; color: var(--emerald); letter-spacing: 5px; margin-bottom: 2rem; text-transform: uppercase; }
+        
+        h1 {font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 400; line-height: 0.95; margin-bottom: 2rem; }
+        h1 span { display: block; font-style: italic; color: var(--text-muted); }
+
+        .hero-p { max-width: 650px; font-size: 1.25rem; font-weight: 300; color: var(--text-muted); margin-bottom: 3rem; }
+
+        .btn { padding: 1.2rem 2.8rem; border-radius: 100px; text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; transition: 0.4s; text-transform: uppercase; }
+        .btn-emerald { background: var(--emerald); color: #000; box-shadow: 0 0 20px rgba(94, 252, 130, 0.2); }
+        .btn-emerald:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(94, 252, 130, 0.4); }
+
+        /* --- THE ECOSYSTEM (OBJECTIVES) --- */
+        .ecosystem-section { padding: 120px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+        .eco-content h2 {  font-size: 3.5rem; margin-bottom: 2rem; }
+        
+        .eco-list { list-style: none; }
+        .eco-item { padding: 1.5rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 1.5rem; }
+        .eco-item span { color: var(--emerald);  }
+        .eco-item h4 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+        .eco-item p { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* --- MEMBERSHIP ARCHITECTURE (TIERS) --- */
+        .membership-section { padding: 100px 5%; background: var(--surface); }
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-header h2 {  font-size: 4rem; }
+
+        .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1300px; margin: 0 auto; }
+        
+        .tier-card { 
+            padding: 3.5rem 2.5rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border); 
+            border-radius: 4px; transition: 0.5s; display: flex; flex-direction: column; 
+        }
+        .tier-card:hover { border-color: var(--emerald); background: rgba(255,255,255,0.04); transform: translateY(-10px); }
+        
+        .tier-name { font-size: 0.8rem; color: var(--emerald); margin-bottom: 1rem; text-transform: uppercase; }
+        .tier-price {  font-size: 3rem; margin-bottom: 2rem; }
+        .tier-price span { font-size: 1rem; opacity: 0.5; }
+
+        .benefits-list { list-style: none; margin-bottom: 3rem; flex-grow: 1; }
+        .benefits-list li { margin-bottom: 1rem; font-size: 0.9rem; display: flex; gap: 0.8rem; align-items: flex-start; }
+        .benefits-list li::before { content: "◈"; color: var(--emerald); }
+
+        .tier-featured { border-color: var(--gold); position: relative; }
+        .tier-featured::after { 
+            content: "THE HONOURS CIRCLE"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--gold); color: #000; font-size: 0.6rem; font-weight: bold; padding: 4px 12px; border-radius: 20px;
+        }
+
+        /* --- THE HONOURS CONVENING (PROMO) --- */
+        .convening-banner { 
+            margin: 100px 5%; padding: 6rem; background: linear-gradient(45deg, #0a0c0c, #131a15); 
+            border-radius: 2px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .convening-banner h3 {  font-size: 3rem; margin-bottom: 1rem; }
+        .convening-banner p { color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* --- FOOTER --- */
+        footer { padding: 100px 10%; text-align: center; border-top: 1px solid var(--border); }
+
+        @media (max-width: 900px) {
+            .ecosystem-section { grid-template-columns: 1fr; }
+            .convening-banner { padding: 3rem 1.5rem; }
+            h1 { font-size: 3.5rem; }
+        }
+   
+
+
+:root {
+    --emerald-gnosis: #0E4D4A;
+    --emerald-light: #7EB148;
+}
+
+.whatsapp-chat {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 350px;
+    background: rgba(5, 6, 8, 0.98);
+    border: 1px solid var(--emerald-light);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    backdrop-filter: blur(15px);
+    z-index: 40000;
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+
+.whatsapp-chat.show { display: flex; animation: slideUp 0.4s ease-out forwards; }
+
+.chat-header {
+    background: var(--emerald-gnosis);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(126, 177, 72, 0.2);
+}
+
+.chat-header-info { display: flex; align-items: center; gap: 12px; }
+
+.chat-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--emerald-light);
+}
+
+.chat-title {  color: #fff; font-size: 1rem; }
+
+.chat-body { padding: 20px; background: url('www.transparenttextures.com'); }
+
+.message-bubble {
+    background: rgba(255,255,255,0.05);
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--emerald-light);
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.chat-footer { padding: 15px; background: #000; }
+
+.message-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.start-chat-btn {
+    width: 100%;
+    background: var(--emerald-light);
+    color: #000;
+    border: none;
+    padding: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-chat-btn:hover { background: #fff; box-shadow: 0 0 20px rgba(126, 177, 72, 0.5); }
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+#startChatBtn {
+    background: #7EB148;
+    color: #050608;
+    border: none;
+    padding: 15px;
+    
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(126, 177, 72, 0.3);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#startChatBtn:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(126, 177, 72, 0.5);
+}
+
+
+
+/* WhatsApp Widget Design System 2026 */
+.whatsapp-chat {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 350px;
+    background: rgba(5, 6, 8, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(126, 177, 72, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    z-index: 99999;
+    flex-direction: column;
+    overflow: hidden;
+  
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whatsapp-chat.show {
+    display: flex;
+    animation: gnosisFadeUp 0.4s ease-out forwards;
+}
+
+.chat-header {
+    background: #0E4D4A;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #7EB148;
+    object-fit: cover;
+}
+
+.chat-title {
+    
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.message-bubble {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.start-chat-btn {
+    width: 100%;
+    background: #7EB148;
+    color: #050608;
+    border: none;
+    padding: 15px;
+    
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-chat-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 20px rgba(126, 177, 72, 0.5);
+    transform: translateY(-2px);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.close-btn:hover { opacity: 1; }
+
+@keyframes gnosisFadeUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+=======
+
+        :root {
+            --bg: #040505;
+            --surface: #0a0c0c;
+            --emerald: #7EB148;
+            --gold: #0E4D4A;
+            --border: rgba(255, 255, 255, 0.08);
+            --text-main: #f1f5f9;
+            --text-muted: #0E4D4A;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+     
+        body {
+    background: var(--void-black);
+    color: var(--divine-white);
+    font-family: 'Syne', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+
+        /* --- THE ORBITAL CANVAS (JS Target) --- */
+        #portal-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none; opacity: 0.4;
+        }
+
+      
+
+        .eyebrow {  font-size: 0.75rem; color: var(--emerald); letter-spacing: 5px; margin-bottom: 2rem; text-transform: uppercase; }
+        
+        h1 {font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 400; line-height: 0.95; margin-bottom: 2rem; }
+        h1 span { display: block; font-style: italic; color: var(--text-muted); }
+
+        .hero-p { max-width: 650px; font-size: 1.25rem; font-weight: 300; color: var(--text-muted); margin-bottom: 3rem; }
+
+        .btn { padding: 1.2rem 2.8rem; border-radius: 100px; text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; transition: 0.4s; text-transform: uppercase; }
+        .btn-emerald { background: var(--emerald); color: #000; box-shadow: 0 0 20px rgba(94, 252, 130, 0.2); }
+        .btn-emerald:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(94, 252, 130, 0.4); }
+
+        /* --- THE ECOSYSTEM (OBJECTIVES) --- */
+        .ecosystem-section { padding: 120px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+        .eco-content h2 {  font-size: 3.5rem; margin-bottom: 2rem; }
+        
+        .eco-list { list-style: none; }
+        .eco-item { padding: 1.5rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 1.5rem; }
+        .eco-item span { color: var(--emerald);  }
+        .eco-item h4 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+        .eco-item p { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* --- MEMBERSHIP ARCHITECTURE (TIERS) --- */
+        .membership-section { padding: 100px 5%; background: var(--surface); }
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-header h2 {  font-size: 4rem; }
+
+        .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1300px; margin: 0 auto; }
+        
+        .tier-card { 
+            padding: 3.5rem 2.5rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border); 
+            border-radius: 4px; transition: 0.5s; display: flex; flex-direction: column; 
+        }
+        .tier-card:hover { border-color: var(--emerald); background: rgba(255,255,255,0.04); transform: translateY(-10px); }
+        
+        .tier-name { font-size: 0.8rem; color: var(--emerald); margin-bottom: 1rem; text-transform: uppercase; }
+        .tier-price {  font-size: 3rem; margin-bottom: 2rem; }
+        .tier-price span { font-size: 1rem; opacity: 0.5; }
+
+        .benefits-list { list-style: none; margin-bottom: 3rem; flex-grow: 1; }
+        .benefits-list li { margin-bottom: 1rem; font-size: 0.9rem; display: flex; gap: 0.8rem; align-items: flex-start; }
+        .benefits-list li::before { content: "◈"; color: var(--emerald); }
+
+        .tier-featured { border-color: var(--gold); position: relative; }
+        .tier-featured::after { 
+            content: "THE HONOURS CIRCLE"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--gold); color: #000; font-size: 0.6rem; font-weight: bold; padding: 4px 12px; border-radius: 20px;
+        }
+
+        /* --- THE HONOURS CONVENING (PROMO) --- */
+        .convening-banner { 
+            margin: 100px 5%; padding: 6rem; background: linear-gradient(45deg, #0a0c0c, #131a15); 
+            border-radius: 2px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .convening-banner h3 {  font-size: 3rem; margin-bottom: 1rem; }
+        .convening-banner p { color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* --- FOOTER --- */
+        footer { padding: 100px 10%; text-align: center; border-top: 1px solid var(--border); }
+
+        @media (max-width: 900px) {
+            .ecosystem-section { grid-template-columns: 1fr; }
+            .convening-banner { padding: 3rem 1.5rem; }
+            h1 { font-size: 3.5rem; }
+        }
+   
+
+
+:root {
+    --emerald-gnosis: #0E4D4A;
+    --emerald-light: #7EB148;
+}
+
+.whatsapp-chat {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 350px;
+    background: rgba(5, 6, 8, 0.98);
+    border: 1px solid var(--emerald-light);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    backdrop-filter: blur(15px);
+    z-index: 40000;
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+
+.whatsapp-chat.show { display: flex; animation: slideUp 0.4s ease-out forwards; }
+
+.chat-header {
+    background: var(--emerald-gnosis);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(126, 177, 72, 0.2);
+}
+
+.chat-header-info { display: flex; align-items: center; gap: 12px; }
+
+.chat-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--emerald-light);
+}
+
+.chat-title {  color: #fff; font-size: 1rem; }
+
+.chat-body { padding: 20px; background: url('www.transparenttextures.com'); }
+
+.message-bubble {
+    background: rgba(255,255,255,0.05);
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--emerald-light);
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.chat-footer { padding: 15px; background: #000; }
+
+.message-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.start-chat-btn {
+    width: 100%;
+    background: var(--emerald-light);
+    color: #000;
+    border: none;
+    padding: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-chat-btn:hover { background: #fff; box-shadow: 0 0 20px rgba(126, 177, 72, 0.5); }
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+#startChatBtn {
+    background: #7EB148;
+    color: #050608;
+    border: none;
+    padding: 15px;
+    
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(126, 177, 72, 0.3);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#startChatBtn:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(126, 177, 72, 0.5);
+}
+
+
+
+/* WhatsApp Widget Design System 2026 */
+.whatsapp-chat {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 350px;
+    background: rgba(5, 6, 8, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(126, 177, 72, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    z-index: 99999;
+    flex-direction: column;
+    overflow: hidden;
+  
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whatsapp-chat.show {
+    display: flex;
+    animation: gnosisFadeUp 0.4s ease-out forwards;
+}
+
+.chat-header {
+    background: #0E4D4A;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #7EB148;
+    object-fit: cover;
+}
+
+.chat-title {
+    
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.message-bubble {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.start-chat-btn {
+    width: 100%;
+    background: #7EB148;
+    color: #050608;
+    border: none;
+    padding: 15px;
+    
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-chat-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 20px rgba(126, 177, 72, 0.5);
+    transform: translateY(-2px);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.close-btn:hover { opacity: 1; }
+
+@keyframes gnosisFadeUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+>>>>>>> e4c592eb03593544a43d96ede8497954bce0eb1e

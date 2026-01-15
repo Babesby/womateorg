@@ -1,0 +1,153 @@
+<<<<<<< HEAD
+#form-overlay {
+    backdrop-filter: blur(15px); /* Gnosis-style depth */
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-primary {
+    background: #7EB148;
+    color: #050608;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 25px rgba(126, 177, 72, 0.6);
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.share-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.share-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    bottom: 70px; /* Floats above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 77, 78, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid #7EB148;
+    border-radius: 8px;
+    padding: 10px;
+    width: 180px;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.share-item {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 0.8rem;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.share-item:hover {
+    background: rgba(126, 177, 72, 0.2);
+    color: #7EB148;
+}
+
+footer {
+    padding: 100px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(126, 177, 72, 0.1);
+}
+=======
+#form-overlay {
+    backdrop-filter: blur(15px); /* Gnosis-style depth */
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-primary {
+    background: #7EB148;
+    color: #050608;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 25px rgba(126, 177, 72, 0.6);
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.share-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.share-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    bottom: 70px; /* Floats above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 77, 78, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid #7EB148;
+    border-radius: 8px;
+    padding: 10px;
+    width: 180px;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.share-item {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 0.8rem;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.share-item:hover {
+    background: rgba(126, 177, 72, 0.2);
+    color: #7EB148;
+}
+
+footer {
+    padding: 100px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(126, 177, 72, 0.1);
+}
+>>>>>>> e4c592eb03593544a43d96ede8497954bce0eb1e
