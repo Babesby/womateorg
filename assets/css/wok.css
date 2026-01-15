@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .gnosis-shop-overlay {
     display: none;
     position: fixed;
@@ -52,58 +51,3 @@
 
 
 
-=======
-.gnosis-shop-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-   
-    backdrop-filter: blur(15px); /* The sleek Gnosis blur effect */
-    justify-content: center;
-    align-items: center;
-    z-index: 30000; /* Ensure it's above all else */
-}
-
-.gnosis-shop-content {
-
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #7EB148;
-    max-width: 800px; /* A good size for the shop page */
-    width: 90%;
-    height: 90%;
-    box-shadow: 0 0 50px rgba(126, 177, 72, 0.5);
-    position: relative;
-    overflow: hidden; /* Keeps iframe contained */
-}
-
-.modal-close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-   
-    border: 1px solid #7EB148;
-    color: #7EB148;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 30001; /* Above the iframe and modal content */
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-}
-
-/* Ensure the iframe fills its container perfectly */
-.gnosis-shop-content iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding-top: 50px; /* Make space for the close button */
-    height: calc(100% - 50px);
-}
-
-
-
->>>>>>> e4c592eb03593544a43d96ede8497954bce0eb1e
