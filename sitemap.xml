@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org">
-  <!-- Main Homepage -->
-  <url>
-    <loc>https://www.womate.org/</loc>
-    <lastmod>2026-01-16</lastmod>
-    <priority>1.00</priority>
-  </url>
-
-  <!-- Sub-pages from your navigation -->
   <url>
     <loc>https://www.womate.org</loc>
     <lastmod>2026-01-16</lastmod>
-    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://www.womate.org</loc>
+    <loc>https://www.womate.orgShe-leads.html</loc>
     <lastmod>2026-01-16</lastmod>
-    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.womate.org</loc>
+    <loc>https://www.womate.orgwok.html</loc>
     <lastmod>2026-01-16</lastmod>
-    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.womate.org</loc>
+    <loc>https://www.womate.orgcircle.html</loc>
     <lastmod>2026-01-16</lastmod>
-    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.womate.org</loc>
+    <loc>https://www.womate.orgresearch.html</loc>
     <lastmod>2026-01-16</lastmod>
-    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.womate.org</loc>
+    <loc>https://www.womate.orgheal.html</loc>
     <lastmod>2026-01-16</lastmod>
-    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.womate.orgteam.html</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
