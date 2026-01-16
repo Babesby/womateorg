@@ -43,23 +43,19 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-
-    <!-- 5. Favicons & CSS -->
     <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
     <link href="assets/css/style.css" rel="stylesheet">
-    <style>* { margin: 0; padding: 0; box-sizing: border-box; }</style>
+     <link href="assets/css/enquire.css" rel="stylesheet">
 
 
+    <style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Syne', sans-serif; }
+header { min-height:100vh; display:flex; flex-direction:column; }
+.hero-sub { opacity:0.85; }
+</style>
 
-<script type="text/javascript"
-      src="https://onsite.optimonk.com/script.js?account=265595"
-      async></script>
-   <script src='https://cdn.jotfor.ms/agent/embedjs/019bc24256917a41a9c991e7e0eff4a38fee/embed.js'>
-</script>
- <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+ 
 </head>
 
 
@@ -73,8 +69,6 @@
    <a href="index.html">
   <img src="assets/img/logo.svg" alt="WOMATE">
 </a>
-
-
     <button class="nav-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
     </button>
@@ -95,7 +89,7 @@
 </nav>
 
 <header>
-    <h1 class="animate__animated animate__flipInY">Women <span>In Climate</span></h1>
+    <h1 class="flipInY">Women <span>In Climate</span></h1>
     <p class="hero-sub">Driving Inclusive Climate Action with Technology</p>
     <a href="javascript:void(0)" class="cta-rise" onclick="toggleFlipbook()">Explore Our 2025 Impact</a>
 </header>
@@ -362,7 +356,7 @@ To rescue, rehabilitate, & restore young women with mental health challenges, pa
                 <a href="CH.html" style="color: var(--accent-green); text-decoration: none; font-weight: 600; border-bottom: 1px solid; padding-bottom: 4px;">Meet the 2025 Leaders &rarr;</a>
             </div>
             <div class="spotlight-image">
-                <img src="assets/img/featured-img.svg" alt="Featured Leader">
+                <img src="assets/img/featured-img.svg" alt="Featured Leader "width="480" height="480">
             </div>
         </div>
     </div>
@@ -572,117 +566,7 @@ learn”</p>
 <!-- 3. PANEL OVERLAY (Click to close) -->
 <div id="panelOverlay" class="panel-overlay" onclick="toggleEnquiry()"></div>
 
-<style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    /* 2026 LUXURY PANEL CSS */
-    :root {
-        --gold-accent: #7EB148;
-        --panel-bg: #0E4D4A;
-    }
 
-    /* HIDDEN STATE: Panel is pushed 100% off-screen to the right */
-    .enquiry-panel {
-        position: fixed;
-        top: 0;
-        right: -100%; 
-        width: 100%;
-        max-width: 450px;
-        height: 100vh;
-        background: var(--panel-bg);
-        backdrop-filter: blur(50px); /* Liquid glass effect */
-        border-left: 1px solid rgba(197, 160, 89, 0.2);
-        z-index: 9999;
-        padding: 60px 40px;
-        transition: right 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-        box-sizing: border-box;
-   
-    }
-
-    /* REVEAL STATE */
-    .enquiry-panel.active {
-        right: 0;
-    }
-
-    .panel-overlay {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100vw; height: 100vh;
-        background: rgba(0,0,0,0.8);
-        opacity: 0;
-        visibility: hidden;
-        z-index: 9998;
-        transition: opacity 0.4s ease;
-    }
-
-    .panel-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    /* FORM STYLING */
-    .panel-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 40px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        padding-bottom: 20px;
-    }
-
-    .panel-header h3 {
-        font-family: 'Syne', sans-serif;
-        color: var(--gold-accent);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-    .close-btn {
-        background: none; border: none;
-        color: #fff; font-size: 2rem;
-        cursor: pointer; opacity: 0.5;
-        transition: opacity 0.3s;
-    }
-    .close-btn:hover { opacity: 1; }
-
-    .input-group { margin-bottom: 25px; text-align: left; }
-    
-    .input-group label {
-        display: block;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.7rem;
-        color: var(--gold-accent);
-        margin-bottom: 10px;
-        letter-spacing: 1px;
-    }
-
-    .input-group input, .input-group textarea {
-        width: 100%;
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 4px;
-        padding: 15px;
-        color: #fff;
-        font-family: 'Syne', sans-serif;
-        box-sizing: border-box;
-    }
-
-    .btn-submit {
-        width: 100%;
-        padding: 20px;
-        background: var(--gold-accent);
-        color: #000;
-        font-weight: 800;
-        border: none;
-        cursor: pointer;
-        font-family: 'JetBrains Mono', monospace;
-        transition: transform 0.2s, background 0.3s;
-    }
-
-    .btn-submit:hover {
-        background: #fff;
-        transform: translateY(-2px);
-    }
-</style>
 
 <script>
     // SNAPPY TOGGLE LOGIC
@@ -700,7 +584,24 @@ learn”</p>
             document.body.style.overflow = 'auto';
         }
     }
+
+
+    function toggleEnquiry() {
+  if (!window.panelCSSLoaded) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/assets/css/enquire.css';
+    document.head.appendChild(link);
+    window.panelCSSLoaded = true;
+  }
+
+  document.getElementById('enquiryPanel').classList.toggle('active');
+  document.getElementById('panelOverlay').classList.toggle('active');
+}
+
 </script>
+
+ 
 
 <!-- UPDATED CONTACT-RICH FOOTER -->
 <footer style="padding: 80px 40px;">
