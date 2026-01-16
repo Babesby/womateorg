@@ -529,10 +529,170 @@ learn”</p>
 
         <div style="margin-top: 60px;">
             <p style="font-size:0.9rem; color:var(--lunar-white);">We are expanding our 2026 Ecosystem.</p>
-            <a href="mailto:womatead@gmail.com" style="color:var(--life-green); text-decoration:none; font-weight:bold; letter-spacing:2px; border-bottom:1px solid var(--life-green);">Partner with US (Contact:womatead@gmail.com) &rarr;</a>
+             <!-- TRIGGER BUTTON -->
+        <a href="javascript:void(0)" class="btn btn-gold" style="text-decoration:none; font-weight:bold; letter-spacing:2px; color: #0E4D4A; border-bottom:1px solid"  onclick="toggleEnquiry()">Partner with US &rarr;</a>
         </div>
     </div>
 </section>
+
+<!-- 2. LUXURY SIDE PANEL (2026 Liquid Glass) -->
+<div id="enquiryPanel" class="enquiry-panel">
+    <div class="panel-content">
+        <div class="panel-header">
+            <h3>Inquiry</h3>
+            <button onclick="toggleEnquiry()" class="close-btn">&times;</button>
+        </div>
+        
+        <!-- FORMSPREE INTEGRATION -->
+        <form action="https://formspree.io/f/mykkzrdp" method="POST" class="luxury-form">
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" name="name" required placeholder="Name Surname">
+            </div>
+            <div class="input-group">
+                <label>Professional Email</label>
+                <input type="email" name="email" required placeholder="email@domain.com">
+            </div>
+            <div class="input-group">
+                <label>How can we collaborate?</label>
+                <textarea name="message" rows="5" required placeholder="Describe your inquiry..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">SEND MESSAGE</button>
+        </form>
+    </div>
+</div>
+
+<!-- 3. PANEL OVERLAY (Click to close) -->
+<div id="panelOverlay" class="panel-overlay" onclick="toggleEnquiry()"></div>
+
+<style>
+    /* 2026 LUXURY PANEL CSS */
+    :root {
+        --gold-accent: #7EB148;
+        --panel-bg: #0E4D4A;
+    }
+
+    /* HIDDEN STATE: Panel is pushed 100% off-screen to the right */
+    .enquiry-panel {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 100%;
+        max-width: 450px;
+        height: 100vh;
+        background: var(--panel-bg);
+        backdrop-filter: blur(50px); /* Liquid glass effect */
+        border-left: 1px solid rgba(197, 160, 89, 0.2);
+        z-index: 9999;
+        padding: 60px 40px;
+        transition: right 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        box-sizing: border-box;
+        box-shadow: -20px 0 50px rgba(0,0,0,0.8);
+    }
+
+    /* REVEAL STATE */
+    .enquiry-panel.active {
+        right: 0;
+    }
+
+    .panel-overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background: rgba(0,0,0,0.8);
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9998;
+        transition: opacity 0.4s ease;
+    }
+
+    .panel-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* FORM STYLING */
+    .panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 20px;
+    }
+
+    .panel-header h3 {
+        font-family: 'Syne', sans-serif;
+        color: var(--gold-accent);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .close-btn {
+        background: none; border: none;
+        color: #fff; font-size: 2rem;
+        cursor: pointer; opacity: 0.5;
+        transition: opacity 0.3s;
+    }
+    .close-btn:hover { opacity: 1; }
+
+    .input-group { margin-bottom: 25px; text-align: left; }
+    
+    .input-group label {
+        display: block;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.7rem;
+        color: var(--gold-accent);
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .input-group input, .input-group textarea {
+        width: 100%;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 4px;
+        padding: 15px;
+        color: #fff;
+        font-family: 'Syne', sans-serif;
+        box-sizing: border-box;
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 20px;
+        background: var(--gold-accent);
+        color: #000;
+        font-weight: 800;
+        border: none;
+        cursor: pointer;
+        font-family: 'JetBrains Mono', monospace;
+        transition: transform 0.2s, background 0.3s;
+    }
+
+    .btn-submit:hover {
+        background: #fff;
+        transform: translateY(-2px);
+    }
+</style>
+
+<script>
+    // SNAPPY TOGGLE LOGIC
+    function toggleEnquiry() {
+        const panel = document.getElementById('enquiryPanel');
+        const overlay = document.getElementById('panelOverlay');
+        
+        panel.classList.toggle('active');
+        overlay.classList.toggle('active');
+        
+        // Lock body scroll when panel is open
+        if (panel.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
+</script>
 
 <!-- UPDATED CONTACT-RICH FOOTER -->
 <footer style="padding: 80px 40px;">
