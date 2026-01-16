@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOMATE | Leadership </title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+
+        <!-- 1. Primary Meta Tags (For Google Search & Browsers) -->
+    <meta name="title" content="WOMATE | Leadership ">
+    <meta name="description" content="Womate is an ecosystem where African women rise as climate leaders, storytellers, innovators, and advocates, using technology to solve today’s pressing climate challenges.">
+
+    <!-- 2. Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="www.womate.org">
+    <meta property="og:title" content="WOMATE | Leadership ">
+    <meta property="og:description" content="A platform for African women to rise as innovators and advocates using sustainable technology.">
+    <!-- Fixed Image Path: Must include https:// and the leading slash for assets -->
+    <meta property="og:image" content="https://www.womate.org/assets/img/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- 3. Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.womate.org/">
+    <meta property="twitter:title" content="WOMATE | Leadership ">
+    <meta property="twitter:description" content="Driving inclusive climate action through technology.">
+    <meta property="twitter:image" content="https://www.womate.org/assets/img/og-preview.png">
+
+    <!-- 4. Schema Markup (For Google Knowledge Panel & Logo Search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WOMATE",
+      "url": "https://www.womate.org",
+      "logo": "https://www.womate.org/assets/img/logo.svg",
+      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology.",
+      "sameAs": [
+        "x.com"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- 5. Favicons & CSS -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+
+
+
+   <script src='https://cdn.jotfor.ms/agent/embedjs/019bc24256917a41a9c991e7e0eff4a38fee/embed.js'>
+</script>
+
+    <style>
+        :root {
+            --brand-accent: #00ffaa;
+            --ocean-depth: #081a19;
+            --surface: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+            --syne: 'Syne', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: radial-gradient(circle at top right, #0d2b28, #050a0a);
+            background-attachment: fixed;
+            color: #f0fdfa;
+            font-family: var(--syne);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
+
+        /* HERO BENTO - RESPONSIVE GRID */
+        .hero-bento {
+            padding: clamp(8rem, 15vh, 12rem) 0 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-bento { grid-template-columns: 2.2fr 1fr; }
+        }
+
+        .bento-card {
+            background: var(--surface);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--border);
+            padding: clamp(1.5rem, 5vw, 4rem);
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .label {
+            font-family: var(--mono);
+            color: var(--brand-accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: clamp(0.6rem, 2vw, 0.75rem);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .typewriter-title {
+            font-size: clamp(1.8rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            min-height: 3.5em; /* Prevents layout jump during typing */
+        }
+
+        .hero-desc { font-size: clamp(1rem, 2vw, 1.2rem); opacity: 0.9; }
+
+        /* LEADERSHIP UNIT - TOUCH CAROUSEL */
+        .leadership-outer { padding: 4rem 0; }
+        .leadership-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+        }
+
+        .flex-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 1rem 0.5rem 3rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .flex-carousel::-webkit-scrollbar { display: none; }
+
+        .leader-card {
+            flex: 0 0 clamp(280px, 80vw, 350px);
+            scroll-snap-align: center;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 1rem;
+            transition: 0.4s ease;
+        }
+
+        .photo-frame {
+            width: 100%;
+            height: clamp(300px, 50vh, 400px);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .photo-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: 0.5s; }
+        .leader-card:hover img { filter: grayscale(0); }
+
+        .role-badge {
+            position: absolute; bottom: 1rem; left: 1rem;
+            background: var(--brand-accent); color: #000;
+            padding: 6px 12px; font-weight: 800; font-size: 0.7rem;
+            border-radius: 50px; font-family: var(--mono);
+        }
+
+        /* CTA SECTION - STACKABLE FLEX */
+        .cta-section { padding: clamp(4rem, 10vw, 10rem) 0; background: rgba(0,0,0,0.2); }
+        .cta-flex { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 3rem; 
+        }
+
+        @media (min-width: 1024px) {
+            .cta-flex { flex-direction: row; align-items: start; }
+        }
+
+        .cta-content { flex: 1; }
+        .cta-terminal {
+            flex: 1;
+            background: var(--surface);
+            border: 1px solid var(--brand-accent);
+            padding: clamp(1.5rem, 5vw, 4rem);
+            border-radius: 40px;
+            width: 100%;
+        }
+
+        .input-field {
+            width: 100%; background: transparent; border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            color: #fff; padding: 1rem 0; margin-bottom: 1.5rem;
+            font-family: inherit; outline: none; font-size: 1rem;
+        }
+
+        .btn-primary {
+            width: 100%; background: var(--brand-accent); color: #000;
+            padding: 1.2rem; border: none; border-radius: 50px;
+            font-weight: 800; cursor: pointer; text-transform: uppercase;
+        }
+
+        /* LENS - DISABLED ON MOBILE FOR PERFORMANCE */
+        #radar {
+            display: none;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(0, 255, 170, 0.05) 0%, transparent 70%);
+            position: fixed; pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%); border-radius: 50%;
+        }
+        .center-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* vertical centering */
+    align-items: center;       /* horizontal centering */
+    text-align: center;        /* center text */
+}
+
+
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.4rem 0;
+    font-size: 1rem;
+    color: #7EB148; /* WOMATE gold/green accent */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.linkedin-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+
+        @media (min-width: 1024px) { #radar { display: block; } }
+    </style>
+</head>
+<body>
+
+    <canvas id="pleroma-canvas"></canvas>
+<div class="universe-overlay"></div>
+
+<!-- NAV -->
+<nav class="divine-nav">
+   <a href="index.html">
+  <img src="assets/img/logo.svg" alt="WOMATE">
+</a>
+
+
+    <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+        <div class="nav-veil"></div>
+         <!-- CLOSE BUTTON -->
+    <button class="nav-close" aria-label="Close Menu">&times;</button>
+
+
+        <a href="index.html">Ecosystem</a>
+        <a href="She-leads.html">She Leads</a>
+        <a href="wok.html">WoK-Action</a>
+        <a href="circle.html">Circle</a>
+        <a href="research.html">Consultation</a>
+        <a href="heal.html">Healing</a>
+        <a href="#" class="nav-cta">Team</a>
+    </div>
+</nav>
+
+    <div id="radar"></div>
+
+    <main class="container">
+        <!-- STRATEGIC HERO -->
+        <div class="hero-bento">
+            <div class="bento-card">
+                <span class="label">Strategic Oversight // 2026</span>
+                <h1 class="typewriter-title" id="type-target"></h1>
+                <p class="hero-desc">
+                    WOMATE is an institutional engine driving women-led climate adaptation across Africa, bridging the gap between community wisdom and scalable tech.
+                </p>
+            </div>
+            <div class="bento-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
+                    <h4 style="color: var(--brand-accent); font-size: 1.5rem;">1000+</h4>
+                    <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase;">Women Reached</p>
+                </div>
+                <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
+                    <h4 style="color: var(--brand-accent); font-size: 1.5rem;">85%</h4>
+                    <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase;">Impact Score</p>
+                </div>
+                <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
+                    <h4 style="color: var(--brand-accent); font-size: 1.5rem;">80%</h4>
+                    <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase;">Community Resilience Index</p>
+                </div>
+                 <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
+                    <h4 style="color: var(--brand-accent); font-size: 1.5rem;">Institutional Impact</h4>
+                    <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase;">Scaling women-led research into global climate policy.</p>
+                </div>
+                <p style="grid-column: span 2; font-size: 0.8rem; opacity: 0.5; margin-top: 1rem; font-family: var(--mono);">// DATA_VERIFIED_2026</p>
+            </div>
+        </div>
+
+        <!-- LEADERSHIP CAROUSEL -->
+        <div class="leadership-outer">
+            <div class="leadership-header">
+                <span class="label">Executive Unit</span>
+                <h2 class="syne-800" style="font-size: clamp(2rem, 4vw, 3rem);">Leadership</h2>
+            </div>
+            
+            <div class="flex-carousel">
+                <div class="leader-card">
+                    <div class="photo-frame">
+                        <img src="assets/img/team/pp.jpg" alt="Phillipa Aidoo">
+                        <span class="role-badge">CEO // TECHNOLOGY</span>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Phillipa Aidoo     <a href="https://gh.linkedin.com/in/phillipa-aidoo"
+           class="linkedin-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Phillipa Aidoo on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a></h3>
+                       
+                        <p>Chief Strategist & Full-stack Developer. Architect of WOMATE's integrated climate-tech ecosystem.</p>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="photo-frame">
+                        <img src="assets/img/team/a.png" alt="Asaa Gyebi-Adjei">
+                        <span class="role-badge">CFO // RESEARCH</span>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Asaa Gyebi-Adjei <a href="https://gh.linkedin.com/in/asaa-gyebi-adjei-902a03111"
+           class="linkedin-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Asaa on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a></h3>
+                        <p>PhD Candidate & Strategic Economist. Leading Data Analysis for high-impact adaptation projects.</p>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="photo-frame">
+                        <img src="assets/img/team/r.jpg" alt="Ruby Damenshie-Brown">
+                        <span class="role-badge">COO // PROGRAMS</span>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Ruby Damenshie-Brown <a href="https://gh.linkedin.com/in/ruby-damenshie-brown-she-her-582b7287"
+           class="linkedin-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Ruby on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a></h3>
+                        <p>Operations Specialist. Expert in community engagement and regional climate policy scaling.</p>
+                    </div>
+                </div>
+
+                <div class="leader-card">
+                    <div class="photo-frame">
+                        <img src="assets/img/team/h.jpg" alt="Hamza Abubakar">
+                        <span class="role-badge">CCO // ADVOCACY</span>
+                    </div>
+                    <div class="leader-info">
+                        <h3>Hamza Abubakar <a href="https://gh.linkedin.com/in/hamza-abubakar-537852214"
+           class="linkedin-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Hamza on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a></h3>
+                        <p>UN Climate Champion. Driving global communication and excellence for planetary stewardship.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CALL TO ACTION -->
+        <div class="cta-section">
+            <div class="cta-flex">
+                <div class="cta-content center-cta" >
+                    <h2 class="syne-800" style="font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1;">Invest in the Future of Climate Leadership.</h2>
+                    <p style="margin: 2rem 0; opacity: 0.8;">Join global stakeholders scaling women-led adaptation. Direct Transmissions: <strong>womatead@gmail.com</strong></p>
+                </div>
+
+                <div class="cta-terminal">
+                    <form action="https://formspree.io/f/mykkzrdp" method="POST">
+                        <input type="text" name="name" placeholder="Name / Organization" class="input-field" required>
+                        <input type="email" name="email" placeholder="Email Address" class="input-field" required>
+                        <textarea name="message" placeholder="Strategic Inquiry Details..." rows="3" class="input-field" required></textarea>
+                        <button type="submit" class="btn-primary">Initiate Partnership</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const text = "Driving Inclusive Climate Action with Technology.";
+            let i = 0;
+            const target = document.getElementById('type-target');
+            function type() {
+                if (i < text.length) {
+                    target.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 45);
+                }
+            }
+            type();
+
+            const radar = document.getElementById('radar');
+            document.addEventListener('mousemove', (e) => {
+                radar.style.left = e.clientX + 'px';
+                radar.style.top = e.clientY + 'px';
+            });
+        });
+        
+        const toggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const closeBtn = document.querySelector('.nav-close');
+
+toggle.onclick = () => navLinks.classList.toggle('open');
+closeBtn.onclick = () => navLinks.classList.remove('open');
+
+document.querySelectorAll('.nav-links a').forEach(a =>
+    a.onclick = () => navLinks.classList.remove('open')
+);
+
+    </script>
+    <!-- UPDATED CONTACT-RICH FOOTER -->
+<footer style="padding: 80px 40px;">
+    <div class="container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:40px; text-align:left;">
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">WOMATE</h4>
+            <p style="font-size:0.8rem; color:#666; line-height:1.8;">Driving 360° inclusive climate action through sustainable technology and community leadership.</p>
+        </div>
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">Contact</h4>
+            <p style="font-size:0.8rem; color:#666;">Global HQ: Accra, Ghana</p>
+            <p style="font-size:0.8rem; color:#666;">womatead.gmail.com</p>
+        </div>
+        <div>
+            <h4 style="color:var(--ethereal-gold); margin-bottom:20px;">Community</h4>
+            <ul style="list-style:none; font-size:0.8rem; color:#666;">
+                <li><a href="circle.html" style="color:#666; text-decoration:none;">The Circle Membership</a></li>
+                <li><a href="CH.html" style="color:#666; text-decoration:none;">WOMATE CLIMATE HONOURS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="margin-top:60px; border-top:1px solid rgba(255,255,255,0.05); padding-top:20px; text-align:center;">
+        <p>© 2026 WOMATE. All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
