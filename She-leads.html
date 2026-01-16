@@ -601,6 +601,38 @@
 
 
     <footer>
+        <div class="cohort-image">
+    <img src="assets/img/she.png" alt="She Leads Climate – Outstanding Fellows 2025">
+</div>
+<style>.cohort-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 2.5rem;
+    padding: 0 1rem;
+}
+
+.cohort-image img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: contain;
+
+    /* GNOSIS-style depth */
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Mobile refinement */
+@media (max-width: 640px) {
+    .cohort-image img {
+        max-width: 100%;
+        border-radius: 14px;
+    }
+}
+</style>
     <h2>The 2026 Cohort Awaits.</h2>
     <div class="share-wrapper">
         <a href="javascript:void(0)" class="btn btn-primary" onclick="handleShare()">Share the Movement</a>
