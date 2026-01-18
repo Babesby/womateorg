@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOMATE | Safe Minds Initiative</title>
-       <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --bg-deep: #0a0a0b;
@@ -66,30 +65,94 @@
             margin-bottom: 2.5rem;
         }
 
-        /* Impact Matrix */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 5rem 0;
-        }
+        :root {
+    --gnosis-accent: #7EB148;
+    --akashic-void: #080808;
+    --data-gold: rgba(212, 175, 55, 0.8);
+}
+:root {
+    --gnosis-accent: #7EB148;
+    --glass-edge: rgba(255, 255, 255, 0.1);
+}
 
-        .glass-card {
-            background: var(--glass-white);
-            border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(12px);
-            padding: 3rem;
-            border-radius: 4px;
-            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-        }
+.grid {
+    display: grid;
+    /* Force 3 columns on desktop, stack on mobile */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5rem;
+    perspective: 1500px; 
+    margin: 4rem auto;
+    max-width: 1200px; /* Limits width to keep it elegant */
+}
 
-        .glass-card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-10px);
-            background: rgba(212, 175, 55, 0.03);
-        }
+.glass-card {
+    height: 300px; /* Reduced height for desktop elegance */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.2, 1, 0.3, 1);
+    cursor: pointer;
+}
 
-        .glass-card h3 { color: var(--accent-gold); margin-bottom: 1rem; font-size: 1.5rem; }
+/* Elegant Zoom + Flip */
+.glass-card:hover {
+    transform: rotateY(180deg) scale(1.05); /* Subtle scale instead of massive zoom */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 4px;
+    border: 1px solid var(--glass-edge);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    /* Transparent Background */
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(8px);
+}
+
+/* Front Side */
+.card-front h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gnosis-accent);
+    margin: 0;
+}
+
+/* Back Side (The Record) */
+.card-back {
+    transform: rotateY(180deg);
+    background: rgba(126, 177, 72, 0.05); /* Very slight tint on back */
+    border-color: var(--gnosis-accent);
+}
+
+.card-back p {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.card-back strong {
+    color: var(--gnosis-accent);
+    font-weight: 800;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .glass-card {
+        height: 250px;
+    }
+}
 
         /* Donation Section */
         .donation-suite {
@@ -223,36 +286,26 @@
 
 
     </style>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-
     <!-- 5. Favicons & CSS -->
-   <link rel="icon" type="image/svg+xml" href="assets/img/oo.png">
+   <link rel="icon" type="image/png+xml" href="favicon.png">
     <link href="assets/css/style.css" rel="stylesheet">
-
-
 
     <!-- 1. Primary Meta Tags (For Google Search & Browsers) -->
     <meta name="title" content="WOMATE | Safe Minds Initiative">
     <meta name="description" content="Safe Minds in a Changing Climate: Rescuing and restoring the dignity of young women at the intersection of mental health and environmental crisis.">
-
     <!-- 2. Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.womate.org/heal.html">
     <meta property="og:title" content="WOMATE | Safe Minds Initiative">
     <meta property="og:description" content="Safe Minds in a Changing Climate: Rescuing and restoring the dignity of young women at the intersection of mental health and environmental crisis.">
     <!-- Fixed Image Path: Must include https:// and the leading slash for assets -->
-    <meta property="og:image" content="https://www.womate.org/assets/img/og-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
+    <meta property="og:image" content="https://www.womate.org/favicon.png">
     <!-- 3. Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.womate.org/heal.html">
     <meta property="twitter:title" content="WOMATE | Safe Minds Initiative">
     <meta property="twitter:description" content="Driving inclusive climate action through technology.">
-    <meta property="twitter:image" content="https://www.womate.org/assets/img/og-preview.png">
-
+    <meta property="twitter:image" content="https://www.womate.org/favicon.png">
     <!-- 4. Schema Markup (For Google Knowledge Panel & Logo Search) -->
     <script type="application/ld+json">
     {
@@ -260,19 +313,15 @@
       "@type": "Organization",
       "name": "WOMATE",
       "url": "https://www.womate.org/",
-      "logo": "https://www.womate.org/assets/img/logo.svg",
-      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology.",
-      "sameAs": [
-        "x.com"
-      ]
+      "logo": "https://www.womate.org/favicon.png",
+      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology."
     }
     </script>
-
-
  <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <link href="assets/css/nav.css" rel="stylesheet">
 </head>
 <body>
 
@@ -281,11 +330,15 @@
    <a href="index.html">
   <img src="assets/img/logo.svg" alt="WOMATE">
 </a>
-
-
-    <button class="nav-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle akashic-hub" aria-label="Access Akashic Records" onclick="this.classList.toggle('active')">
+    <div class="ring"></div>
+    <div class="cube">
+        <span class="face front"></span>
+        <span class="face back"></span>
+        <span class="face side"></span>
+    </div>
+    <div class="plus-seal">+</div>
+</button>
     <div class="nav-links">
         <div class="nav-veil"></div>
          <!-- CLOSE BUTTON -->
@@ -309,28 +362,52 @@
     <div id="canvas-bg"></div>
 
     <div class="container">
-    
+    <br/><br/> <br/><br/> 
 
         <div class="hero">
             <h1 class="reveal">To See What Is Hidden.</h1>
-            <p class="reveal">Safe Minds in a Changing Climate: Rescuing and restoring the dignity of young women at the intersection of mental health and environmental crisis.</p>
+            <p class="reveal" style="color: #FCFBF7;">Safe Minds in a Changing Climate: Rescuing and restoring the dignity of young women at the intersection of mental health and environmental crisis.</p>
             <a href="#" class="cta-btn reveal">BECOME A GUARDIAN</a>
         </div>
 
         <div class="grid">
-            <div class="glass-card reveal">
-                <h3 style="color: #7EB148;">Rescue</h3>
-                <p>Identifying and compassionately removing young women from the isolation of the streets into a sanctuary of healing.</p>
-            </div>
-            <div class="glass-card reveal">
-                <h3 style="color: #7EB148;">Restore</h3>
-                <p>Professional psychiatric assessment combined with clinical care to rebuild the cognitive foundations of the self.</p>
-            </div>
-            <div class="glass-card reveal">
-                <h3 style="color: #7EB148;">Resilience</h3>
-                <p>Mastering vocational arts—from tailoring to catering—ensuring a future defined by independence, not survival.</p>
-            </div>
+    <!-- REVEAL 01 -->
+    <div class="glass-card">
+        <div class="card-front">
+            <h3>Rescue</h3>
         </div>
+        <div class="card-back">
+            <p>
+                <strong>Identifying</strong> and compassionately <strong>removing</strong> young women from the isolation of the streets into a <strong>sanctuary</strong> of healing.
+            </p>
+        </div>
+    </div>
+
+    <!-- REVEAL 02 -->
+    <div class="glass-card">
+        <div class="card-front">
+            <h3>Restore</h3>
+        </div>
+        <div class="card-back">
+            <p>
+                <strong>Professional psychiatric</strong> assessment combined with <strong>clinical care</strong> to rebuild the <strong>cognitive foundations</strong> of the self.
+            </p>
+        </div>
+    </div>
+
+    <!-- REVEAL 03 -->
+    <div class="glass-card">
+        <div class="card-front">
+            <h3>Resilience</h3>
+        </div>
+        <div class="card-back">
+            <p>
+                <strong>Mastering vocational arts</strong>—from tailoring to catering—ensuring a future defined by <strong>independence</strong>, not survival.
+            </p>
+        </div>
+    </div>
+</div>
+
     </div>
 
    <section id="donate" class="donation-suite">

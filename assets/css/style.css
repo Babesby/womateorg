@@ -45,20 +45,25 @@ body {
 
 /* ================= DIVINE NAV ================= */
 .divine-nav {
-    position: sticky;
+    /* Changed from sticky to fixed to lock it in place regardless of scroll */
+    position: fixed; 
     top: 0;
+    left: 0;
+    width: 100%; /* Ensures the bar covers the full width in fixed mode */
+    box-sizing: border-box; /* Prevents padding from pushing width over 100% */
+    
     z-index: 3000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 6%;
-    background: linear-gradient(
-        to bottom,
-        rgba(5,6,8,.9),
-        rgba(5,6,8,.7)
-    );
-    border-bottom: 1px solid rgba(212,175,55,.25);
-    background: #7EB148;
+    
+    /* Optimized background for 2026 */
+    background: #7EB148; 
+    border-bottom: 1px solid rgba(14, 77, 74, 0.2);
+    
+    /* Optional: Adding a shadow so content scrolls "underneath" the bar visibly */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .logo {

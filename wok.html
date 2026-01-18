@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOMATE | WOK-Action</title>
-
     <!-- 1. Primary Meta Tags (For Google Search & Browsers) -->
     <meta name="title" content="WOMATE | WOK-Action">
     <meta name="description" content="Strengthening evidence-based programming while uplifting women’s voices in climate adaptation discourse.">
-
     <!-- 2. Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.womate.org/wok.html">
     <meta property="og:title" content="WOMATE | WOK-Action">
     <meta property="og:description" content="Strengthening evidence-based programming while uplifting women’s voices in climate adaptation discourse.">
     <!-- Fixed Image Path: Must include https:// and the leading slash for assets -->
-    <meta property="og:image" content="https://www.womate.org/assets/img/og-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
+    <meta property="og:image" content="https://www.womate.org/favicon.png">
     <!-- 3. Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="womate.org/wok.html">
     <meta property="twitter:title" content="WOMATE |  WOK-Action">
     <meta property="twitter:description" content="Driving inclusive climate action through technology.">
-    <meta property="twitter:image" content="https://www.womate.org/assets/img/og-preview.png">
-
+    <meta property="twitter:image" content="https://www.womate.org/favicon.png">
     <!-- 4. Schema Markup (For Google Knowledge Panel & Logo Search) -->
     <script type="application/ld+json">
     {
@@ -36,26 +27,19 @@
       "@type": "Organization",
       "name": "WOMATE",
       "url": "https://www.womate.org/wok.html",
-      "logo": "https://www.womate.org/assets/img/logo.svg",
-      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology.",
-      "sameAs": [
-        "x.com"
-      ]
+      "logo": "https://www.womate.org/favicon.png",
+      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology."
     }
     </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-
     <!-- 5. Favicons & CSS -->
-    <link rel="icon" type="image/svg+xml" href="assets/img/oo.png">
+    <link rel="icon" type="image/png+xml" href="favicon.png">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/she.css" rel="stylesheet">
     <link href="assets/css/wok.css" rel="stylesheet">
+    <link href="assets/css/nav.css" rel="stylesheet">
 </head>
-
-
-
     <style>
         :root {
             --bg: #050706;
@@ -68,7 +52,7 @@
             --border: rgba(255, 255, 255, 0.08);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box!important; scroll-behavior: smooth !important; }
         body { background-color: var(--bg); color: var(--text-main); overflow-x: hidden; }
 
         /* --- BACKGROUND ILLUMINATION --- */
@@ -106,15 +90,7 @@
         .theme-box h2 { font-size: 3rem; margin-bottom: 1.5rem; }
 
         /* --- THE ARCHITECTURE OF ACTION (GRID) --- */
-        .grid-section { padding: 100px 10%; }
-        .section-title { font-size: 3.5rem; margin-bottom: 4rem; text-align: center; }
         
-        .action-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .action-card { padding: 3rem; background: var(--surface); border: 1px solid var(--border); border-radius: 2px; position: relative; transition: 0.5s; overflow: hidden; }
-        .action-card:hover { border-color: var(--gold); background: #111; }
-        .action-card span {  color: var(--gold); font-size: 0.8rem; margin-bottom: 2rem; display: block; }
-        .action-card h3 { font-size: 1.8rem; margin-bottom: 1rem; }
-        .action-card p { color: var(--text-muted); font-size: 0.95rem; }
 
         /* --- PORTAL GALLERY (CAROUSEL) --- */
         .portal-section { padding: 100px 0; }
@@ -126,15 +102,9 @@
 
         /* --- TESTIMONIAL / VOICES --- */
         .voices-section { padding: 100px 10%; text-align: center; }
-        .voice-card { max-width: 800px; margin: 0 auto; padding: 4rem; background: radial-gradient(circle at center, #0c100e, transparent); position: relative; }
+        .voice-card { max-width: 800px; margin: 0 auto; padding: 4rem; background: radial-gradient(circle at center, #0E4D4A, transparent); position: relative; }
         .voice-card blockquote { font-size: 2.5rem; font-style: italic; line-height: 1.2; margin-bottom: 2rem; }
         .voice-info { display: flex; align-items: center; justify-content: center; gap: 1rem; }
-        .voice-info img { width: 50px; height: 50px; border-radius: 50%; border: 1px solid var(--gold); }
-
-        /* --- IMPACT STATUS --- */
-        .impact-status { padding: 80px 10%; display: flex; justify-content: space-around; background: var(--surface); border-top: 1px solid var(--border); }
-        .stat-box h4 { color: var(--gold); font-size: 2.5rem; }
-        .stat-box p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
 
         /* --- FOOTER / FUND --- */
         footer { padding: 120px 10%; text-align: center; background: radial-gradient(circle at top, var(--emerald) 0%, transparent 70%); }
@@ -146,28 +116,21 @@
             .action-grid { grid-template-columns: 1fr; }
         }
     </style>
-
-
-
-
-</head>
-
 <!-- NAV -->
 <nav class="divine-nav">
-   <a href="index.html">
-  <img src="assets/img/logo.svg" alt="WOMATE">
-</a>
-
-
-    <button class="nav-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links">
-        <div class="nav-veil"></div>
-         <!-- CLOSE BUTTON -->
-    <button class="nav-close" aria-label="Close Menu">&times;</button>
-
-
+<a href="index.html"><img src="assets/img/logo.svg" alt="WOMATE"></a>
+<button class="nav-toggle akashic-hub" aria-label="Access Akashic Records" onclick="this.classList.toggle('active')">
+    <div class="ring"></div>
+    <div class="cube">
+        <span class="face front"></span>
+        <span class="face back"></span>
+        <span class="face side"></span>
+    </div>
+    <div class="plus-seal">+</div>
+</button>
+<div class="nav-links">
+<div class="nav-veil"></div>
+<button class="nav-close" aria-label="Close Menu">&times;</button>
         <a href="index.html">Ecosystem</a>
         <a href="She-leads.html">She Leads</a>
         <a href="#" class="nav-cta">WoK-Action</a>
@@ -176,87 +139,229 @@
         <a href="heal.html">Healing</a>
         <a href="team.html" >Team</a>
         <a href="merch.html" >Merch</a>
-    </div>
+</div>
 </nav>
+
 <body>
 <canvas id="pleroma-canvas"></canvas>
 <div class="universe-overlay"></div>
-    <div class="shimmer-bg"></div>
-
-    
+<div class="shimmer-bg"></div>
 
 <header>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <h1 class="gnosis-extra-syne">WOK.<span>Action</span></h1>
     <p class="hero-sub">Women, Knowledge Systems, and Climate Action (WoK-Action) Project is a community-based research & empowerment initiative that centres women’s local knowledge, lived experiences, & everyday leadership in climate adaptation.</p>
-    <div class="cta-group">
+    <div class="cta-group" style="text-align: center;">
         <!-- Trigger the custom iFrame Modal -->
         <a href="javascript:void(0)" class="btn btn-gold" onclick="toggleShopModal()">Fund Community Project</a>
         <a href="#objectives" class="btn btn-outline">Explore Research</a>
     </div>
 </header>
 
-
-
-
-
-
-
-
-
-    <section class="theme-section">
+<section class="theme-section">
         <div class="theme-box">
             <span class="theme-label">2025 ACTIVE THEME</span>
-            <h2>“Rising Together: How Women’s Local Wisdom and Everyday Leadership Shape Adaptation.”</h2>
+            <h2 style="font-size: xx-large;">“Rising Together: How Women’s Local Wisdom and Everyday Leadership Shape Adaptation.”</h2>
             <p style="max-width: 600px; color: var(--text-muted);">Bridging the gap between lived experience and practical solutions through a documented storytelling approach.</p>
         </div>
-    </section>
+</section>
 
-    <section id="objectives" class="grid-section">
-    <h2 class="section-title">The Framework of Discovery</h2>
+<section class="grid-section">
+    <h2 class="section-title">THE ACTION PILLARS</h2>
     <div class="action-grid">
-
-        <div class="action-card">
-            <span>01 / DOCUMENTATION</span>
-            <h3>Indigenous Sovereignty</h3>
-            <p>Preserving women’s local and indigenous knowledge systems, traditions, and climate adaptation practices before they are lost.</p>
+        <!-- 01 -->
+        <div class="action-card" onclick="this.classList.toggle('active')">
+            <div class="action-card-inner">
+                <div class="action-front">
+                    <span>01 / DOCUMENTATION</span>
+                    <h3>Indigenous Sovereignty</h3>
+                </div>
+                <div class="action-back">
+                    <p>Preserving women’s local and indigenous knowledge systems, traditions, and climate adaptation practices before they are lost.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 02 -->
+        <div class="action-card" onclick="this.classList.toggle('active')">
+            <div class="action-card-inner">
+                <div class="action-front">
+                    <span>02 / ANALYSIS</span>
+                    <h3>Impact Visibility</h3>
+                </div>
+                <div class="action-back">
+                    <p>Examining how climate change reshapes women’s livelihoods, health, and everyday wellbeing across communities.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 03 -->
+        <div class="action-card" onclick="this.classList.toggle('active')">
+            <div class="action-card-inner">
+                <div class="action-front">
+                    <span>03 / RESILIENCE</span>
+                    <h3>Economic Alchemy</h3>
+                </div>
+                <div class="action-back">
+                    <p>Identifying practical skills, trades, and income pathways that strengthen women’s economic and climate resilience.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 04 -->
+        <div class="action-card" onclick="this.classList.toggle('active')">
+            <div class="action-card-inner">
+                <div class="action-front">
+                    <span>04 / PARTICIPATION</span>
+                    <h3>Collective Inquiry</h3>
+                </div>
+                <div class="action-back">
+                    <p>Using participatory research, focus groups, and interviews to ensure women co-lead knowledge creation and decision-making.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="action-card">
-            <span>02 / ANALYSIS</span>
-            <h3>Impact Visibility</h3>
-            <p>Examining how climate change reshapes women’s livelihoods, health, and everyday wellbeing across communities.</p>
+        <!-- 05 -->
+        <div class="action-card" onclick="this.classList.toggle('active')">
+            <div class="action-card-inner">
+                <div class="action-front">
+                    <span>05 / MOBILIZATION</span>
+                    <h3>Community Wealth</h3>
+                </div>
+                <div class="action-back">
+                    <p>Mobilising resources collaboratively to support women-led solutions, skills training, and local adaptation initiatives.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="action-card">
-            <span>03 / RESILIENCE</span>
-            <h3>Economic Alchemy</h3>
-            <p>Identifying practical skills, trades, and income pathways that strengthen women’s economic and climate resilience.</p>
+        <!-- 06 -->
+        <div class="action-card" onclick="this.classList.toggle('active')">
+            <div class="action-card-inner">
+                <div class="action-front">
+                    <span>06 / STORYTELLING</span>
+                    <h3>Living Archives</h3>
+                </div>
+                <div class="action-back">
+                    <p>Documenting insights through storytelling, reports, and shared learning to elevate women’s voices in climate discourse.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="action-card">
-            <span>04 / PARTICIPATION</span>
-            <h3>Collective Inquiry</h3>
-            <p>Using participatory research, focus groups, and interviews to ensure women co-lead knowledge creation and decision-making.</p>
-        </div>
-
-        <div class="action-card">
-            <span>05 / MOBILIZATION</span>
-            <h3>Community Wealth</h3>
-            <p>Mobilising resources collaboratively to support women-led solutions, skills training, and local adaptation initiatives.</p>
-        </div>
-
-        <div class="action-card">
-            <span>06 / STORYTELLING</span>
-            <h3>Living Archives</h3>
-            <p>Documenting insights through storytelling, reports, and shared learning to elevate women’s voices in climate discourse.</p>
-        </div>
-
     </div>
 </section>
 
+<style>
+/* ================= AKASHIC GRID STYLES ================= */
+.grid-section { padding: 100px 10%; background: #222; }
+.section-title { font-size: 3.5rem; margin-bottom: 4rem; text-align: center; letter-spacing: 4px; }
+.action-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 2rem; 
+}
+/* 3D Wrapper */
+.action-card { 
+    height: 350px; /* Consistent height for the grid */
+    perspective: 1200px; 
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0; /* Override guide padding to allow card-inner to fill */
+}
 
-    <!-- STORYTELLING PORTAL -->
-    <section class="portal-section">
+.action-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Flip Trigger */
+.action-card:hover .action-card-inner,
+.action-card.active .action-card-inner { 
+    transform: rotateY(180deg); 
+}
+
+/* Faces */
+.action-front, .action-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    padding: 3rem;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(126, 177, 72, 0.2);
+}
+
+/* FRONT: The Pillar Title */
+.action-front {
+    background: var(--life-green); /* Brand Dark Green */
+    color: white;
+}
+
+.action-card span { 
+    color: var(--womate-gold); 
+    font-size: 0.8rem; 
+    margin-bottom: 2rem; 
+    display: block; 
+    letter-spacing: 3px;
+}
+
+.action-card h3 { 
+    font-size: 1.8rem; 
+    margin-bottom: 1rem; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+/* BACK: The Record Content */
+.action-back {
+    background: #293a17; /* Guide background color */
+    color: #0E4D4A;
+    transform: rotateY(180deg);
+    border-color: #0E4D4A;
+    text-align: left;
+}
+
+.action-back p { 
+    color: var(--divine-white); 
+    font-size: 1rem; 
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Interaction: Pulse Diamond on front */
+.action-front::after {
+    content: "◈";
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--womate-gold);
+    opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+    .section-title { font-size: 2.5rem; }
+    .action-card { height: 300px; }
+}
+</style>
+
+<script>
+// Logic to ensure only one card is flipped at a time on mobile 2026
+document.querySelectorAll('.action-card').forEach(card => {
+    card.addEventListener('click', () => {
+        document.querySelectorAll('.action-card').forEach(other => {
+            if (other !== card) other.classList.remove('active');
+        });
+    });
+});
+</script>
+
+
+
+<section class="portal-section">
         <div class="carousel-wrapper">
             <div class="carousel-item">
                 <img src="assets/img/wok/16.svg" alt="Okere District Documentation">
@@ -268,41 +373,106 @@
                 <img src="assets/img/wok/18.svg" alt="Skills Implementation">
             </div>
         </div>
-    </section>
+</section>
 
-    <section class="impact-status">
-        <div class="stat-box">
-            <h4>2025</h4>
-            <p>Launch Year</p>
+<section class="akashic-archive impact-status">
+    <div class="stat-container" style="text-align: center;  font-weight: 900;">
+        <!-- STAT BOX 1: Year -->
+        <div data-gnosis-type="number">
+            <h4 class="count-target" data-target="2025" style="font-size: xx-large;">0</h4>
+            <p style="color: #0E4D4A;">Launch Year</p>
         </div>
-        <div class="stat-box">
-            <h4>Okere</h4>
-            <p>Active District</p>
+        <!-- STAT BOX 2: Text (Static) -->
+        <div data-gnosis-type="universal">
+            <h4 style="font-size: xx-large;">Okere</h4>
+            <p style="color: #0E4D4A;">Active District</p>
         </div>
-        <div class="stat-box">
-            <h4>100%</h4>
-            <p>Community Led</p>
+        <!-- STAT BOX 3: Percent -->
+        <div  data-gnosis-type="number">
+            <h4 class="count-target" data-target="100" style="font-size: xx-large;">0</h4>
+            <p style="color: #0E4D4A;">Community Led</p>
         </div>
-    </section>
+    </div>
+</section>
+<style>
+.akashic-archive {
+    position: relative;
+    padding: 100px 6%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.stat-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    z-index: 2;
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .stat-box h4 { font-size: 2.8rem; }
+    .akashic-archive { padding: 60px 20px; }
+}
+</style>
+<script>
+/* REAL-TIME AKASHIC COUNTER LOGIC */
+const gnosisCounter = () => {
+    const targets = document.querySelectorAll('.count-target');
+    
+    const observerOptions = {
+        threshold: 0.5
+    };
 
-    <section class="voices-section">
-        <div class="voice-card">
-            <blockquote>"To care about climate change, you only need to be one thing, and that’s a person living on planet Earth who wants a better future."</blockquote>
-            <div class="voice-info">
-                <div>
-                    <strong>Katharine Hayhoe</strong><br>
-                    <small style="color: var(--gold)">Climate Scientist and Author.</small>
-                </div>
-            </div>
-        </div>
-    </section>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const targetEl = entry.target;
+                const finalValue = parseInt(targetEl.getAttribute('data-target'));
+                const duration = 2000; // 2 Seconds for total gnosis reveal
+                let startTime = null;
 
-    <footer id="fund">
-        <h2>Ready to fuel the future?</h2>
-        <p style="margin-bottom: 3rem; color: var(--text-muted);">Your investment directly supports the 2026 expansion of WoK-Action research and skills training. </p>
-       
+                const animate = (currentTime) => {
+                    if (!startTime) startTime = currentTime;
+                    const progress = Math.min((currentTime - startTime) / duration, 1);
+                    
+                    // Ease out cubic for a futuristic "reconstructing data" feel
+                    const easedProgress = 1 - Math.pow(1 - progress, 3);
+                    const currentVal = Math.floor(easedProgress * finalValue);
+                    
+                    targetEl.innerText = targetEl.parentElement.dataset.gnosisType === 'number' && finalValue === 100 
+                        ? currentVal + '%' 
+                        : currentVal;
 
-       
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    }
+                };
+                
+                requestAnimationFrame(animate);
+                observer.unobserve(targetEl); // Run only once
+            }
+        });
+    }, observerOptions);
+
+    targets.forEach(target => observer.observe(target));
+};
+document.addEventListener('DOMContentLoaded', gnosisCounter);
+</script>
+
+<section class="voices-section" style="text-align: center;">
+<div class="voice-card">
+<blockquote style="font-size: x-large;">"To care about climate change, you only need to be one thing, and that’s a person living on planet Earth who wants a better future."</blockquote>
+<div class="voice-info"><div>
+<strong>Katharine Hayhoe</strong><br>
+<small style="color: var(--gold)">Climate Scientist and Author.</small>
+</div></div></div>
+</section>
+
+<footer id="fund">
+<h2>Ready to fuel the future?</h2>
+<p style="margin-bottom: 3rem; color:#7EB148">Your investment directly supports the 2026 expansion of WoK-Action research and skills training. </p>       
 <!-- THE CUSTOM GNOSIS IFRAME MODAL -->
 <div id="shop-modal" class="gnosis-shop-overlay">
     <div class="gnosis-shop-content">
@@ -319,38 +489,7 @@
         ></iframe>
     </div>
 </div>
-
-
-    </footer>
-
-    <script>
-        // CONCEPTUAL JS: Lighting Reveal
-        // Moves the radial gradient with the mouse to "illuminate" the data
-        document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth) * 100;
-            const y = (e.clientY / window.innerHeight) * 100;
-            document.documentElement.style.setProperty('--mouse-x', `${x}%`);
-            document.documentElement.style.setProperty('--mouse-y', `${y}%`);
-        });
-
-        // Intersection Observer for card reveals
-        const cards = document.querySelectorAll('.action-card');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        }, { threshold: 0.1 });
-
-        cards.forEach(card => {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(30px)";
-            card.style.transition = "1s cubic-bezier(0.22, 1, 0.36, 1)";
-            observer.observe(card);
-        });
-    </script>
+</footer>
   <script src="assets/js/style.js"></script>
 </body>
 </html>

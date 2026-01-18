@@ -4,37 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHE LEADS | WOMATE</title>
-    
-    <!-- Typography: 2026 Trend - Elegant Serifs & Minimal Sans -->
-   
-  
-     <link href="assets/css/style.css" rel="stylesheet">
-     <link href="assets/css/she.css" rel="stylesheet">
-
-
-     <!-- 1. Primary Meta Tags (For Google Search & Browsers) -->
     <meta name="title" content="SHE LEADS | WOMATE">
     <meta name="description" content="She Leads equips and empowers young women with climate knowledge, leadership skills, and confidence to actively engage in climate justice advocacy and action">
-
     <!-- 2. Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.womate.org/">
     <meta property="og:title" content="SHE LEADS | WOMATE">
     <meta property="og:description" content="She Leads equips and empowers young women with climate knowledge to actively engage in climate justice advocacy and action">
     <!-- Fixed Image Path: Must include https:// and the leading slash for assets -->
-    <meta property="og:image" content="https://www.womate.org/assets/img/og-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
+    <meta property="og:image" content="https://www.womate.org/favicon.png">
     <!-- 3. Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="womate.org">
     <meta property="twitter:title" content="SHE LEADS | WOMATE">
     <meta property="twitter:description" content="Driving inclusive climate action through technology.">
-    <meta property="twitter:image" content="https://www.womate.org/assets/img/og-preview.png">
-
-     <script src="https://cdn.jsdelivr.net"></script>
-
+    <meta property="twitter:image" content="https://www.womate.org/favicon.png">
+    <script src="https://cdn.jsdelivr.net"></script>
     <!-- 4. Schema Markup (For Google Knowledge Panel & Logo Search) -->
     <script type="application/ld+json">
     {
@@ -42,22 +27,17 @@
       "@type": "Organization",
       "name": "WOMATE",
       "url": "https://www.womate.org/",
-      "logo": "https://www.womate.org/assets/img/logo.svg",
-      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology.",
-      "sameAs": [
-        "x.com"
-      ]
+      "logo": "https://www.womate.org/favicon.png",
+      "description": "WOMATE is an organization dedicated to driving women-led climate action using technology."
     }
     </script>
-
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/she.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-
     <!-- 5. Favicons & CSS -->
-    <link rel="icon" type="image/svg+xml" href="assets/img/oo.png">
-    <link href="assets/css/style.css" rel="stylesheet">
-
-
+    <link rel="icon" type="image/png+xml" href="favicon.png">
+    <link href="assets/css/nav.css" rel="stylesheet">
     <style>
         :root {
             --bg: #050706;
@@ -264,6 +244,83 @@
             color: var(--text-dim);
         }
 
+        /* Container for the 3D space */
+.pillar-card {
+    background: transparent; /* Background moves to inner */
+    border: none;
+    perspective: 1000px;
+    height: 450px; /* Set a fixed height for the flip effect */
+    cursor: pointer;
+}
+
+.pillar-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* The actual flip trigger */
+.pillar-card:hover .pillar-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Common styles for both sides */
+.pillar-front, .pillar-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 24px;
+    padding: 3rem;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Front side styling */
+.pillar-front {
+    z-index: 2;
+}
+
+/* Back side styling */
+.pillar-back {
+    transform: rotateY(180deg);
+    background: #1a2e23; /* Slightly different shade for back */
+    border-color: var(--brand-accent);
+}
+
+.pillar-back p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+/* Decorative flip indicator */
+.flip-indicator {
+    margin-top: auto;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    opacity: 0.4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Glow effect refinement */
+.pillar-front::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top right, var(--accent-glow), transparent 70%);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+
         /* --- FOOTER CTA --- */
         footer {
             padding: 10rem 2rem;
@@ -284,28 +341,26 @@
             footer h2 { font-size: 2.5rem; }
         }
     </style>
-
-
-
 </head>
+
 <!-- NAV -->
- <canvas id="pleroma-canvas"></canvas>
-<div class="universe-overlay"></div>
 <nav class="divine-nav">
    <a href="index.html">
   <img src="assets/img/logo.svg" alt="WOMATE">
 </a>
-
-
-    <button class="nav-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-    </button>
+  <button class="nav-toggle akashic-hub" aria-label="Access Akashic Records" onclick="this.classList.toggle('active')">
+    <div class="ring"></div>
+    <div class="cube">
+        <span class="face front"></span>
+        <span class="face back"></span>
+        <span class="face side"></span>
+    </div>
+    <div class="plus-seal">+</div>
+</button>
     <div class="nav-links">
         <div class="nav-veil"></div>
          <!-- CLOSE BUTTON -->
     <button class="nav-close" aria-label="Close Menu">&times;</button>
-
-
         <a href="index.html">Ecosystem</a>
         <a href="#" class="nav-cta">She Leads</a>
         <a href="wok.html">WoK-Action</a>
@@ -316,12 +371,14 @@
         <a href="merch.html" >Merch</a>
     </div>
 </nav>
-<body>
 
-    <div class="gnosis-overlay"></div>
+<body>
+<canvas id="pleroma-canvas"></canvas>
+<div class="universe-overlay"></div>
+<div class="gnosis-overlay"></div>
 
 <header>
-
+    <br/><br/><br/><br/><br/>
           <h1 class="flipInY">She Leads <span>Climate Mentorship.</span></h1>
           <p class="hero-sub">Where Young Women Gain the Knowledge, Skills, and Courage to Lead Climate Action</p>
     <div class="cta-container">
@@ -329,19 +386,14 @@
         <a href="javascript:void(0)" class="btn btn-primary" onclick="toggleForm()">Secure Your Interest</a>
         <a href="#curriculum" class="btn btn-secondary">Explore the Pillars</a>
     </div>
-
 </header>
 
-  
-
 <!-- FORM OVERLAY (Hidden by default) -->
-<div id="form-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(5,6,8,0.98); z-index:20000; flex-direction:column; align-items:center; justify-content:center; padding: 20px;">
-    
+<div id="form-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#1a2e23; z-index:20000; flex-direction:column; align-items:center; justify-content:center; padding: 20px;">
     <!-- Close Button -->
     <div style="width:100%; max-width:700px; text-align:right; margin-bottom:10px;">
         <button onclick="toggleForm()" style="background:none; border:none; color:#7EB148; font-size:2rem; cursor:pointer;">&times;</button>
     </div>
-
     <!-- The Google Form Embed -->
     <div style="width:100%; max-width:700px; height:85vh; background:#fff; border-radius:8px; overflow:hidden; box-shadow: 0 0 50px rgba(126, 177, 72, 0.2);">
         <iframe 
@@ -363,55 +415,101 @@
         <p>Equipping young women with knowledge, skills, and pathways for climate leadership.</p>
     </div>
 
-    <div class="pillar-grid">
-        <div class="pillar-card">
-            <span>// PILLAR 01</span>
-            <h3>Climate Change Foundations</h3>
-            <p>
-                Understanding climate change science, causes, and impacts at local, regional, and global levels.
-            </p>
-        </div>
-
-        <div class="pillar-card">
-            <span>// PILLAR 02</span>
-            <h3>Gender & Climate Justice</h3>
-            <p>
-                Examining how climate change affects women and marginalized communities and how equity-centered solutions drive impact.
-            </p>
-        </div>
-
-        <div class="pillar-card">
-            <span>// PILLAR 03</span>
-            <h3>Climate Governance & Policy</h3>
-            <p>
-                Learning how climate institutions, policies, and decision-making spaces function—and how women can engage and lead.
-            </p>
-        </div>
-
-        <div class="pillar-card">
-            <span>// PILLAR 04</span>
-            <h3>Advocacy, Storytelling & Communication</h3>
-            <p>
-                Building skills to communicate climate issues clearly, influence change, and mobilize communities.
-            </p>
-        </div>
-
-        <div class="pillar-card">
-            <span>// PILLAR 05</span>
-            <h3>Leadership & Community Engagement</h3>
-            <p>
-                Strengthening leadership confidence, collaboration, and community-based climate action.
-            </p>
-        </div>
-
-        <div class="pillar-card">
-            <span>// PILLAR 06</span>
-            <h3>Climate Careers & Professional Pathways</h3>
-            <p>
-                Exploring career opportunities, mentorship pathways, and professional growth in climate and sustainability fields.
-            </p>
+    
+        <div class="pillar-grid">
+    <!-- Repeat this structure for all 6 pillars -->
+    <div class="pillar-card">
+        <div class="pillar-card-inner">
+            <!-- FRONT SIDE -->
+            <div class="pillar-front">
+                <span>// PILLAR 01</span>
+                <h3 style="font-size: x-large; text-align: center;">Climate Change Foundations</h3>
+                <div class="flip-indicator">View Details →</div>
+            </div>
+            <!-- BACK SIDE -->
+            <div class="pillar-back">
+                <p>
+                    Understanding climate change science, causes, and impacts at local, regional, and global levels.
+                </p>
+                <div class="flip-indicator">← Back</div>
+            </div>
         </div>
     </div>
+    
+    <!-- Pillar 02 Example -->
+    <div class="pillar-card">
+        <div class="pillar-card-inner">
+            <div class="pillar-front">
+                <span>// PILLAR 02</span>
+                <h3 style="font-size: x-large; text-align: center;">Gender & Climate Justice</h3>
+                <div class="flip-indicator">View Details →</div>
+            </div>
+            <div class="pillar-back">
+                <p>Examining how climate change affects women and marginalized communities and how equity-centered solutions drive impact.</p>
+                <div class="flip-indicator">← Back</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pillar-card">
+        <div class="pillar-card-inner">
+            <div class="pillar-front">
+                <span>// PILLAR 03</span>
+                <h3 style="font-size: x-large; text-align: center;">Climate Governance & Policy</h3>
+                <div class="flip-indicator">View Details →</div>
+            </div>
+            <div class="pillar-back">
+                <p>Learning how climate institutions, policies, and decision-making spaces function—and how women can engage and lead.
+           </p>
+                <div class="flip-indicator">← Back</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pillar-card">
+        <div class="pillar-card-inner">
+            <div class="pillar-front">
+                <span>// PILLAR 04</span>
+                <h3 style="font-size: x-large; text-align: center;">Advocacy, Storytelling & Comms</h3>
+                <div class="flip-indicator">View Details →</div>
+            </div>
+            <div class="pillar-back">
+                <p>Building skills to communicate climate issues clearly, influence change, and mobilize communities.</p>
+                <div class="flip-indicator">← Back</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pillar-card">
+        <div class="pillar-card-inner">
+            <div class="pillar-front">
+                <span>// PILLAR 05</span>
+                <h3 style="font-size: x-large; text-align: center;">Leadership & Community Engagement</h3>
+                <div class="flip-indicator">View Details →</div>
+            </div>
+            <div class="pillar-back">
+                <p>Strengthening leadership confidence, collaboration, and community-based climate action.</p>
+                <div class="flip-indicator">← Back</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pillar-card">
+        <div class="pillar-card-inner">
+            <div class="pillar-front">
+                <span>// PILLAR 06</span>
+                <h3 style="font-size: x-large; text-align: center;">Climate Careers & Professional Pathways</h3>
+                <div class="flip-indicator">View Details →</div>
+            </div>
+            <div class="pillar-back">
+                <p>Exploring career opportunities, mentorship pathways, and professional growth in climate and sustainability fields.</p>
+                <div class="flip-indicator">← Back</div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+  
 </section>
 
 
@@ -681,6 +779,15 @@
             const y = (e.clientY / window.innerHeight) * 100;
             glow.style.background = `radial-gradient(circle at ${x}% ${y}%, #1a2e23 0%, transparent 70%)`;
         });
+
+
+
+        document.querySelectorAll('.pillar-card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.querySelector('.pillar-card-inner').classList.toggle('is-flipped');
+    });
+});
+
     </script>
 
       <script src="assets/js/style.js"></script>

@@ -168,3 +168,17 @@ document.querySelector('.gnosis-extra-syne').addEventListener('mousemove', (e) =
     // Subtly shift the glow based on mouse position
     target.style.textShadow = `${xPos * 20}px ${yPos * 20}px 40px rgba(126, 177, 72, 0.4)`;
 });
+
+
+
+
+
+
+
+function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    const btn = document.querySelector('.akashic-hub');
+    
+    nav.classList.toggle('open');
+    btn.classList.toggle('active');
+}
