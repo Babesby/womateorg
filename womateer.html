@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a WOMATEER | Join the Mission</title>  
+    <!-- 1. Primary Meta Tags (For Google Search & Browsers) -->
+    <meta name="title" content="WOMATE | Ecosystem of African Women Climate Leaders">
+    <meta name="description" content="Womate is an ecosystem where African women rise as climate leaders, storytellers, innovators, and advocates, using technology to solve today’s pressing climate challenges.">
+    <!-- 2. Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.womate.org/">
+    <meta property="og:title" content="WOMATE | Ecosystem of African Women Climate Leaders">
+    <meta property="og:description" content="A platform for African women to rise as innovators and advocates using sustainable technology.">
+    <!-- Fixed Image Path: Must include https:// and the leading slash for assets -->
+    <meta property="og:image" content="https://www.womate.org/favicin.png">
+    <!-- 3. Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.womate.org/">
+    <meta property="twitter:title" content="WOMATE | Ecosystem of African Women Climate Leaders">
+    <meta property="twitter:description" content="Driving inclusive climate action through technology.">
+    <meta property="twitter:image" content="https://www.womate.org/favicon.png">
+    <meta name="google-site-verification" content="h8dZlQ4J6hxmyiT5vZOm0QeZ87t3AkurgDGJVr0yr8I" />
+
+    <!-- 4. Schema Markup (For Google Knowledge Panel & Logo Search) -->
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "WOMATE",
+  "url": "https://www.womate.org/",
+  "logo": "https://www.womate.org/favicon.png",
+  "description": "WOMATE is an organization dedicated to driving women-led climate action using technology."
+}
+</script>
+
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/nav.css" rel="stylesheet">
+    <style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Syne', sans-serif; }
+header { min-height:100vh; display:flex; flex-direction:column; }
+.hero-sub { opacity:0.85; }
+</style>
+    <link href="https://cdnjs.cloudflare.com" rel="stylesheet">
+    <style>
+        :root {
+            --womate-gold: #7EB148; /* Your specified brand green/gold */
+            --life-green: #0E4D4A;
+            --earth-clay: #8B4513;
+            --void-black: #050608;
+            --divine-white: #FCFBF7;
+            --glass: rgba(255, 255, 255, 0.05);
+            --accent-gradient: linear-gradient(135deg, var(--life-green), var(--womate-gold));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--void-black);
+            color: var(--divine-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background Elements */
+        .glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(14, 77, 74, 0.3) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            z-index: -1;
+        }
+
+        /* Navigation Branding */
+        nav {
+            padding: 2rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: var(--divine-white);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--womate-gold); }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 10% 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--womate-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subheadline {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Role Cards Section */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 4rem 10%;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--womate-gold);
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--womate-gold);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 { margin-bottom: 0.5rem; }
+        .card p { font-size: 0.9rem; opacity: 0.7; }
+
+        /* Form Container */
+        .form-section {
+            background: var(--divine-white);
+            border-radius: 40px 40px 0 0;
+            padding: 4rem 5%;
+            margin-top: 4rem;
+            color: var(--void-black);
+            text-align: center;
+        }
+
+        .form-header {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .iframe-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: var(--divine-white);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 2rem 5%; }
+            .grid { padding: 2rem 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow"></div>
+
+  <!-- NAV -->
+<nav class="divine-nav">
+   <a href="index.html">
+  <img src="assets/img/logo.svg" alt="WOMATE">
+</a>
+    <button class="nav-toggle akashic-hub" aria-label="Access Akashic Records" onclick="this.classList.toggle('active')">
+    <div class="ring"></div>
+    <div class="cube">
+        <span class="face front"></span>
+        <span class="face back"></span>
+        <span class="face side"></span>
+    </div>
+    <div class="plus-seal">+</div>
+</button>
+    <div class="nav-links">
+        <div class="nav-veil"></div>
+         <!-- CLOSE BUTTON -->
+    <button class="nav-close" aria-label="Close Menu">&times;</button>
+
+
+        <a href="index.html" >Ecosystem</a>
+        <a href="She-leads.html">She Leads</a>
+        <a href="wok.html">WoK-Action</a>
+        <a href="circle.html">Circle</a>
+        <a href="research.html">Consultation</a>
+        <a href="heal.html">Healing</a>
+        <a href="team.html" >Team</a>
+        <a href="merch.html" >Merch</a>
+    </div>
+</nav>
+
+    <header class="hero"> <br/><br/><br/><br/><br/>
+        <h1>Elevate Your Impact as a WOMATEER</h1>
+        <p class="subheadline">Where purpose meets professional excellence. Join the WOMATEER 2026 Cohort and contribute your skills to advancing climate resilience, social equity, and women’s empowerment across communities worldwide.
+
+At WOMATE, volunteering is not an add-on, it is a commitment to meaningful, skill-driven impact. WOMATEERS are builders, storytellers, and coordinators who align their expertise with work that matters.</p>
+    </header>
+
+    <section class="grid">
+        <div class="card">
+            <i class="fas fa-bezier-curve"></i>
+            <h3>Visual Strategist</h3>
+            <p>Graphic Designer: Shape the visual language of the movement. Translate purpose, dignity, and impact into compelling design that strengthens our identity and amplifies women’s voices.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-code"></i>
+            <h3>Digital Systems Lead</h3>
+            <p>Developer: Design and maintain the digital platforms that power our programs. Build accessible, reliable infrastructure that connects communities, partners, and ideas.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Impact Storyteller</h3>
+            <p>Social Media & Video Lead: Craft narratives that move beyond awareness into action. Produce content that communicates our mission clearly, ethically, and globally.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-users"></i>
+            <h3>Community Impact Lead</h3>
+            <p>Community Engagement Coordinator: Serve as the bridge between strategy and grassroots action. Coordinate programs, partnerships, and outreach that translate vision into measurable impact.</p>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <div class="form-header">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Apply with Intention</h2>
+            <p> Complete the secure application portal to be considered for the WOMATEER ecosystem. This process helps us align skills, availability, and values to ensure meaningful collaboration and shared impact.
+
+Apply today and be part of a global network building sustainable change for women and communities.</p>
+        </div>
+
+        <div class="iframe-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6MZY9sqaYTHzYu1-gm53MbHQIwh8UiA40akKWjubQhXDFpw/viewform?embedded=true" 
+                    width="100%" 
+                    height="1800" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">Loading application portal…</iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 WOMATE. All rights reserved. | <a href="https://womate.org" style="color: var(--life-green); text-decoration: none;">womate.org</a></p>
+    </footer>
+      <script src="assets/js/style.js"></script>
+
+</body>
+</html>
