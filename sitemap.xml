@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.womate.org/womateer.html</loc>
+    <lastmod>2026-01-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.womate.org/wok.html</loc>
     <lastmod>2026-01-16</lastmod>
     <priority>0.8</priority>
