@@ -1038,7 +1038,7 @@
                 <div>
                     <h4 style="color:var(--ethereal-gold); margin-bottom:20px; font-family: 'Syne', sans-serif; font-weight: 800;">Contact</h4>
                     <p style="font-size:0.9rem; color:#666;">Global HQ: Accra, Ghana</p>
-                    <p style="font-size:0.9rem; color:#666;">womatead@gmail.com</p>
+                    <p style="font-size:0.9rem; color:#666;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="41362e2c203524202501262c20282d6f222e2c">[email&#160;protected]</a></p>
                 </div>
                 <div>
                     <h4 style="color:var(--ethereal-gold); margin-bottom:20px; font-family: 'Syne', sans-serif; font-weight: 800;">Community</h4>
@@ -1056,7 +1056,7 @@
     </div>
 
     <!-- Particles Script -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         /* PARTICLES */
         const canvas = document.getElementById('pleroma-canvas');
         const ctx = canvas.getContext('2d');
@@ -1402,7 +1402,7 @@
             }).catch(err => console.log('Notification error:', err));
         }
 
-        // Security: Prevent form access without payment
+        // ✅ CRITICAL FIX: Check for existing payment on page load and restore access
         window.addEventListener('load', function() {
             // Check if there's a verified payment in localStorage
             const lastPayment = localStorage.getItem('womate_last_payment');
@@ -1412,14 +1412,33 @@
                 if (paymentDataStr) {
                     const paymentData = JSON.parse(paymentDataStr);
                     
-                    // Check if payment is recent (within 24 hours)
+                    // Check if payment is recent (within 30 days)
                     const paymentTime = new Date(paymentData.timestamp).getTime();
                     const now = Date.now();
-                    const hoursSincePayment = (now - paymentTime) / (1000 * 60 * 60);
+                    const daysSincePayment = (now - paymentTime) / (1000 * 60 * 60 * 24);
                     
-                    if (hoursSincePayment < 24 && paymentData.verified) {
-                        // User has a recent verified payment
-                        console.log('Recent payment found:', lastPayment);
+                    if (daysSincePayment < 30 && paymentData.verified) {
+                        // User has a recent verified payment - automatically restore their form access
+                        console.log('✅ Verified payment found - restoring form access:', lastPayment);
+                        
+                        // Update the success message with their payment details
+                        document.getElementById('paymentReference').textContent = paymentData.reference;
+                        document.getElementById('paymentEmail').textContent = paymentData.email;
+                        
+                        // Update JotForm URL with payment data
+                        const jotformIframe = document.getElementById('JotFormIFrame-260422109303039');
+                        const jotformBaseUrl = 'https://form.jotform.com/260422109303039';
+                        const jotformUrl = `${jotformBaseUrl}?payment_ref=${encodeURIComponent(paymentData.reference)}&email=${encodeURIComponent(paymentData.email)}&full_name=${encodeURIComponent(paymentData.fullName)}`;
+                        jotformIframe.src = jotformUrl;
+                        
+                        // Hide landing section and show form section immediately
+                        document.getElementById('landingSection').classList.add('hidden');
+                        document.getElementById('formSection').classList.add('active');
+                        
+                        // Scroll to top
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        console.log('Payment expired or not verified');
                     }
                 }
             }
