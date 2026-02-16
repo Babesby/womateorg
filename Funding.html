@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOMATE Priority Access & Partnership Registration 2026</title>
-    <meta name="title" content="WOMATE | Funding opportunities">
-    <meta name="description" content="Expert-backed support to help you compete confidently for $5,000 seed funding">
+    <title>WOMATE Grant Application Support Programme 2026</title>
+    <meta name="title" content="WOMATE | Grant Application Support">
+    <meta name="description" content="Professional application review and support for African women founders competing for $5,000 seed funding">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -202,12 +202,6 @@
             background: rgba(255, 255, 255, 1);
         }
 
-        .benefit-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
         .benefit-card h3 {
             font-family: 'Syne', sans-serif;
             color: var(--life-green);
@@ -223,35 +217,20 @@
             font-size: 1.05rem;
         }
 
-        /* Urgency Box */
-        .urgency-box {
-            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+        /* Countdown Box */
+        .countdown-box {
+            background: linear-gradient(135deg, var(--life-green), var(--womate-gold));
             color: white;
             padding: 50px 45px;
             border-radius: 20px;
             text-align: center;
             margin: 60px 0;
-            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.35);
+            box-shadow: 0 20px 50px rgba(14, 77, 74, 0.35);
             position: relative;
             overflow: hidden;
         }
 
-        .urgency-box::before {
-            content: '⚡';
-            position: absolute;
-            font-size: 18rem;
-            opacity: 0.12;
-            top: -60px;
-            right: -40px;
-            animation: floatSlow 4s ease-in-out infinite;
-        }
-
-        @keyframes floatSlow {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-25px) rotate(10deg); }
-        }
-
-        .urgency-box h2 {
+        .countdown-box h2 {
             font-family: 'Syne', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 20px;
@@ -270,7 +249,7 @@
             z-index: 1;
         }
 
-        .urgency-text {
+        .countdown-text {
             font-size: 1.3rem;
             margin-bottom: 15px;
             position: relative;
@@ -315,7 +294,6 @@
             border: 3px solid #e8e8e8;
             border-radius: 20px;
             padding: 45px;
-            cursor: pointer;
             transition: all 0.4s ease;
             position: relative;
             background: white;
@@ -323,7 +301,7 @@
 
         .pricing-card:hover {
             border-color: var(--womate-gold);
-            transform: scale(1.03);
+            transform: scale(1.02);
             box-shadow: 0 15px 40px rgba(126, 177, 72, 0.25);
         }
 
@@ -338,14 +316,14 @@
             top: -18px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            background: linear-gradient(135deg, var(--womate-gold), var(--life-green));
             color: white;
             padding: 10px 30px;
             border-radius: 25px;
             font-family: 'Syne', sans-serif;
             font-weight: 800;
             font-size: 1rem;
-            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 8px 20px rgba(126, 177, 72, 0.4);
             letter-spacing: 0.5px;
         }
 
@@ -369,7 +347,7 @@
         }
 
         .savings {
-            color: #FF6B6B;
+            color: var(--life-green);
             font-family: 'Syne', sans-serif;
             font-weight: 700;
             font-size: 1.2rem;
@@ -400,7 +378,7 @@
             font-size: 1.4rem;
         }
 
-        /* Payment Button */
+        /* Buttons */
         .payment-button {
             width: 100%;
             padding: 25px;
@@ -413,8 +391,7 @@
             font-weight: 800;
             cursor: pointer;
             transition: all 0.4s ease;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             box-shadow: 0 12px 35px rgba(126, 177, 72, 0.35);
             margin-top: 25px;
         }
@@ -434,117 +411,132 @@
             transform: none;
         }
 
-        /* FAQ Section */
-        .faq-section {
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 60px 50px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 25px;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
-        }
-
-        .faq-section h2 {
-            font-family: 'Syne', sans-serif;
+        .terms-button {
+            width: 100%;
+            padding: 18px;
+            background: transparent;
             color: var(--life-green);
-            font-size: 2.8rem;
-            margin-bottom: 50px;
-            font-weight: 800;
-            text-align: center;
-        }
-
-        .faq-item {
-            margin-bottom: 25px;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 25px;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .faq-question {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 15px;
+            border: 2px solid var(--life-green);
+            border-radius: 12px;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
+            margin-top: 15px;
         }
 
-        .faq-question:hover h4 {
-            color: var(--womate-gold);
+        .terms-button:hover {
+            background: var(--life-green);
+            color: white;
         }
 
-        .faq-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-            margin-top: 5px;
-        }
-
-        .faq-question h4 {
-            font-family: 'Syne', sans-serif;
-            color: var(--life-green);
-            font-size: 1.4rem;
-            font-weight: 700;
-            line-height: 1.4;
-            transition: color 0.3s ease;
-        }
-
-        .faq-answer {
-            padding-left: 55px;
-        }
-
-        .faq-answer p {
-            color: #555;
-            line-height: 1.9;
-            font-size: 1.05rem;
-        }
-
-        /* Trust Section */
-        .trust-section {
-            text-align: center;
-            margin: 80px 0;
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .trust-section h3 {
-            font-family: 'Syne', sans-serif;
-            color: var(--life-green);
-            font-size: 2rem;
-            margin-bottom: 40px;
-            font-weight: 800;
-        }
-
-        .trust-badges {
-            display: flex;
+        /* Terms Modal */
+        .terms-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 100001;
             justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .terms-modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+       .terms-modal-content {
+    background: white;
+    border-radius: 25px;
+    padding: 0;
+
+    /* Balance width & height */
+    max-width: 650px;
+    width: 95%;
+    height: 85vh;
+    max-height: 85vh;
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.4s ease;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .terms-modal-header {
+            padding: 30px 40px;
+            background: linear-gradient(135deg, var(--life-green), var(--womate-gold));
+            color: white;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
-        .trust-badge {
-            text-align: center;
-        }
-
-        .trust-badge-icon {
-            font-size: 3.5rem;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .trust-badge-text {
+        .terms-modal-header h3 {
             font-family: 'Syne', sans-serif;
-            font-weight: 600;
-            color: #555;
-            font-size: 1.05rem;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .terms-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            font-size: 2rem;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .terms-close:hover {
+            background: white;
+            color: var(--life-green);
+            transform: rotate(90deg);
+        }
+
+        .terms-iframe-container {
+            flex: 1;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .terms-iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Email Collection Modal */
@@ -567,11 +559,6 @@
             display: flex;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         .email-modal-content {
             background: white;
             border-radius: 25px;
@@ -581,17 +568,6 @@
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
             animation: slideUp 0.4s ease;
             position: relative;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .email-modal h3 {
@@ -781,6 +757,109 @@
             margin-bottom: 10px;
         }
 
+        /* FAQ Section */
+        .faq-section {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 60px 50px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .faq-section h2 {
+            font-family: 'Syne', sans-serif;
+            color: var(--life-green);
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 25px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .faq-question h4 {
+            font-family: 'Syne', sans-serif;
+            color: var(--life-green);
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer p {
+            color: #555;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            text-align: center;
+            margin: 80px 0;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .trust-section h3 {
+            font-family: 'Syne', sans-serif;
+            color: var(--life-green);
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 800;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .trust-badge {
+            text-align: center;
+        }
+
+        .trust-badge-icon {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .trust-badge-text {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* Important Notice */
+        .important-notice {
+            background: #f8f9fa;
+            border-left: 4px solid var(--womate-gold);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 45px 0;
+        }
+
+        .important-notice strong {
+            color: var(--life-green);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .landing-section {
@@ -835,11 +914,6 @@
                 flex-direction: column;
             }
 
-            .faq-answer {
-                padding-left: 0;
-                margin-top: 12px;
-            }
-
             .faq-section h2 {
                 font-size: 2.2rem;
             }
@@ -847,8 +921,27 @@
             .faq-question h4 {
                 font-size: 1.2rem;
             }
+
+            .terms-modal-content {
+                width: 95%;
+                max-height: 95vh;
+            }
+
+            .terms-modal-header {
+                padding: 20px 25px;
+            }
+
+            .terms-modal-header h3 {
+                font-size: 1.4rem;
+            }
         }
     </style>
+        <style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Syne', sans-serif; }
+header { min-height:100vh; display:flex; flex-direction:column; }
+.hero-sub { opacity:0.85; }
+</style>
 </head>
 <body>
     <canvas id="pleroma-canvas"></canvas>
@@ -879,16 +972,33 @@
         </div>
     </nav>
 
+    <!-- Terms & Conditions Modal -->
+    <div class="terms-modal" id="termsModal">
+        <div class="terms-modal-content">
+            <div class="terms-modal-header">
+                <h3>Terms & Conditions</h3>
+                <button class="terms-close" onclick="closeTermsModal()">&times;</button>
+            </div>
+            <div class="terms-iframe-container">
+                <iframe 
+                    src="https://docs.google.com/document/d/1krGm1g5gJDDo2euD9-TxYriBlX3lsW6nNbt3BzqwNcw/preview"
+                    width="100%"
+                    height="600"
+                ></iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- Email Collection Modal -->
     <div class="email-modal" id="emailModal">
         <div class="email-modal-content">
-            <h3>🔐 Secure Your Spot</h3>
-            <p>Please provide your email and full name to proceed with secure payment. This helps us send you receipts and track your application.</p>
+            <h3>Secure Your Registration</h3>
+            <p>Please provide your email and full name to proceed with payment. This information is used for receipts and application tracking.</p>
             
             <input 
                 type="text" 
                 id="fullNameInput" 
-                placeholder="Full Name (as on Identification Card)" 
+                placeholder="Full Name (as on ID)" 
                 required
             >
             <div class="error-message" id="nameError">Please enter your full name</div>
@@ -925,10 +1035,11 @@
         <!-- Landing Section (Visible Initially) -->
         <div class="landing-section" id="landingSection">
             <br/><br/> 
+            
             <!-- Hero Section -->
             <div class="hero-container">
-                <h1>Turn Your Vision Into $5,000 Seed Capital</h1>
-                <p class="subtitle">Expert-Backed Priority Support to Help African Women Founders Win Competitive Global Grants</p>
+                <h1>Grant Application Support Programme 2026</h1>
+                <p class="subtitle">Professional Application Review & Support to Help African Women Founders Compete for $5,000 Seed Funding</p>
                 
                 <div class="hero-stats">
                     <div class="stat-box">
@@ -937,225 +1048,219 @@
                     </div>
                     <div class="stat-box">
                         <span class="stat-number">72hrs</span>
-                        <span class="stat-label">Early Bird Discount</span>
+                        <span class="stat-label">Early Registration Period</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-number">FREE</span>
+                        <span class="stat-number">Included</span>
                         <span class="stat-label">Grant Writing Webinar</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Urgency Box -->
-            <div class="urgency-box">
-              
-                <p class="urgency-text">Save GHS 50 - Only available for the first 3 days</p>
+            <!-- Countdown Box -->
+            <div class="countdown-box">
+                <h2>Early Registration Rate</h2>
+                <p class="countdown-text">Save GHS 50 - Early rate available for limited time</p>
                 <div class="countdown" id="countdown">72:00:00</div>
-                <p style="font-size: 1.2rem; position: relative; z-index: 1;">After this, registration returns to GHS 200</p>
+                <p style="font-size: 1.2rem; position: relative; z-index: 1;">After this period, registration returns to GHS 200</p>
             </div>
 
             <!-- Benefits Grid -->
             <div class="content-grid">
                 <div class="benefit-card">
-                    
                     <h3>Professional Application Review</h3>
-                    <p>Get your application reviewed by Keldork Global Innovations - technical experts who understand what grant committees look for in winning proposals.</p>
+                    <p>Technical review and feedback from Keldork Global Innovations. Your proposal will be audited for quality, alignment with grant criteria, and competitive positioning.</p>
                 </div>
 
                 <div class="benefit-card">
-                
-                    <h3>Priority Submission Support</h3>
-                    <p>Skip the overwhelm. We streamline your application process, ensuring nothing is missed and everything is submitted on time with maximum impact.</p>
+                    <h3>Application Streamlining</h3>
+                    <p>Administrative assistance to ensure all requirements are met, documentation is complete, and submission deadlines are observed. We help you avoid common mistakes.</p>
                 </div>
 
                 <div class="benefit-card">
-                 
-                    <h3>FREE Grant Masterclass</h3>
-                    <p>Exclusive access to our "How to Access & Apply for Grants" webinar (March 14-15, 2026). Learn insider strategies that have helped founders secure funding.</p>
+                    <h3>Grant Writing Webinar</h3>
+                    <p>Live training on "How to Access & Apply for Grants" (March 14-15, 2026). Learn strategies used by successful grant recipients to win competitive funding.</p>
                 </div>
 
                 <div class="benefit-card">
-                  
                     <h3>Technical Capacity Building</h3>
-                    <p>Beyond application support - gain skills and knowledge that will help you compete for future funding opportunities with confidence.</p>
+                    <p>Gain skills and frameworks to compete for future funding opportunities independently. Learn what selection committees look for in winning applications.</p>
                 </div>
 
                 <div class="benefit-card">
-                   
                     <h3>WOMATE Community Access</h3>
-                    <p>Join a network of ambitious women climate leaders. Share insights, get feedback, and build lasting partnerships with like-minded founders.</p>
+                    <p>Join a network of African women climate entrepreneurs. Share insights, receive peer feedback, and build partnerships with founders pursuing similar goals.</p>
                 </div>
 
                 <div class="benefit-card">
-                   
-                    <h3>Stand Out From Competition</h3>
-                    <p>Most applicants submit generic applications. Yours will be polished, professional, and strategically positioned to catch the selection committee's attention.</p>
+                    <h3>Competitive Positioning</h3>
+                    <p>Professional review helps ensure your application is polished, complete, and strategically positioned to stand out to the selection committee.</p>
                 </div>
             </div>
 
             <!-- Pricing Section -->
             <div class="pricing-container">
                 <div class="pricing-header">
-                    <h2>Choose Your Investment Level</h2>
-                    <p>Secure your priority support path and FREE webinar access</p>
+                    <h2>Registration Options</h2>
+                    <p>Professional application support with webinar access and community membership</p>
                 </div>
 
                 <div class="pricing-options">
-                    <!-- Early Bird Option -->
-                    <div class="pricing-card featured" data-amount="15000" data-label="Early Bird">
-                        <div class="featured-badge">🔥 SAVE GHS 50</div>
-                        <h3 style="color: var(--life-green); font-size: 2rem; margin-top: 15px; font-family: 'Syne', sans-serif; font-weight: 800;">Early Bird Special</h3>
+                    <!-- Early Registration -->
+                    <div class="pricing-card featured" data-amount="15000" data-label="Early Registration">
+                        <div class="featured-badge">Early Registration</div>
+                        <h3 style="color: var(--life-green); font-size: 2rem; margin-top: 15px; font-family: 'Syne', sans-serif; font-weight: 800;">Early Registration Rate</h3>
                         <div>
                             <span class="original-price">GHS 200</span>
                             <div class="price-amount">
                                 <span class="currency">GHS</span> 150
                             </div>
-                            <div class="savings">You Save: GHS 50 (25% OFF)</div>
+                            <div class="savings">Save GHS 50 with early registration</div>
                         </div>
                         <ul class="price-features">
-                            <li>Professional application review</li>
-                            <li>Priority submission support</li>
-                            <li>FREE Grant Writing Webinar (Worth GHS 100)</li>
-                            <li>Technical capacity building</li>
-                            <li>WOMATE community access</li>
-                            <li>24-hour response guarantee</li>
-                            <li>Only $10 fee upon successful award</li>
+                            <li>Professional application review by Keldork Global Innovations</li>
+                            <li>Application streamlining and compliance verification</li>
+                            <li>Grant Writing Webinar access (March 14-15, 2026)</li>
+                            <li>Technical capacity building resources</li>
+                            <li>WOMATE community membership (6 months)</li>
+                            <li>Email support throughout application process</li>
+                            <li>Success fee: $10 upon grant award (supports community projects)</li>
                         </ul>
-                        <button class="payment-button" onclick="showEmailModal(15000, 'Early Bird - GHS 150')">
-                            🚀 Secure My Spot - GHS 150
+                        
+                        <button class="terms-button" onclick="showTermsModal()">
+                            📄 Read Terms & Conditions
                         </button>
-                        <p style="text-align: center; color: #999; margin-top: 18px; font-size: 0.95rem;">⏰ Offer expires in <span id="countdown2">72 hours</span></p>
+                        
+                        <button class="payment-button" onclick="showEmailModal(15000, 'Early Registration - GHS 150')">
+                            Register Now - GHS 150
+                        </button>
+                        
+                        <p style="text-align: center; color: #999; margin-top: 18px; font-size: 0.95rem;">Early rate ends in: <span id="countdown2">72 hours</span></p>
                     </div>
 
-                    <!-- Regular Option -->
-                    <div class="pricing-card" data-amount="20000" data-label="Regular">
-                        <h3 style="color: var(--life-green); font-size: 2rem; font-family: 'Syne', sans-serif; font-weight: 800;">Regular Registration</h3>
+                    <!-- Standard Registration -->
+                    <div class="pricing-card" data-amount="20000" data-label="Standard Registration">
+                        <h3 style="color: var(--life-green); font-size: 2rem; font-family: 'Syne', sans-serif; font-weight: 800;">Standard Registration</h3>
                         <div class="price-amount">
                             <span class="currency">GHS</span> 200
                         </div>
-                        <p style="color: #666; margin-top: 12px;">Available after early bird period</p>
+                        <p style="color: #666; margin-top: 12px;">Available after early registration period</p>
                         <ul class="price-features">
-                            <li>Professional application review</li>
-                            <li>Priority submission support</li>
-                            <li>FREE Grant Writing Webinar (Worth GHS 100)</li>
-                            <li>Technical capacity building</li>
-                            <li>WOMATE community access</li>
-                            <li>48-hour response time</li>
-                            <li>Only $10 fee upon successful award</li>
+                            <li>Professional application review by Keldork Global Innovations</li>
+                            <li>Application streamlining and compliance verification</li>
+                            <li>Grant Writing Webinar access (March 14-15, 2026)</li>
+                            <li>Technical capacity building resources</li>
+                            <li>WOMATE community membership (6 months)</li>
+                            <li>Email support throughout application process</li>
+                            <li>Success fee: $10 upon grant award (supports community projects)</li>
                         </ul>
-                        <button class="payment-button" onclick="showEmailModal(20000, 'Regular - GHS 200')">
+                        
+                        <button class="terms-button" onclick="showTermsModal()">
+                            📄 Read Terms & Conditions
+                        </button>
+                        
+                        <button class="payment-button" onclick="showEmailModal(20000, 'Standard Registration - GHS 200')">
                             Register Now - GHS 200
                         </button>
                     </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 45px; padding: 30px; background: #f8f9fa; border-radius: 15px;">
+                <div class="important-notice">
                     <p style="color: #555; font-size: 1.05rem; line-height: 1.9;">
-                        <strong>Important:</strong> This is an investment in professional application support, not a guarantee of selection. 
-                        Final decisions rest with the Global Selection Committee. Your registration fee is <strong>non-refundable</strong> 
-                        but positions you for the best possible chance at securing the $5,000 seed funding.
+                        <strong>Important:</strong> This is professional consulting to strengthen your application. Final grant decisions are made by an independent Global Selection Committee. Registration fees are non-refundable as services begin immediately upon payment. Please review our Terms & Conditions before registering.
                     </p>
                 </div>
             </div>
 
             <!-- FAQ Section -->
             <div class="faq-section">
-                <h2>❓ Frequently Asked Questions</h2>
+                <h2>Frequently Asked Questions</h2>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-        
                         <h4>What exactly am I paying for?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>You're securing professional application support from Keldork Global Innovations to help you compete for a $5,000 seed grant. This includes expert review of your application, priority submission assistance, access to our grant writing webinar (worth GHS 100), and membership in the WOMATE community network.</p>
+                        <p>Professional application review from Keldork Global Innovations, application streamlining support, access to our grant writing webinar (March 14-15, 2026), technical capacity building, and WOMATE community membership. This is a consulting service to help you submit the strongest possible application.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                       
                         <h4>Does this guarantee I'll receive the $5,000 funding?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>No. This is an investment in professional support to strengthen your application, not a guarantee of selection. The final decision rests with the Global Selection Committee. However, our expert review significantly improves your chances by ensuring your application meets all requirements and stands out from the competition.</p>
+                        <p>No. This is professional support to strengthen your application quality and completeness. Final grant decisions rest with the independent Global Selection Committee. Our role is to help ensure your application meets all requirements and is competitively positioned.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        
-                        <h4>What happens after I pay?</h4>
+                        <h4>What happens after I register?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>Immediately after payment verification, you'll get access to the registration form to submit your business/project details. Our technical experts will review your application, provide feedback, and help you prepare a competitive submission. You'll also receive access to the Grant Writing Webinar scheduled for March 14-15, 2026.</p>
+                        <p>You'll receive immediate access to submit your business/project details. Our technical experts will review your application, provide written feedback, and guide you through preparing your final submission. You'll also receive webinar access credentials for March 14-15, 2026.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                    
-                        <h4>When does the early bird discount expire?</h4>
+                        <h4>What are the key dates?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>The GHS 150 early bird rate is available for 72 hours from the start of registration. After this period, the registration fee increases to GHS 200. The countdown timer shows exactly how much time is remaining.</p>
+                        <p>Early registration rate (GHS 150): Limited time offer. Grant writing webinar: March 14-15, 2026 (5-6 PM GMT). Official grant application deadline: March 1, 2026. Registration closes: February 26, 2026.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                       
-                        <h4>What about the $10 fee mentioned?</h4>
+                        <h4>What is the $10 success fee?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>The $10 fee is only charged IF you successfully receive the $5,000 grant. This is a success fee paid to WOMATE after award confirmation. You pay nothing extra if you don't receive the grant - only your initial registration fee applies.</p>
+                        <p>If you successfully receive the $5,000 grant, a $10 administrative fee is paid to WOMATE. This supports ongoing community-based climate action projects. You only pay this fee if you receive the grant award.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                      
-                        <h4>Can I get a refund if I change my mind?</h4>
+                        <h4>Why is the fee non-refundable?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>Registration fees are non-refundable. Once you pay, you immediately receive access to expert services, webinar registration, and community membership. These resources are provided regardless of the final grant outcome.</p>
+                        <p>Services begin immediately upon registration. Your application enters our review queue, you receive community access, and webinar registration is confirmed. The non-refundable policy ensures we work with committed applicants serious about the application process.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        
                         <h4>Who is eligible to apply?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>This program is designed for African women founders and entrepreneurs with climate-focused business ideas or projects. Whether you're just starting out or have an existing venture, if you're committed to climate action through technology, you're encouraged to apply.</p>
+                        <p>African women founders and entrepreneurs with climate-focused business ideas or projects. All experience levels welcome - from early-stage ideas to existing ventures committed to climate action through technology.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                       
                         <h4>How will I receive updates and webinar access?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>All communications, including webinar links, application status updates, and expert feedback, will be sent to the email address you provide during registration. Please ensure you use an email you check regularly.</p>
+                        <p>All communications, including webinar access links, application feedback, and status updates, will be sent to the email you provide during registration.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        
                         <h4>What is Keldork Global Innovations' role?</h4>
                     </div>
                     <div class="faq-answer">
-                        <p>Keldork Global Innovations is our technical partner providing professional application review services. They are experts in grant applications and understand what selection committees look for in winning proposals. Their review helps ensure your application is technically sound and competitive.</p>
+                        <p>Keldork Global Innovations is our technical partner providing professional application review services. They specialize in grant applications and understand what selection committees look for in winning proposals. Their review helps ensure your application is technically sound and competitive.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Trust Section -->
             <div class="trust-section">
-                <h3>🔒 Your Investment Is Protected</h3>
+                <h3>Your Investment Is Protected</h3>
                 <div class="trust-badges">
                     <div class="trust-badge">
                         <span class="trust-badge-icon">🛡️</span>
@@ -1175,7 +1280,7 @@
             <div class="success-message">
                 <span class="success-icon">✅</span>
                 <h2>Payment Verified Successfully!</h2>
-                <p style="font-size: 1.3rem; font-family: 'Syne', sans-serif;">Thank you for securing your priority support path. Please complete the registration form below to finalize your application.</p>
+                <p style="font-size: 1.3rem; font-family: 'Syne', sans-serif;">Thank you for registering. Please complete the application form below to finalize your registration.</p>
                 <p style="margin-top: 18px; font-size: 1.05rem;">Payment Reference: <strong id="paymentReference"></strong></p>
                 <p style="font-size: 1rem; opacity: 0.9;">Email: <strong id="paymentEmail"></strong></p>
             </div>
@@ -1183,7 +1288,7 @@
             <!-- JotForm Embed with Payment Reference -->
             <iframe 
                 id="JotFormIFrame-260422109303039" 
-                title="Priority Support Path 2026 - Access: Compete. Prepare. Win" 
+                title="Grant Application Support Registration 2026" 
                 onload="window.parent.scrollTo(0,0)" 
                 allowtransparency="true" 
                 allow="geolocation; microphone; camera; fullscreen" 
@@ -1207,13 +1312,13 @@
                 <div>
                     <h4 style="color:var(--ethereal-gold); margin-bottom:20px; font-family: 'Syne', sans-serif; font-weight: 800;">Contact</h4>
                     <p style="font-size:0.9rem; color:#666;">Global HQ: Accra, Ghana</p>
-                    <p style="font-size:0.9rem; color:#666;"><a href="womatead@gmail.com">womatead@gmail.com</a></p>
+                    <p style="font-size:0.9rem; color:#666;">womatead@gmail.com</p>
                 </div>
                 <div>
                     <h4 style="color:var(--ethereal-gold); margin-bottom:20px; font-family: 'Syne', sans-serif; font-weight: 800;">Community</h4>
                     <ul style="list-style:none; font-size:0.9rem; color:#666;">
-                        <li style="margin-bottom: 8px;"><a href="circle.html" style="color:#666; text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='#7EB148'" onmouseout="this.style.color='#666'">The Circle Membership</a></li>
-                        <li><a href="CH.html" style="color:#666; text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='#7EB148'" onmouseout="this.style.color='#666'">WOMATE CLIMATE HONOURS</a></li>
+                        <li style="margin-bottom: 8px;"><a href="circle.html" style="color:#666; text-decoration:none;">The Circle Membership</a></li>
+                        <li><a href="CH.html" style="color:#666; text-decoration:none;">WOMATE CLIMATE HONOURS</a></li>
                     </ul>
                 </div>
             </div>
@@ -1225,7 +1330,7 @@
     </div>
 
     <!-- Particles Script -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         /* PARTICLES */
         const canvas = document.getElementById('pleroma-canvas');
         const ctx = canvas.getContext('2d');
@@ -1321,7 +1426,6 @@
             
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
-                // Countdown expired - could switch to regular pricing
             }
         }
 
@@ -1333,6 +1437,17 @@
         let selectedPlan = '';
         let userEmail = '';
         let userFullName = '';
+
+        // Terms Modal Functions
+        function showTermsModal() {
+            document.getElementById('termsModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTermsModal() {
+            document.getElementById('termsModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
 
         // Email Modal Functions
         function showEmailModal(amount, plan) {
@@ -1461,10 +1576,7 @@
 
         // SECURITY: Payment Verification Function
         function verifyPayment(reference, expectedAmount, email, fullName, planLabel) {
-            // IMPORTANT: Replace this URL with your actual backend verification endpoint
-            // For now, this is a placeholder that simulates verification
-            
-            const VERIFY_ENDPOINT = '/api/verify-payment'; // Vercel will handle this automatically // REPLACE WITH YOUR BACKEND URL
+            const VERIFY_ENDPOINT = '/api/verify-payment';
             
             // Attempt backend verification
             fetch(VERIFY_ENDPOINT, {
@@ -1482,18 +1594,13 @@
             .then(response => response.json())
             .then(data => {
                 if (data.verified && data.amount >= expectedAmount) {
-                    // Payment verified successfully
                     handleSuccessfulPayment(reference, email, fullName, planLabel);
                 } else {
-                    // Verification failed
                     handleFailedVerification();
                 }
             })
             .catch(error => {
                 console.error('Verification error:', error);
-                
-                // FALLBACK: If backend is not available, proceed with client-side only
-                // This is NOT ideal for production but allows testing
                 console.warn('Backend verification not available - proceeding with client-side only');
                 handleSuccessfulPayment(reference, email, fullName, planLabel);
             });
@@ -1547,8 +1654,7 @@
 
         // Send payment notification to admin
         function sendPaymentNotification(paymentData) {
-            // This can be connected to Formspree, SendGrid, or your own backend
-            const NOTIFICATION_ENDPOINT = 'https://formspree.io/f/mykkzrdp'; // REPLACE WITH YOUR ENDPOINT
+            const NOTIFICATION_ENDPOINT = 'https://formspree.io/f/mykkzrdp';
             
             fetch(NOTIFICATION_ENDPOINT, {
                 method: 'POST',
@@ -1571,9 +1677,8 @@
             }).catch(err => console.log('Notification error:', err));
         }
 
-        // ✅ CRITICAL FIX: Check for existing payment on page load and restore access
+        // Check for existing payment on page load and restore access
         window.addEventListener('load', function() {
-            // Check if there's a verified payment in localStorage
             const lastPayment = localStorage.getItem('womate_last_payment');
             
             if (lastPayment) {
@@ -1581,30 +1686,24 @@
                 if (paymentDataStr) {
                     const paymentData = JSON.parse(paymentDataStr);
                     
-                    // Check if payment is recent (within 30 days)
                     const paymentTime = new Date(paymentData.timestamp).getTime();
                     const now = Date.now();
                     const daysSincePayment = (now - paymentTime) / (1000 * 60 * 60 * 24);
                     
                     if (daysSincePayment < 30 && paymentData.verified) {
-                        // User has a recent verified payment - automatically restore their form access
                         console.log('✅ Verified payment found - restoring form access:', lastPayment);
                         
-                        // Update the success message with their payment details
                         document.getElementById('paymentReference').textContent = paymentData.reference;
                         document.getElementById('paymentEmail').textContent = paymentData.email;
                         
-                        // Update JotForm URL with payment data
                         const jotformIframe = document.getElementById('JotFormIFrame-260422109303039');
                         const jotformBaseUrl = 'https://form.jotform.com/260422109303039';
                         const jotformUrl = `${jotformBaseUrl}?payment_ref=${encodeURIComponent(paymentData.reference)}&email=${encodeURIComponent(paymentData.email)}&full_name=${encodeURIComponent(paymentData.fullName)}`;
                         jotformIframe.src = jotformUrl;
                         
-                        // Hide landing section and show form section immediately
                         document.getElementById('landingSection').classList.add('hidden');
                         document.getElementById('formSection').classList.add('active');
                         
-                        // Scroll to top
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     } else {
                         console.log('Payment expired or not verified');
@@ -1623,6 +1722,14 @@
         document.getElementById('fullNameInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 document.getElementById('emailInput').focus();
+            }
+        });
+
+        // Close modals on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeTermsModal();
+                closeEmailModal();
             }
         });
 
