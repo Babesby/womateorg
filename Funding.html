@@ -434,6 +434,75 @@
             transform: none;
         }
 
+        /* FAQ Section */
+        .faq-section {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 60px 50px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .faq-section h2 {
+            font-family: 'Syne', sans-serif;
+            color: var(--life-green);
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 25px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover h4 {
+            color: var(--womate-gold);
+        }
+
+        .faq-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .faq-question h4 {
+            font-family: 'Syne', sans-serif;
+            color: var(--life-green);
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .faq-answer {
+            padding-left: 55px;
+        }
+
+        .faq-answer p {
+            color: #555;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
         /* Trust Section */
         .trust-section {
             text-align: center;
@@ -738,7 +807,7 @@
                 font-size: 3rem;
             }
 
-            .pricing-container {
+            .pricing-container, .faq-section {
                 padding: 40px 25px;
             }
 
@@ -764,6 +833,19 @@
 
             .email-modal-buttons {
                 flex-direction: column;
+            }
+
+            .faq-answer {
+                padding-left: 0;
+                margin-top: 12px;
+            }
+
+            .faq-section h2 {
+                font-size: 2.2rem;
+            }
+
+            .faq-question h4 {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -973,6 +1055,101 @@
                         Final decisions rest with the Global Selection Committee. Your registration fee is <strong>non-refundable</strong> 
                         but positions you for the best possible chance at securing the $5,000 seed funding.
                     </p>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>❓ Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">💰</span>
+                        <h4>What exactly am I paying for?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You're securing professional application support from Keldork Global Innovations to help you compete for a $5,000 seed grant. This includes expert review of your application, priority submission assistance, access to our grant writing webinar (worth GHS 100), and membership in the WOMATE community network.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">🎯</span>
+                        <h4>Does this guarantee I'll receive the $5,000 funding?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. This is an investment in professional support to strengthen your application, not a guarantee of selection. The final decision rests with the Global Selection Committee. However, our expert review significantly improves your chances by ensuring your application meets all requirements and stands out from the competition.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">📅</span>
+                        <h4>What happens after I pay?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Immediately after payment verification, you'll get access to the registration form to submit your business/project details. Our technical experts will review your application, provide feedback, and help you prepare a competitive submission. You'll also receive access to the Grant Writing Webinar scheduled for March 14-15, 2026.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">⏰</span>
+                        <h4>When does the early bird discount expire?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The GHS 150 early bird rate is available for 72 hours from the start of registration. After this period, the registration fee increases to GHS 200. The countdown timer shows exactly how much time is remaining.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">💳</span>
+                        <h4>What about the $10 fee mentioned?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The $10 fee is only charged IF you successfully receive the $5,000 grant. This is a success fee paid to WOMATE after award confirmation. You pay nothing extra if you don't receive the grant - only your initial registration fee applies.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">🔄</span>
+                        <h4>Can I get a refund if I change my mind?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Registration fees are non-refundable. Once you pay, you immediately receive access to expert services, webinar registration, and community membership. These resources are provided regardless of the final grant outcome.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">👥</span>
+                        <h4>Who is eligible to apply?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>This program is designed for African women founders and entrepreneurs with climate-focused business ideas or projects. Whether you're just starting out or have an existing venture, if you're committed to climate action through technology, you're encouraged to apply.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">📧</span>
+                        <h4>How will I receive updates and webinar access?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All communications, including webinar links, application status updates, and expert feedback, will be sent to the email address you provide during registration. Please ensure you use an email you check regularly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">🤝</span>
+                        <h4>What is Keldork Global Innovations' role?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Keldork Global Innovations is our technical partner providing professional application review services. They are experts in grant applications and understand what selection committees look for in winning proposals. Their review helps ensure your application is technically sound and competitive.</p>
+                    </div>
                 </div>
             </div>
 
