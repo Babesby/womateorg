@@ -57,13 +57,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box!important; scroll-behavior: smooth !important; }
         body { background-color: var(--bg); color: var(--text-main); overflow-x: hidden; }
 
-        /* --- BACKGROUND ILLUMINATION --- */
-        .shimmer-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--emerald) 0%, transparent 50%);
-            opacity: 0.15; z-index: -1; pointer-events: none;
-        }
-
         /* --- HERO SECTION --- */
         header {
             height: 100vh; display: flex; flex-direction: column; justify-content: center;
@@ -82,8 +75,8 @@
         .btn { padding: 1.2rem 2.5rem; border-radius: 100px; text-decoration: none; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; transition: 0.4s; text-transform: uppercase; }
         .btn-gold { background: var(--gold); color: #000; }
         .btn-gold:hover { box-shadow: 0 0 30px var(--glow); transform: translateY(-3px); }
-        .btn-outline { border: 1px solid var(--border); color: var(--text-main); backdrop-filter: blur(10px); }
-        .btn-outline:hover { background: rgba(255,255,255,0.05); }
+        .btn-outline { border: 1px solid var(--emerald); color: var(--text-main); backdrop-filter: blur(10px); }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); border: 1px solid var(--gold); }
 
         /* --- THE ANNUAL THEME REVEAL --- */
         .theme-section { padding: 100px 10%; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -109,7 +102,7 @@
         .voice-info { display: flex; align-items: center; justify-content: center; gap: 1rem; }
 
         /* --- FOOTER / FUND --- */
-        footer { padding: 120px 10%; text-align: center; background: radial-gradient(circle at top, var(--emerald) 0%, transparent 70%); }
+        footer { padding: 120px 10%; text-align: center; background: radial-gradient(circle at top, #dde5d3 0%, transparent 70%); }
         footer h2 { font-size: 4rem; margin-bottom: 2rem; }
 
         @media (max-width: 768px) {
@@ -140,6 +133,7 @@
         <a href="research.html">Consultation</a>
         <a href="heal.html">Healing</a>
         <a href="team.html" >Team</a>
+         <a href="Funding.html">Funding</a>
         <a href="merch.html" >Merch</a>
 </div>
 </nav>
@@ -147,16 +141,16 @@
 <body>
 <canvas id="pleroma-canvas"></canvas>
 <div class="universe-overlay"></div>
-<div class="shimmer-bg"></div>
+
 
 <header>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    <h1 class="gnosis-extra-syne">WOK.<span>Action</span></h1>
-    <p class="hero-sub">Women, Knowledge Systems, and Climate Action (WoK-Action) Project is a community-based research & empowerment initiative that centres women’s local knowledge, lived experiences, & everyday leadership in climate adaptation.</p>
+    <h1 class="gnosis-extra-syne" style="color: #222;">WOK.<span>Action</span></h1>
+    <p class="hero-sub" style="color: #222;">Women, Knowledge Systems, and Climate Action (WoK-Action) Project is a community-based research & empowerment initiative that centres women’s local knowledge, lived experiences, & everyday leadership in climate adaptation.</p>
     <div class="cta-group" style="text-align: center;">
         <!-- Trigger the custom iFrame Modal -->
         <a href="javascript:void(0)" class="btn btn-gold" onclick="toggleShopModal()">Fund Community Project</a>
-        <a href="#objectives" class="btn btn-outline">Explore Research</a>
+        <a href="#objectives" class="btn btn-outline" style="color: #222;">Explore Research</a>
     </div>
 </header>
 
@@ -168,7 +162,7 @@
         </div>
 </section>
 
-<section class="grid-section">
+<section class="grid-section" id="objectives">
     <h2 class="section-title">THE ACTION PILLARS</h2>
     <div class="action-grid">
         <!-- 01 -->
@@ -473,7 +467,7 @@ document.addEventListener('DOMContentLoaded', gnosisCounter);
 </section>
 
 <footer id="fund">
-<h2>Ready to fuel the future?</h2>
+<h2 style="color: #222;">Ready to fuel the future?</h2>
 <p style="margin-bottom: 3rem; color:#7EB148">Your investment directly supports the 2026 expansion of WoK-Action research and skills training. </p>       
 <!-- THE CUSTOM GNOSIS IFRAME MODAL -->
 <div id="shop-modal" class="gnosis-shop-overlay">

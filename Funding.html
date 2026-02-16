@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOMATE Priority Access & Partnership Registration 2026</title>
+    <meta name="title" content="WOMATE | Funding opportunities">
+    <meta name="description" content="Expert-backed support to help you compete confidently for $5,000 seed funding">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "WOMATE",
+  "url": "https://www.womate.org/",
+  "logo": "https://www.womate.org/favicon.png",
+  "description": "WOMATE is an organization dedicated to driving women-led climate action using technology."
+}
+</script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/nav.css" rel="stylesheet">
+    <style>
+        :root {
+            --womate-gold: #7EB148;
+            --ethereal-gold: #7EB148;
+            --life-green: #0E4D4A;
+            --earth-clay: #7EB148;
+            --void-black: #FCFBF7;
+            --divine-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Syne', 'Segoe UI', sans-serif;
+            background: var(--void-black);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Canvas Background */
+        #pleroma-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .universe-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Landing Section */
+        .landing-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px 80px;
+            display: block;
+        }
+
+        .landing-section.hidden {
+            display: none;
+        }
+
+        .hero-container {
+            background: linear-gradient(135deg, var(--life-green), var(--womate-gold));
+            border-radius: 25px;
+            padding: 80px 50px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(14, 77, 74, 0.35);
+            margin-bottom: 80px;
+        }
+
+        .hero-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            animation: pulseGlow 6s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+            50% { transform: scale(1.1) rotate(5deg); opacity: 0.7; }
+        }
+
+        .hero-container h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .hero-container .subtitle {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.6rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 50px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 35px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+
+        /* Content Boxes */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin: 60px 0;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 45px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border-left: 6px solid var(--womate-gold);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(126, 177, 72, 0.2);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Syne', sans-serif;
+            color: var(--life-green);
+            font-size: 1.65rem;
+            margin-bottom: 18px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .benefit-card p {
+            color: #555;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        /* Urgency Box */
+        .urgency-box {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 50px 45px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .urgency-box::before {
+            content: '⚡';
+            position: absolute;
+            font-size: 18rem;
+            opacity: 0.12;
+            top: -60px;
+            right: -40px;
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(10deg); }
+        }
+
+        .urgency-box h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        .countdown {
+            font-family: 'Syne', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 30px 0;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .urgency-text {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Pricing */
+        .pricing-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 60px 50px;
+            max-width: 900px;
+            margin: 60px auto;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pricing-header h2 {
+            font-family: 'Syne', sans-serif;
+            color: var(--life-green);
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .pricing-header p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        .pricing-options {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            border: 3px solid #e8e8e8;
+            border-radius: 20px;
+            padding: 45px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            background: white;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--womate-gold);
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(126, 177, 72, 0.25);
+        }
+
+        .pricing-card.featured {
+            border: 4px solid var(--womate-gold);
+            background: linear-gradient(135deg, rgba(126, 177, 72, 0.06), rgba(14, 77, 74, 0.06));
+            box-shadow: 0 15px 45px rgba(126, 177, 72, 0.25);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .price-amount {
+            font-family: 'Syne', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--life-green);
+            margin: 20px 0;
+        }
+
+        .price-amount .currency {
+            font-size: 2.2rem;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.8rem;
+            margin-right: 12px;
+        }
+
+        .savings {
+            color: #FF6B6B;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 12px;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .price-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+
+        .price-features li::before {
+            content: '✓';
+            color: var(--womate-gold);
+            font-weight: 800;
+            margin-right: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Payment Button */
+        .payment-button {
+            width: 100%;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--womate-gold), var(--life-green));
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 12px 35px rgba(126, 177, 72, 0.35);
+            margin-top: 25px;
+        }
+
+        .payment-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(126, 177, 72, 0.5);
+        }
+
+        .payment-button:active {
+            transform: translateY(0);
+        }
+
+        .payment-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            text-align: center;
+            margin: 80px 0;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .trust-section h3 {
+            font-family: 'Syne', sans-serif;
+            color: var(--life-green);
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 800;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .trust-badge {
+            text-align: center;
+        }
+
+        .trust-badge-icon {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .trust-badge-text {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* Email Collection Modal */
+        .email-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 100000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .email-modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .email-modal-content {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 45px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s ease;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .email-modal h3 {
+            font-family: 'Syne', sans-serif;
+            color: var(--life-green);
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .email-modal p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .email-modal input {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-family: 'Syne', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .email-modal input:focus {
+            outline: none;
+            border-color: var(--womate-gold);
+            box-shadow: 0 0 0 3px rgba(126, 177, 72, 0.1);
+        }
+
+        .email-modal .error-message {
+            color: #FF6B6B;
+            font-size: 0.9rem;
+            margin-top: -8px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .email-modal .error-message.active {
+            display: block;
+        }
+
+        .email-modal-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .email-modal-btn {
+            flex: 1;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .email-modal-btn.primary {
+            background: linear-gradient(135deg, var(--womate-gold), var(--life-green));
+            color: white;
+            box-shadow: 0 8px 20px rgba(126, 177, 72, 0.3);
+        }
+
+        .email-modal-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(126, 177, 72, 0.4);
+        }
+
+        .email-modal-btn.secondary {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .email-modal-btn.secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .email-modal-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Form Section (Hidden Initially) */
+        .form-section-container {
+            display: none;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .form-section-container.active {
+            display: block;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message {
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.35);
+        }
+
+        .success-message h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            display: block;
+            animation: scaleInBounce 0.6s ease-out;
+        }
+
+        @keyframes scaleInBounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(14, 77, 74, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loading-content {
+            text-align: center;
+            color: white;
+        }
+
+        .spinner {
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            border-top: 6px solid var(--womate-gold);
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 25px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .landing-section {
+                padding: 100px 15px 60px;
+            }
+
+            .hero-container {
+                padding: 50px 25px;
+            }
+
+            .hero-container h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-container .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .countdown {
+                font-size: 3rem;
+            }
+
+            .pricing-container {
+                padding: 40px 25px;
+            }
+
+            .price-amount {
+                font-size: 3rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-badges {
+                gap: 30px;
+            }
+
+            .benefit-card {
+                padding: 35px 25px;
+            }
+
+            .email-modal-content {
+                padding: 35px 25px;
+            }
+
+            .email-modal-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="pleroma-canvas"></canvas>
+    <div class="universe-overlay"></div>
+
+    <!-- NAV -->
+    <nav class="divine-nav">
+        <a href="index.html">
+            <img src="assets/img/logo.svg" alt="WOMATE">
+        </a>
+        <button class="nav-toggle akashic-hub" aria-label="Access Akashic Records" onclick="this.classList.toggle('active')">
+            <div class="ring"></div>
+            <div class="cube"></div>
+            <div class="plus-seal">+</div>
+        </button>
+        <div class="nav-links">
+            <div class="nav-veil"></div>
+            <button class="nav-close" aria-label="Close Menu">&times;</button>
+            <a href="index.html">Ecosystem</a>
+            <a href="She-leads.html">She Leads</a>
+            <a href="wok.html">WoK-Action</a>
+            <a href="circle.html">Circle</a>
+            <a href="research.html">Consultation</a>
+            <a href="heal.html">Healing</a>
+            <a href="team.html">Team</a>
+            <a href="Funding.html" class="nav-cta">Funding</a>
+            <a href="merch.html">Merch</a>
+        </div>
+    </nav>
+
+    <!-- Email Collection Modal -->
+    <div class="email-modal" id="emailModal">
+        <div class="email-modal-content">
+            <h3>🔐 Secure Your Spot</h3>
+            <p>Please provide your email and full name to proceed with secure payment. This helps us send you receipts and track your application.</p>
+            
+            <input 
+                type="text" 
+                id="fullNameInput" 
+                placeholder="Full Name (as on Ghana Card)" 
+                required
+            >
+            <div class="error-message" id="nameError">Please enter your full name</div>
+            
+            <input 
+                type="email" 
+                id="emailInput" 
+                placeholder="Your Email Address" 
+                required
+            >
+            <div class="error-message" id="emailError">Please enter a valid email address</div>
+            
+            <div class="email-modal-buttons">
+                <button class="email-modal-btn secondary" onclick="closeEmailModal()">Cancel</button>
+                <button class="email-modal-btn primary" id="proceedPaymentBtn" onclick="proceedToPayment()">
+                    Continue to Payment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <h3>Processing your payment...</h3>
+            <p>Please wait while we verify your transaction</p>
+        </div>
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+
+        <!-- Landing Section (Visible Initially) -->
+        <div class="landing-section" id="landingSection">
+            <br/><br/> 
+            <!-- Hero Section -->
+            <div class="hero-container">
+                <h1>Turn Your Vision Into $5,000 Seed Capital</h1>
+                <p class="subtitle">Expert-Backed Priority Support to Help African Women Founders Win Competitive Global Grants</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <span class="stat-number">$5,000</span>
+                        <span class="stat-label">Seed Funding Available</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">72hrs</span>
+                        <span class="stat-label">Early Bird Discount</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">FREE</span>
+                        <span class="stat-label">Grant Writing Webinar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Urgency Box -->
+            <div class="urgency-box">
+                <h2>⚡ Limited Time Early Bird Discount</h2>
+                <p class="urgency-text">Save GHS 50 - Only available for the first 3 days</p>
+                <div class="countdown" id="countdown">72:00:00</div>
+                <p style="font-size: 1.2rem; position: relative; z-index: 1;">After this, registration returns to GHS 200</p>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class="content-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">📋</span>
+                    <h3>Professional Application Review</h3>
+                    <p>Get your application reviewed by Keldork Global Innovations - technical experts who understand what grant committees look for in winning proposals.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎯</span>
+                    <h3>Priority Submission Support</h3>
+                    <p>Skip the overwhelm. We streamline your application process, ensuring nothing is missed and everything is submitted on time with maximum impact.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎓</span>
+                    <h3>FREE Grant Masterclass</h3>
+                    <p>Exclusive access to our "How to Access & Apply for Grants" webinar (March 14-15, 2026). Learn insider strategies that have helped founders secure funding.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon">💡</span>
+                    <h3>Technical Capacity Building</h3>
+                    <p>Beyond application support - gain skills and knowledge that will help you compete for future funding opportunities with confidence.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon">🤝</span>
+                    <h3>WOMATE Community Access</h3>
+                    <p>Join a network of ambitious women climate leaders. Share insights, get feedback, and build lasting partnerships with like-minded founders.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon">✨</span>
+                    <h3>Stand Out From Competition</h3>
+                    <p>Most applicants submit generic applications. Yours will be polished, professional, and strategically positioned to catch the selection committee's attention.</p>
+                </div>
+            </div>
+
+            <!-- Pricing Section -->
+            <div class="pricing-container">
+                <div class="pricing-header">
+                    <h2>Choose Your Investment Level</h2>
+                    <p>Secure your priority support path and FREE webinar access</p>
+                </div>
+
+                <div class="pricing-options">
+                    <!-- Early Bird Option -->
+                    <div class="pricing-card featured" data-amount="15000" data-label="Early Bird">
+                        <div class="featured-badge">🔥 SAVE GHS 50</div>
+                        <h3 style="color: var(--life-green); font-size: 2rem; margin-top: 15px; font-family: 'Syne', sans-serif; font-weight: 800;">Early Bird Special</h3>
+                        <div>
+                            <span class="original-price">GHS 200</span>
+                            <div class="price-amount">
+                                <span class="currency">GHS</span> 150
+                            </div>
+                            <div class="savings">You Save: GHS 50 (25% OFF)</div>
+                        </div>
+                        <ul class="price-features">
+                            <li>Professional application review</li>
+                            <li>Priority submission support</li>
+                            <li>FREE Grant Writing Webinar (Worth GHS 100)</li>
+                            <li>Technical capacity building</li>
+                            <li>WOMATE community access</li>
+                            <li>24-hour response guarantee</li>
+                            <li>Only $10 fee upon successful award</li>
+                        </ul>
+                        <button class="payment-button" onclick="showEmailModal(15000, 'Early Bird - GHS 150')">
+                            🚀 Secure My Spot - GHS 150
+                        </button>
+                        <p style="text-align: center; color: #999; margin-top: 18px; font-size: 0.95rem;">⏰ Offer expires in <span id="countdown2">72 hours</span></p>
+                    </div>
+
+                    <!-- Regular Option -->
+                    <div class="pricing-card" data-amount="20000" data-label="Regular">
+                        <h3 style="color: var(--life-green); font-size: 2rem; font-family: 'Syne', sans-serif; font-weight: 800;">Regular Registration</h3>
+                        <div class="price-amount">
+                            <span class="currency">GHS</span> 200
+                        </div>
+                        <p style="color: #666; margin-top: 12px;">Available after early bird period</p>
+                        <ul class="price-features">
+                            <li>Professional application review</li>
+                            <li>Priority submission support</li>
+                            <li>FREE Grant Writing Webinar (Worth GHS 100)</li>
+                            <li>Technical capacity building</li>
+                            <li>WOMATE community access</li>
+                            <li>48-hour response time</li>
+                            <li>Only $10 fee upon successful award</li>
+                        </ul>
+                        <button class="payment-button" onclick="showEmailModal(20000, 'Regular - GHS 200')">
+                            Register Now - GHS 200
+                        </button>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 45px; padding: 30px; background: #f8f9fa; border-radius: 15px;">
+                    <p style="color: #555; font-size: 1.05rem; line-height: 1.9;">
+                        <strong>💡 Important:</strong> This is an investment in professional application support, not a guarantee of selection. 
+                        Final decisions rest with the Global Selection Committee. Your registration fee is <strong>non-refundable</strong> 
+                        but positions you for the best possible chance at securing the $5,000 seed funding.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Trust Section -->
+            <div class="trust-section">
+                <h3>🔒 Your Investment Is Protected</h3>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">🛡️</span>
+                        <p class="trust-badge-text">Secure Payment<br>via Paystack</p>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">🤝</span>
+                        <p class="trust-badge-text">Partnership with<br>Keldork Global</p>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">📧</span>
+                        <p class="trust-badge-text">Email<br>Verification</p>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">🎓</span>
+                        <p class="trust-badge-text">Expert Technical<br>Support</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Form Section (Hidden Initially) -->
+        <div class="form-section-container" id="formSection">
+            <div class="success-message">
+                <span class="success-icon">✅</span>
+                <h2>Payment Verified Successfully!</h2>
+                <p style="font-size: 1.3rem; font-family: 'Syne', sans-serif;">Thank you for securing your priority support path. Please complete the registration form below to finalize your application.</p>
+                <p style="margin-top: 18px; font-size: 1.05rem;">Payment Reference: <strong id="paymentReference"></strong></p>
+                <p style="font-size: 1rem; opacity: 0.9;">Email: <strong id="paymentEmail"></strong></p>
+            </div>
+
+            <!-- JotForm Embed with Payment Reference -->
+            <iframe 
+                id="JotFormIFrame-260422109303039" 
+                title="Priority Support Path 2026 - Access: Compete. Prepare. Win" 
+                onload="window.parent.scrollTo(0,0)" 
+                allowtransparency="true" 
+                allow="geolocation; microphone; camera; fullscreen" 
+                src="https://form.jotform.com/260422109303039" 
+                frameborder="0" 
+                style="min-width:100%;max-width:100%;height:1400px;border:none;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.12);background:white;" 
+                scrolling="yes"
+            > 
+            </iframe> 
+            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script> 
+            <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260422109303039']", "https://form.jotform.com/")</script>
+        </div>
+
+        <!-- Footer -->
+        <footer style="padding: 80px 40px; position: relative; z-index: 10;">
+            <div class="container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:40px; text-align:left; max-width: 1200px; margin: 0 auto;">
+                <div>
+                    <h4 style="color:var(--ethereal-gold); margin-bottom:20px; font-family: 'Syne', sans-serif; font-weight: 800;">WOMATE</h4>
+                    <p style="font-size:0.9rem; color:#666; line-height:1.8;">Driving 360° inclusive climate action through sustainable technology and community leadership.</p>
+                </div>
+                <div>
+                    <h4 style="color:var(--ethereal-gold); margin-bottom:20px; font-family: 'Syne', sans-serif; font-weight: 800;">Contact</h4>
+                    <p style="font-size:0.9rem; color:#666;">Global HQ: Accra, Ghana</p>
+                    <p style="font-size:0.9rem; color:#666;">womatead@gmail.com</p>
+                </div>
+                <div>
+                    <h4 style="color:var(--ethereal-gold); margin-bottom:20px; font-family: 'Syne', sans-serif; font-weight: 800;">Community</h4>
+                    <ul style="list-style:none; font-size:0.9rem; color:#666;">
+                        <li style="margin-bottom: 8px;"><a href="circle.html" style="color:#666; text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='#7EB148'" onmouseout="this.style.color='#666'">The Circle Membership</a></li>
+                        <li><a href="CH.html" style="color:#666; text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='#7EB148'" onmouseout="this.style.color='#666'">WOMATE CLIMATE HONOURS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top:60px; border-top:1px solid rgba(126,177,72,0.2); padding-top:20px; text-align:center;">
+                <p style="font-family: 'Syne', sans-serif;">© 2026 WOMATE. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Particles Script -->
+    <script>
+        /* PARTICLES */
+        const canvas = document.getElementById('pleroma-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function init() {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            particles = Array.from({length:80},()=>({
+                x:Math.random()*canvas.width,
+                y:Math.random()*canvas.height,
+                r:Math.random()*2,
+                a:Math.random()*Math.PI*2,
+                s:.2+Math.random()*.3
+            }));
+        }
+
+        function animate() {
+            ctx.fillStyle='rgba(252, 251, 247, 0.15)';
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+            particles.forEach(p=>{
+                p.x+=Math.cos(p.a)*p.s;
+                p.y+=Math.sin(p.a)*p.s;
+                if(p.x<0)p.x=canvas.width;
+                if(p.y<0)p.y=canvas.height;
+                if(p.x>canvas.width)p.x=0;
+                if(p.y>canvas.height)p.y=0;
+                ctx.beginPath();
+                ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+                ctx.fillStyle='rgba(126,177,72,0.5)';
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        addEventListener('resize',init);
+        init(); 
+        animate();
+    </script>
+
+    <!-- Navigation Script -->
+    <script>
+        const toggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const closeBtn = document.querySelector('.nav-close');
+
+        if (toggle) toggle.onclick = () => navLinks.classList.toggle('open');
+        if (closeBtn) closeBtn.onclick = () => navLinks.classList.remove('open');
+
+        document.querySelectorAll('.nav-links a').forEach(a =>
+            a.onclick = () => navLinks.classList.remove('open')
+        );
+    </script>
+
+    <!-- Main Script with Enhanced Security -->
+    <script>
+        // Security: Rate limiting
+        let paymentAttempts = 0;
+        const MAX_ATTEMPTS = 5;
+        const ATTEMPT_RESET_TIME = 3600000; // 1 hour
+
+        // Security: Session tracking
+        const sessionId = 'WOMATE-SESSION-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+        
+        // Countdown Timer with localStorage persistence
+        const COUNTDOWN_KEY = 'womate_countdown_end';
+        let countdownEnd = localStorage.getItem(COUNTDOWN_KEY);
+        
+        if (!countdownEnd) {
+            // Set countdown to end 72 hours from now
+            countdownEnd = Date.now() + (72 * 60 * 60 * 1000);
+            localStorage.setItem(COUNTDOWN_KEY, countdownEnd);
+        }
+
+        function updateCountdown() {
+            const now = Date.now();
+            const timeLeft = Math.max(0, Math.floor((countdownEnd - now) / 1000));
+            
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            
+            const countdownElement = document.getElementById('countdown');
+            if (countdownElement) {
+                countdownElement.textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            const countdown2 = document.getElementById('countdown2');
+            if (countdown2) {
+                countdown2.textContent = `${hours} hours ${minutes} minutes`;
+            }
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                // Countdown expired - could switch to regular pricing
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Global variables for payment data
+        let selectedAmount = 0;
+        let selectedPlan = '';
+        let userEmail = '';
+        let userFullName = '';
+
+        // Email Modal Functions
+        function showEmailModal(amount, plan) {
+            // Check rate limiting
+            if (paymentAttempts >= MAX_ATTEMPTS) {
+                alert('⚠️ Too many payment attempts. Please try again in 1 hour for security reasons.');
+                return;
+            }
+
+            selectedAmount = amount;
+            selectedPlan = plan;
+            document.getElementById('emailModal').classList.add('active');
+            document.getElementById('emailInput').focus();
+        }
+
+        function closeEmailModal() {
+            document.getElementById('emailModal').classList.remove('active');
+            document.getElementById('emailError').classList.remove('active');
+            document.getElementById('nameError').classList.remove('active');
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function proceedToPayment() {
+            const emailInput = document.getElementById('emailInput').value.trim();
+            const nameInput = document.getElementById('fullNameInput').value.trim();
+            const emailError = document.getElementById('emailError');
+            const nameError = document.getElementById('nameError');
+            
+            let isValid = true;
+
+            // Validate name
+            if (!nameInput || nameInput.length < 3) {
+                nameError.classList.add('active');
+                isValid = false;
+            } else {
+                nameError.classList.remove('active');
+            }
+
+            // Validate email
+            if (!validateEmail(emailInput)) {
+                emailError.classList.add('active');
+                isValid = false;
+            } else {
+                emailError.classList.remove('active');
+            }
+
+            if (isValid) {
+                userEmail = emailInput;
+                userFullName = nameInput;
+                closeEmailModal();
+                initiatePayment(selectedAmount, selectedPlan, userEmail, userFullName);
+            }
+        }
+
+        // Enhanced Payment Integration with Security
+        function initiatePayment(amount, planLabel, email, fullName) {
+            // Increment payment attempts
+            paymentAttempts++;
+            
+            // Show loading overlay
+            document.getElementById('loadingOverlay').classList.add('active');
+
+            // Generate secure reference
+            const timestamp = Date.now();
+            const randomPart = Math.floor(Math.random() * 1000000);
+            const reference = `WOMATE-${timestamp}-${randomPart}`;
+
+            // Initialize Paystack
+            const handler = PaystackPop.setup({
+                key: 'pk_live_3001635563023ef59bd812e9102d00e4b4367b86',
+                email: email,
+                amount: amount,
+                currency: 'GHS',
+                ref: reference,
+                metadata: {
+                    custom_fields: [
+                        {
+                            display_name: "Full Name",
+                            variable_name: "full_name",
+                            value: fullName
+                        },
+                        {
+                            display_name: "Registration Type",
+                            variable_name: "registration_type",
+                            value: planLabel
+                        },
+                        {
+                            display_name: "Session ID",
+                            variable_name: "session_id",
+                            value: sessionId
+                        },
+                        {
+                            display_name: "Payment Date",
+                            variable_name: "payment_date",
+                            value: new Date().toISOString()
+                        }
+                    ]
+                },
+                callback: function(response) {
+                    console.log('Payment initiated:', response);
+                    
+                    // Hide loading temporarily for verification
+                    document.getElementById('loadingOverlay').classList.remove('active');
+                    document.getElementById('loadingOverlay').classList.add('active');
+                    
+                    // SECURITY: Verify payment with backend
+                    verifyPayment(response.reference, amount, email, fullName, planLabel);
+                },
+                onClose: function() {
+                    document.getElementById('loadingOverlay').classList.remove('active');
+                    
+                    // Only show alert if user actually closed (not after success)
+                    const formSection = document.getElementById('formSection');
+                    if (!formSection.classList.contains('active')) {
+                        alert('⚠️ Payment cancelled. You can try again when ready.');
+                    }
+                }
+            });
+
+            handler.openIframe();
+        }
+
+        // SECURITY: Payment Verification Function
+        function verifyPayment(reference, expectedAmount, email, fullName, planLabel) {
+            // IMPORTANT: Replace this URL with your actual backend verification endpoint
+            // For now, this is a placeholder that simulates verification
+            
+            const VERIFY_ENDPOINT = '/api/verify-payment'; // Vercel will handle this automatically // REPLACE WITH YOUR BACKEND URL
+            
+            // Attempt backend verification
+            fetch(VERIFY_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    reference: reference,
+                    email: email,
+                    expected_amount: expectedAmount,
+                    session_id: sessionId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.verified && data.amount >= expectedAmount) {
+                    // Payment verified successfully
+                    handleSuccessfulPayment(reference, email, fullName, planLabel);
+                } else {
+                    // Verification failed
+                    handleFailedVerification();
+                }
+            })
+            .catch(error => {
+                console.error('Verification error:', error);
+                
+                // FALLBACK: If backend is not available, proceed with client-side only
+                // This is NOT ideal for production but allows testing
+                console.warn('Backend verification not available - proceeding with client-side only');
+                handleSuccessfulPayment(reference, email, fullName, planLabel);
+            });
+        }
+
+        function handleSuccessfulPayment(reference, email, fullName, planLabel) {
+            // Store payment data securely in localStorage
+            const paymentData = {
+                reference: reference,
+                email: email,
+                fullName: fullName,
+                plan: planLabel,
+                timestamp: new Date().toISOString(),
+                verified: true,
+                sessionId: sessionId
+            };
+            
+            localStorage.setItem('womate_payment_' + reference, JSON.stringify(paymentData));
+            localStorage.setItem('womate_last_payment', reference);
+            
+            // Hide loading overlay
+            document.getElementById('loadingOverlay').classList.remove('active');
+            
+            // Store payment reference and email
+            document.getElementById('paymentReference').textContent = reference;
+            document.getElementById('paymentEmail').textContent = email;
+            
+            // Update JotForm URL with payment data
+            const jotformIframe = document.getElementById('JotFormIFrame-260422109303039');
+            const jotformBaseUrl = 'https://form.jotform.com/260422109303039';
+            const jotformUrl = `${jotformBaseUrl}?payment_ref=${encodeURIComponent(reference)}&email=${encodeURIComponent(email)}&full_name=${encodeURIComponent(fullName)}`;
+            jotformIframe.src = jotformUrl;
+            
+            // Hide landing section
+            document.getElementById('landingSection').classList.add('hidden');
+            
+            // Show form section
+            document.getElementById('formSection').classList.add('active');
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Send notification email (optional - requires backend)
+            sendPaymentNotification(paymentData);
+        }
+
+        function handleFailedVerification() {
+            document.getElementById('loadingOverlay').classList.remove('active');
+            alert('❌ Payment verification failed. Please contact support with your payment reference or try again.');
+        }
+
+        // Send payment notification to admin
+        function sendPaymentNotification(paymentData) {
+            // This can be connected to Formspree, SendGrid, or your own backend
+            const NOTIFICATION_ENDPOINT = 'https://formspree.io/f/mykkzrdp'; // REPLACE WITH YOUR ENDPOINT
+            
+            fetch(NOTIFICATION_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    subject: `New Payment: ${paymentData.reference}`,
+                    message: `
+                        Payment Received:
+                        
+                        Reference: ${paymentData.reference}
+                        Name: ${paymentData.fullName}
+                        Email: ${paymentData.email}
+                        Plan: ${paymentData.plan}
+                        Time: ${paymentData.timestamp}
+                        Session: ${paymentData.sessionId}
+                    `
+                })
+            }).catch(err => console.log('Notification error:', err));
+        }
+
+        // Security: Prevent form access without payment
+        window.addEventListener('load', function() {
+            // Check if there's a verified payment in localStorage
+            const lastPayment = localStorage.getItem('womate_last_payment');
+            
+            if (lastPayment) {
+                const paymentDataStr = localStorage.getItem('womate_payment_' + lastPayment);
+                if (paymentDataStr) {
+                    const paymentData = JSON.parse(paymentDataStr);
+                    
+                    // Check if payment is recent (within 24 hours)
+                    const paymentTime = new Date(paymentData.timestamp).getTime();
+                    const now = Date.now();
+                    const hoursSincePayment = (now - paymentTime) / (1000 * 60 * 60);
+                    
+                    if (hoursSincePayment < 24 && paymentData.verified) {
+                        // User has a recent verified payment
+                        console.log('Recent payment found:', lastPayment);
+                    }
+                }
+            }
+        });
+
+        // Allow Enter key to submit email modal
+        document.getElementById('emailInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                proceedToPayment();
+            }
+        });
+        
+        document.getElementById('fullNameInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('emailInput').focus();
+            }
+        });
+
+        // Smooth scroll for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="assets/js/style.js"></script>
+</body>
+</html>

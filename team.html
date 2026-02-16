@@ -43,7 +43,7 @@
     <script src='https://cdn.jotfor.ms/agent/embedjs/019bc24256917a41a9c991e7e0eff4a38fee/embed.js'></script>
     <style>
         :root {
-            --brand-accent: #00ffaa;
+            --brand-accent: #0E4D4A;
             --ocean-depth: #081a19;
             --surface: rgba(255, 255, 255, 0.05);
             --border: rgba(255, 255, 255, 0.1);
@@ -54,7 +54,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background: radial-gradient(circle at top right, #0d2b28, #050a0a);
+            background: #ffffff;
             background-attachment: fixed;
             color: #f0fdfa;
             font-family: var(--syne);
@@ -78,7 +78,7 @@
         .bento-card {
             background: var(--surface);
             backdrop-filter: blur(25px);
-            border: 1px solid var(--border);
+            border: 1px solid #0E4D4A;
             padding: clamp(1.5rem, 5vw, 4rem);
             border-radius: 30px;
             display: flex;
@@ -156,7 +156,7 @@
         }
 
         /* CTA SECTION - STACKABLE FLEX */
-        .cta-section { padding: clamp(4rem, 10vw, 10rem) 0; background: rgba(0,0,0,0.2); }
+        .cta-section { padding: clamp(4rem, 10vw, 10rem) 0; background: #7EB148; }
         .cta-flex { 
             display: flex; 
             flex-direction: column; 
@@ -228,8 +228,41 @@
 </head>
 
 <body>
-<canvas id="pleroma-canvas"></canvas>
+    <canvas id="pleroma-canvas"></canvas>
 <div class="universe-overlay"></div>
+<script>/* PARTICLES */
+const canvas = document.getElementById('pleroma-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function init() {
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+    particles = Array.from({length:80},()=>({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        a:Math.random()*Math.PI*2,
+        s:.2+Math.random()*.3
+    }));
+}
+function animate() {
+    ctx.fillStyle='rgba(255, 255, 255, 0.15)';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+        p.x+=Math.cos(p.a)*p.s;
+        p.y+=Math.sin(p.a)*p.s;
+        if(p.x<0)p.x=canvas.width;
+        if(p.y<0)p.y=canvas.height;
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle='rgba(126,177,72,0.5)';
+        ctx.fill();
+    });
+    requestAnimationFrame(animate);
+}
+addEventListener('resize',init);
+init(); animate();</script>
 <!-- NAV -->
 <nav class="divine-nav">
    <a href="index.html">
@@ -255,6 +288,7 @@
         <a href="research.html">Consultation</a>
         <a href="heal.html">Healing</a>
         <a href="#" class="nav-cta">Team</a>
+         <a href="Funding.html">Funding</a>
          <a href="merch.html">Merch</a>
 
     </div>
@@ -266,8 +300,8 @@
         <div class="hero-bento">
             <div class="bento-card">
                 <span class="label">Strategic Oversight // 2026</span>
-                <h1 class="typewriter-title" id="type-target"></h1>
-                <p class="hero-desc">
+                <h1 class="typewriter-title" id="type-target" style="color: #0E4D4A;"></h1>
+                <p class="hero-desc" style="color: #222;">
                     WOMATE is an organisation driving women-led climate adaptation across Africa, bridging the gap between community wisdom and scalable tech.
                 </p>
             </div>
@@ -275,21 +309,21 @@
     <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
         <!-- Added data-target and removed the number from the inner text -->
         <h4 class="stat-number" data-target="1000" style="color: var(--brand-accent); font-size: 1.5rem;">0</h4>
-        <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase;">Women Reached</p>
+        <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase; color: #222;">Women Reached</p>
     </div>
     <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
         <h4 class="stat-number" data-target="85" data-suffix="%" style="color: var(--brand-accent); font-size: 1.5rem;">0%</h4>
-        <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase;">Impact Score</p>
+        <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase; color: #222;">Impact Score</p>
     </div>
     <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
         <h4 class="stat-number" data-target="80" data-suffix="%" style="color: var(--brand-accent); font-size: 1.5rem;">0%</h4>
-        <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase;">Community Resilience Index</p>
+        <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase; color: #222;" >Community Resilience Index</p>
     </div>
      <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
         <h4 style="color: var(--brand-accent); font-size: 1.5rem;">Institutional Impact</h4>
-        <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase;">Scaling women-led research into global climate policy.</p>
+        <p style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase; color: #222;">Scaling women-led research into global climate policy.</p>
     </div>
-    <p style="grid-column: span 2; font-size: 0.8rem; opacity: 0.5; margin-top: 1rem; font-family: var(--mono);">// DATA_VERIFIED_2026</p>
+    <p style="grid-column: span 2; font-size: 0.8rem; opacity: 0.5; margin-top: 1rem; color: #0E4D4A; font-family: var(--mono);">// DATA_VERIFIED_2026</p>
 </div>
 <script>document.addEventListener("DOMContentLoaded", () => {
     const observerOptions = {
@@ -347,17 +381,17 @@
         <div class="leadership-outer">
             <div class="leadership-header">
                 <span class="label">Executive Unit</span>
-                <h2 class="syne-800" style="font-size: clamp(2rem, 4vw, 3rem);">Leadership</h2>
+                <h2 class="syne-800" style="font-size: clamp(2rem, 4vw, 3rem); color: #0E4D4A;">Leadership</h2>
             </div>
             
             <div class="flex-carousel">
                 <div class="leader-card">
                     <div class="photo-frame">
                         <img src="assets/img/team/pp.jpg" alt="Phillipa Aidoo">
-                        <span class="role-badge">CEO // TECHNOLOGY</span>
+                        <span class="role-badge" style="color: #ffffff;">CEO // TECHNOLOGY</span>
                     </div>
                     <div class="leader-info">
-                        <h3>Phillipa Aidoo     <a href="https://gh.linkedin.com/in/phillipa-aidoo"
+                        <h3 style="color: #0E4D4A;">Phillipa Aidoo     <a href="https://gh.linkedin.com/in/phillipa-aidoo"
            class="linkedin-link"
            target="_blank"
            rel="noopener noreferrer"
@@ -365,7 +399,7 @@
             <i class="fab fa-linkedin-in"></i>
         </a></h3>
                        
-                        <p>Chief Strategist & Full-stack Developer. Architect of WOMATE's integrated climate-tech ecosystem.</p>
+                        <p style="color: #222;">Chief Strategist & Full-stack Developer. Architect of WOMATE's integrated climate-tech ecosystem.</p>
                     </div>
                 </div>
 
@@ -391,34 +425,34 @@
                 <div class="leader-card">
                     <div class="photo-frame">
                         <img src="assets/img/team/r.jpg" alt="Ruby Damenshie-Brown">
-                        <span class="role-badge">COO // PROGRAMS</span>
+                        <span class="role-badge" style="color: #ffffff;">COO // PROGRAMS</span>
                     </div>
                     <div class="leader-info">
-                        <h3>Ruby Damenshie-Brown <a href="https://gh.linkedin.com/in/ruby-damenshie-brown-she-her-582b7287"
+                        <h3 style="color: #0E4D4A;">Ruby Damenshie-Brown <a href="https://gh.linkedin.com/in/ruby-damenshie-brown-she-her-582b7287"
            class="linkedin-link"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Ruby on LinkedIn">
             <i class="fab fa-linkedin-in"></i>
         </a></h3>
-                        <p>Operations Specialist. Expert in community engagement and regional climate policy scaling.</p>
+                        <p style="color: #222;">Operations Specialist. Expert in community engagement and regional climate policy scaling.</p>
                     </div>
                 </div>
 
                 <div class="leader-card">
                     <div class="photo-frame">
                         <img src="assets/img/team/h.jpg" alt="Hamza Abubakar">
-                        <span class="role-badge">CCO // ADVOCACY</span>
+                        <span class="role-badge" style="color: #ffffff;">CCO // ADVOCACY</span>
                     </div>
                     <div class="leader-info">
-                        <h3>Hamza Abubakar <a href="https://gh.linkedin.com/in/hamza-abubakar-537852214"
+                        <h3 style="color: #0E4D4A;">Hamza Abubakar <a href="https://gh.linkedin.com/in/hamza-abubakar-537852214"
            class="linkedin-link"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Hamza on LinkedIn">
             <i class="fab fa-linkedin-in"></i>
         </a></h3>
-                        <p>UN Climate Champion. Driving global communication and excellence for planetary stewardship.</p>
+                        <p style="color: #222;">UN Climate Champion. Driving global communication and excellence for planetary stewardship.</p>
                     </div>
                 </div>
             </div>
@@ -428,8 +462,8 @@
         <div class="cta-section">
             <div class="cta-flex">
                 <div class="cta-content center-cta" >
-                    <h2 class="syne-800" style="font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1;">Invest in the Future of Climate Leadership.</h2>
-                    <p style="margin: 2rem 0; opacity: 0.8;">Join global stakeholders scaling women-led adaptation. Direct Transmissions: <strong>womatead@gmail.com</strong></p>
+                    <h2 class="syne-800" style="font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; color: #ffffff;">Invest in the Future of Climate Leadership.</h2>
+                    <p style="margin: 2rem 0; opacity: 0.8; color: #222;">Join global stakeholders scaling women-led adaptation. Direct Transmissions: <strong>womatead@gmail.com</strong></p>
                 </div>
 
                 <div class="cta-terminal">
@@ -437,7 +471,7 @@
                         <input type="text" name="name" placeholder="Name / Organization" class="input-field" required>
                         <input type="email" name="email" placeholder="Email Address" class="input-field" required>
                         <textarea name="message" placeholder="Strategic Inquiry Details..." rows="3" class="input-field" required></textarea>
-                        <button type="submit" class="btn-primary">Initiate Partnership</button>
+                        <button type="submit" class="btn-primary" style="color: #ffffff;">Initiate Partnership</button>
                     </form>
                 </div>
             </div>

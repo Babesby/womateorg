@@ -46,14 +46,49 @@
       async></script>
      
 </head>
-<style>* { margin: 0; padding: 0; box-sizing: border-box; }</style>
+<style>* { margin: 0; padding: 0; box-sizing: border-box; } body {
+    background: #ffffff;
+}</style>
 
 <body>
 
+    <canvas id="pleroma-canvas"></canvas>
+<div class="universe-overlay"></div>
+<script>/* PARTICLES */
+const canvas = document.getElementById('pleroma-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function init() {
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+    particles = Array.from({length:80},()=>({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        a:Math.random()*Math.PI*2,
+        s:.2+Math.random()*.3
+    }));
+}
+function animate() {
+    ctx.fillStyle='rgba(255, 255, 255, 0.15)';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+        p.x+=Math.cos(p.a)*p.s;
+        p.y+=Math.sin(p.a)*p.s;
+        if(p.x<0)p.x=canvas.width;
+        if(p.y<0)p.y=canvas.height;
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle='rgba(126,177,72,0.5)';
+        ctx.fill();
+    });
+    requestAnimationFrame(animate);
+}
+addEventListener('resize',init);
+init(); animate();</script>
     
-    
-<canvas id="portal-canvas"></canvas>
-<div class="universe-overlay"!important></div>
+
 
     <!-- NAV -->
 <nav class="divine-nav">
@@ -84,6 +119,7 @@
         <a href="research.html">Consultation</a>
         <a href="heal.html">Healing</a>
         <a href="team.html" >Team</a>
+        <a href="Funding.html">Funding</a>
         <a href="merch.html" >Merch</a>
     </div>
 </nav>
@@ -102,8 +138,8 @@ document.querySelectorAll('.nav-links a').forEach(a =>
 <br/><br/><br/><br/>
 <header>
     <div class="eyebrow">The Inner Ring of Climate Leadership</div>
-    <h1 class="gnosis-extra-syne" style="font-weight: 750;">The WOMATE<span>Circle</span></h1>
-    <p class="hero-p" style="color: #e0e0e0;">A specialized ecosystem for women architects of sustainability. Access a curated stream of influence, intelligence, and collective power.</p>
+    <h1 class="gnosis-extra-syne" style="font-weight: 750; color: #0E4D4A;">The WOMATE<span>Circle</span></h1>
+    <p class="hero-p" style="color: #222">A specialized ecosystem for women architects of sustainability. Access a curated stream of influence, intelligence, and collective power.</p>
     
     <!-- Step 1: Open the Membership Form -->
     <a href="javascript:void(0)" class="btn btn-emerald" onclick="openMembershipPortal()">Enter the Circle</a>
@@ -141,8 +177,8 @@ document.querySelectorAll('.nav-links a').forEach(a =>
 </div>
 
 <!-- SHOP MODAL: The Secure Payment Layer (Put this before </body>) -->
-<div id="shop-modal" class="gnosis-shop-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(5,5,5,0.98); z-index:60000; align-items:center; justify-content:center;">
-    <div class="gnosis-shop-content" style="width:90%; max-width:800px; height:90%; background:#000; border:1px solid #7EB148; position:relative;">
+<div id="shop-modal" class="gnosis-shop-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:whitesmoke; z-index:60000; align-items:center; justify-content:center;">
+    <div class="gnosis-shop-content" style="width:90%; max-width:800px; height:90%; background:white; border:1px solid #7EB148; position:relative;">
         <button onclick="finalWhatsAppEntry()" style="position:absolute; top:10px; right:10px; z-index:100; background:#0E4D4A; color:#7EB148; border:1px solid #7EB148; padding:8px 15px; cursor:pointer; font-family:'Syne'; font-weight:800;">DONE & JOIN COMMUNITY</button>
         <iframe src="https://paystack.shop/pay/womate-circle-fees" width="100%" height="100%" frameborder="0" style="padding-top:50px;"></iframe>
     </div>
@@ -266,7 +302,7 @@ document.getElementById('closeChat').addEventListener('click', () => {
     bottom: 30px;
     right: 30px;
     width: 350px;
-    background: rgba(5, 6, 8, 0.96);
+    background: white;
     backdrop-filter: blur(15px);
     border: 1px solid var(--emerald-light);
     border-radius: 12px;
@@ -584,7 +620,7 @@ document.getElementById('closeChat').addEventListener('click', () => {
 </section>
 
 
-    <div class="convening-banner" style="background: #e0e0e0; padding: 2rem; border-radius: 8px; text-align: center;">
+    <div class="convening-banner" style="background: #e0e0e0; padding: 2rem; border-radius: 8px; text-align: center; border-color: #e0e0e0;">
     <h3 style="color: #0E4D4A">The WOMATE Climate Honours</h3>
     <p style="color: #050608;">Our annual flagship convening. Celebrating women at the intersection of local wisdom and global action. Benefit from priority seating as a Circle member.</p>
     
@@ -614,7 +650,7 @@ document.getElementById('closeChat').addEventListener('click', () => {
         background: #7EB148;       /* Background turns gold */
         color: #fff;               /* Text turns white */
         transform: translateY(-3px); /* Subtle lift effect */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        box-shadow: 0 5px 15px #7EB148;
     }
 </style>
 
@@ -639,51 +675,11 @@ document.getElementById('closeChat').addEventListener('click', () => {
         </div>
     </div>
     <div style="margin-top:60px; border-top:1px solid rgba(255,255,255,0.05); padding-top:20px; text-align:center;">
-        <p>© 2026 WOMATE. All Rights Reserved.</p>
+        <p style="color: #222;">© 2026 WOMATE. All Rights Reserved.</p>
     </div>
 </footer>
 
-    <script>
-        // CONCEPTUAL JS: The "Orbital Ring" background
-        const canvas = document.getElementById('portal-canvas');
-        const ctx = canvas.getContext('2d');
-        let width, height, particles;
-
-        function init() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            particles = [];
-            for (let i = 0; i < 50; i++) {
-                particles.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    size: Math.random() * 2,
-                    speed: Math.random() * 0.5 + 0.2,
-                    angle: Math.random() * Math.PI * 2
-                });
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            ctx.fillStyle = '#5efc82';
-            particles.forEach(p => {
-                p.angle += 0.002;
-                p.x += Math.cos(p.angle) * p.speed;
-                p.y += Math.sin(p.angle) * p.speed;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-            });
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener('resize', init);
-        init();
-        animate();
-
-
-    </script>
+   
 
       <script src="assets/js/style.js"></script>
     

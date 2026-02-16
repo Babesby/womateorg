@@ -32,7 +32,7 @@ function init() {
     }));
 }
 function animate() {
-    ctx.fillStyle='rgba(5,6,8,.08)';
+    ctx.fillStyle='rgba(255, 255, 255, 0.15)';
     ctx.fillRect(0,0,canvas.width,canvas.height);
     particles.forEach(p=>{
         p.x+=Math.cos(p.a)*p.s;
@@ -48,6 +48,8 @@ function animate() {
 }
 addEventListener('resize',init);
 init(); animate();
+
+
 
 
 

@@ -12,7 +12,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
      
         body {
-    background: var(--void-black);
     color: var(--divine-white);
     font-family: 'Syne', sans-serif;
     overflow-x: hidden;

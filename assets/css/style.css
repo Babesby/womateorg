@@ -30,11 +30,8 @@ body {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: var(--life-green); 
-    background-image: 
-        radial-gradient(at 0% 0%, rgba(126, 177, 72, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(139, 69, 19, 0.15) 0px, transparent 50%);
-
+    background: var(--divine-white); 
+   
     animation: pulseLight 15s infinite alternate ease-in-out;
 }
 
@@ -130,7 +127,7 @@ body {
 
 
 .nav-links a {
-    color: var(--divine-white);
+    color: var(--life-green);
     text-decoration: none;
     font-size: .85rem;
     letter-spacing: 2px;
@@ -153,14 +150,14 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--life-green);
+    color: #222;
 }
 .nav-links a:hover::after { opacity: 1; }
 
 .nav-cta {
     padding: .6rem 1.4rem;
     border: 1px solid var(--life-green);
-    background: var(--void-black);
+    background: var(--divine-white);
     clip-path: polygon(8% 0,100% 0,92% 100%,0 100%);
     font-weight: 700;
     

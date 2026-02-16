@@ -35,8 +35,9 @@
     --glass: rgba(255,255,255,0.03);
 }
 
+
 body {
-    background: var(--void-black);
+    background: var(--divine-white)!important;
     color: var(--divine-white);
     font-family: 'Syne', sans-serif;
     overflow-x: hidden;
@@ -162,10 +163,43 @@ h3 {
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/nav.css" rel="stylesheet">
 </head>
-<canvas id="pleroma-canvas"></canvas>
-<div class="universe-overlay"></div>
+
 <body>
-    
+    <canvas id="pleroma-canvas"></canvas>
+<div class="universe-overlay"></div>
+<script>/* PARTICLES */
+const canvas = document.getElementById('pleroma-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function init() {
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+    particles = Array.from({length:80},()=>({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        a:Math.random()*Math.PI*2,
+        s:.2+Math.random()*.3
+    }));
+}
+function animate() {
+    ctx.fillStyle='rgba(255, 255, 255, 0.15)';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+        p.x+=Math.cos(p.a)*p.s;
+        p.y+=Math.sin(p.a)*p.s;
+        if(p.x<0)p.x=canvas.width;
+        if(p.y<0)p.y=canvas.height;
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle='rgba(126,177,72,0.5)';
+        ctx.fill();
+    });
+    requestAnimationFrame(animate);
+}
+addEventListener('resize',init);
+init(); animate();</script>
     <!-- NAV -->
     <nav class="divine-nav">
         <a href="index.html">
@@ -188,13 +222,14 @@ h3 {
             <a href="research.html">Consultation</a>
             <a href="heal.html">Healing</a>
             <a href="team.html">Team</a>
+             <a href="Funding.html">Funding</a>
             <a href="merch.html" class="nav-cta">Merch</a>
         </div>
     </nav>
 
     <main>
 
-    <h1>THE VAULT</h1>
+    <h1 style="color: #0E4D4A;">THE VAULT</h1>
 
 
     <!-- MERCH GRID -->
@@ -204,8 +239,8 @@ h3 {
             <div class="flip-card-inner">
                 <div class="front">
                     <img src="assets/img/merch/12.png" class="product-img" alt="White Front">
-                    <h3>WOMATE T-SHIRT</h3>
-                    <p>Core White</p>
+                    <h3 style="color: #0E4D4A;">WOMATE T-SHIRT</h3>
+                    <p style="color: #0E4D4A;">Core White</p>
                     <div class="price">GHS 60</div>
                 </div>
                 <div class="back">
@@ -220,8 +255,8 @@ h3 {
             <div class="flip-card-inner">
                 <div class="front">
                     <img src="assets/img/merch/13.png" class="product-img" alt="Green Front">
-                    <h3>WOMATE T-SHIRT</h3>
-                    <p>Deep Green</p>
+                    <h3 style="color: #0E4D4A;">WOMATE T-SHIRT</h3>
+                    <p style="color: #0E4D4A;">Deep Green</p>
                     <div class="price">GHS 60</div>
                 </div>
                 <div class="back">

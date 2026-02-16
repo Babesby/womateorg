@@ -45,8 +45,8 @@
         :root {
             --bg: #050706;
             --surface: #0d110f;
-            --accent: #63ff9b; /* The "Divine Spark" Green */
-            --accent-glow: rgba(99, 255, 155, 0.2);
+            --accent: #0E4D4A; /* The "Divine Spark" Green */
+            --accent-glow: #0E4D4A;
             --text-dim: #FCFBF7;
             --text-bright: #f8fafc;
             --border: rgba(255, 255, 255, 0.1);
@@ -66,44 +66,8 @@
             line-height: 1.6;
         }
 
-        /* --- BACKGROUND EFFECTS --- */
-        .gnosis-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, #1a2e23 0%, transparent 70%);
-            opacity: 0.4;
-            z-index: -1;
-            pointer-events: none;
-        }
-
         /* --- NAVIGATION --- */
-        nav {
-            padding: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-        }
-
-
-        .nav-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
+       
 
         /* --- HERO SECTION --- */
         .hero {
@@ -167,14 +131,15 @@
         }
 
         .btn-secondary {
-            border: 1px solid var(--border);
+            border: 1px solid var(--accent);
             color: var(--text-bright);
             backdrop-filter: blur(10px);
+
         }
 
         .btn-secondary:hover {
             background: rgba(255,255,255,0.05);
-            border-color: var(--text-bright);
+            border-color: #7EB148;
         }
 
         /* --- CURRICULUM SECTION --- */
@@ -371,6 +336,7 @@
         <a href="research.html">Consultation</a>
         <a href="heal.html">Healing</a>
         <a href="team.html" >Team</a>
+         <a href="Funding.html">Funding</a>
         <a href="merch.html" >Merch</a>
     </div>
 </nav>
@@ -378,16 +344,15 @@
 <body>
 <canvas id="pleroma-canvas"></canvas>
 <div class="universe-overlay"></div>
-<div class="gnosis-overlay"></div>
 
 <header>
     <br/><br/><br/><br/><br/>
-          <h1 class="flipInY">She Leads <span>Climate Mentorship.</span></h1>
-          <p class="hero-sub">Where Young Women Gain the Knowledge, Skills, and Courage to Lead Climate Action</p>
+          <h1 style="color: #222;" class="flipInY">She Leads <span>Climate Mentorship.</span></h1>
+          <p style="color: #222;" class="hero-sub">Where Young Women Gain the Knowledge, Skills, and Courage to Lead Climate Action</p>
     <div class="cta-container">
         <!-- Triggers the form overlay instead of an external link -->
-        <a href="javascript:void(0)" class="btn btn-primary" onclick="toggleForm()">Secure Your Interest</a>
-        <a href="#curriculum" class="btn btn-secondary">Explore the Pillars</a>
+        <a href="javascript:void(0)" class="btn btn-primary" onclick="toggleForm()" style="color: #f0fdfa;">Secure Your Interest</a>
+        <a href="#curriculum" style="color: #1a2e23;" class="btn btn-secondary">Explore the Pillars</a>
     </div>
 </header>
 
@@ -522,9 +487,9 @@
         <!-- THE UNVEILING: 2026 CERTIFICATION (High Prestige Card) -->
         <div class="unveiling-block">
             <div class="cert-reveal-card" id="certCard">
-                <span class="label">// THE 2026 SEAL OF EXCELLENCE</span>
-                <h2 class="syne-800" style="font-size: clamp(2rem, 4vw, 3rem);">The Prestige Awaits You.</h2>
-                <p style="opacity: 0.8;">A digital credential validating 360° climate leadership.</p>
+                <span class="label" style="color: #222;">// THE 2026 SEAL OF EXCELLENCE</span>
+                <h2 class="syne-800" style="font-size: clamp(2rem, 4vw, 3rem); color: #222;">The Prestige Awaits You.</h2>
+                <p  style="opacity: 0.8; color: #222;">A digital credential validating 360° climate leadership.</p>
                 
                 <div class="cert-mockup" id="certMockup">
                     <img src="assets/img/cert.svg" alt="2026 Certificate Preview" id="certImage" class="cert-image-display">
@@ -544,7 +509,7 @@
 <style>/* 2026 CERTIFICATE REVEAL */
 /* GENERAL STYLES (Keep Pleroma styles from previous message) */
    :root {
-            --brand-accent: #00ffaa;
+            --brand-accent: #222;
             --surface: rgba(255, 255, 255, 0.05);
         }
 
@@ -638,70 +603,8 @@
             z-index: 0;
         }
     </style>
-<script> document.addEventListener('DOMContentLoaded', () => {
-            const certImage = document.getElementById('certImage');
-            const particlesContainer = document.getElementById('particles-container');
 
-            if (certImage) {
-                certImage.addEventListener('click', () => {
-                    // 1. Zoom and Vanish the certificate image
-                    anime({
-                        targets: certImage,
-                        scale: [1, 1.8], // Zoom in significantly to create drama/awe
-                        opacity: 0,
-                        duration: 1000,
-                        easing: 'easeInCubic',
-                        complete: () => {
-                            // 2. Trigger the particle dispersion effect exactly where the image was
-                            createParticles(certImage);
-                        }
-                    });
-                });
-            }
-
-            // Function to create the 'shining scattered particles' effect
-            function createParticles(element) {
-                const amount = 50; // How many particles
-                for (let i = 0; i < amount; i++) {
-                    const particle = document.createElement('div');
-                    particle.classList.add('particle');
-                    // Style particles dynamically
-                    particle.style.position = 'absolute';
-                    particle.style.background = `hsl(${anime.random(150, 180)}, 100%, 70%)`; // Teal/Glow color
-                    particle.style.width = anime.random(4, 8) + 'px';
-                    particle.style.height = anime.random(4, 8) + 'px';
-                    particle.style.borderRadius = '50%';
-                    particle.style.left = '50%';
-                    particle.style.top = '50%';
-                    particle.style.transform = 'translate(-50%, -50%)';
-                    particlesContainer.appendChild(particle);
-                }
-
-                // Animate the particles away from the center
-                anime({
-                    targets: '.particle',
-                    translateX: function() { return anime.random(-250, 250); }, // Scatter horizontally
-                    translateY: function() { return anime.random(-250, 250); }, // Scatter vertically
-                    scale: function() { return anime.random(0.5, 2); },
-                    opacity: 0,
-                    duration: 1200,
-                    delay: anime.stagger(5), // Stagger the launch for a natural explosion
-                    easing: 'easeOutExpo',
-                    complete: () => {
-                        // Clean up particles and reset image state for repeat view
-                        particlesContainer.innerHTML = '';
-                        certImage.style.opacity = '1';
-                        certImage.style.transform = 'scale(1)';
-                    }
-                });
-            }
-        });
-
-</script>
-
-
-    <footer>
-        <div class="cohort-image">
+         <div class="cohort-image">
     <img src="assets/img/she.png" alt="She Leads Climate – Outstanding Fellows 2025">
 </div>
 <style>.cohort-image {
@@ -733,9 +636,13 @@
     }
 }
 </style>
-    <h2>The 2026 Cohort Awaits.</h2>
+
+
+    <footer>
+   
+    <h2 style="color: #222;">The 2026 Cohort Awaits.</h2>
     <div class="share-wrapper">
-        <a href="javascript:void(0)" class="btn btn-primary" onclick="handleShare()">Share the Movement</a>
+        <a href="javascript:void(0)" class="btn btn-primary" onclick="handleShare()" style="color: #f8fafc;">Share the Movement</a>
         
         <!-- Hidden Desktop Share Menu -->
         <div id="desktop-share-menu" class="share-menu">
@@ -767,7 +674,7 @@
         </div>
     </div>
     <div style="margin-top:60px; border-top:1px solid rgba(255,255,255,0.05); padding-top:20px; text-align:center;">
-        <p>© 2026 WOMATE. All Rights Reserved.</p>
+        <p style="color: #222;">© 2026 WOMATE. All Rights Reserved.</p>
     </div>
 </div>
 
